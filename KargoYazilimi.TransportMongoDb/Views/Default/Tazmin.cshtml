@@ -1,0 +1,154 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+
+    <main class="main">
+        <section class="section box-pageheader-1">
+            <div class="container text-center">
+                <h1 class="color-white mb-20 font-bold-800">Hukuki Mevzuat ve Taşıma Standartları</h1>
+                <p class="font-md color-white">ÇOKKEÇECİ FAST DAĞITIM HİZMETLERİ ve LOJİSTİK A.Ş. Yasal Bildirimler Sayfası</p>
+            </div>
+        </section>
+
+        <section class="section pt-80 mb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 mb-30">
+                        <div class="box-sidebar-legal sticky-top" style="top: 110px; z-index: 100;">
+                            <div class="bg-brand-2 p-20 bd-rd8 mb-10">
+                                <h5 class="color-white m-0">Yasal Rehber</h5>
+                            </div>
+                            <ul class="nav nav-tabs d-block border-0" id="legalTab" role="tablist">
+                                <li class="nav-item mb-10">
+                                    <a class="nav-link active btn btn-default w-100 text-start" id="contract-tab" data-bs-toggle="tab" href="#contract" role="tab">Mesafe Taşıma Sözleşmesi</a>
+                                </li>
+                                <li class="nav-item mb-10">
+                                    <a class="nav-link btn btn-default w-100 text-start" id="ops-tab" data-bs-toggle="tab" href="#ops" role="tab">Operasyonel Standartlar</a>
+                                </li>
+                                <li class="nav-item mb-10">
+                                    <a class="nav-link btn btn-default w-100 text-start" id="claims-tab" data-bs-toggle="tab" href="#claims" role="tab">Tazminat ve Hasar Yönetimi</a>
+                                </li>
+                                <li class="nav-item mb-10">
+                                    <a class="nav-link btn btn-default w-100 text-start" id="rules-tab" data-bs-toggle="tab" href="#rules" role="tab">Ambalaj ve Yasaklar</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-9">
+                        <div class="tab-content" id="legalTabContent">
+
+                            <div class="tab-pane fade show active content-detail" id="contract" role="tabpanel">
+                                <h3 class="color-brand-2 mb-30">Genel Taşıma Sözleşmesi (Şartlar ve Koşullar)</h3>
+                                <div class="bg-light p-40 bd-rd8 mb-30 border">
+                                    <h6>MADDE 1: TARAFLAR VE TANIMLAR</h6>
+                                    <p>İşbu sözleşme, bir tarafta merkezi <strong>Kayseri Organize Sanayi Bölgesi</strong> adresinde bulunan <strong>ÇOKKEÇECİ FAST DAĞITIM HİZMETLERİ ve LOJİSTİK A.Ş.</strong> (Bundan sonra "Taşıyıcı" olarak anılacaktır) ile gönderiyi teslim eden "Gönderen" ve gönderinin teslim edileceği "Alıcı" arasında akdedilmiştir. "Gönderi", posta tekeline girmeyen, taşınması yasaklanmamış ve bu sözleşme şartlarına uygun şekilde kabul edilen her türlü emtiayı ifade eder.</p>
+
+                                    <h6>MADDE 2: GÖNDERENİN YÜKÜMLÜLÜKLERİ VE BEYANI</h6>
+                                    <p>Gönderen, gönderinin muhtevası, cinsi, ağırlığı, boyutu ve Alıcı bilgilerini tam ve doğru beyan etmekle mükelleftir. Gönderinin ambalajının, taşıma sırasında oluşabilecek sarsıntı, basınç ve elde elleçleme koşullarına uygun, sağlamlıkta olmasını sağlamak Gönderen'in asil yükümlülüğüdür. Yanlış, eksik veya yanıltıcı beyanlardan doğacak her türlü hukuki, cezai ve mali sorumluluk (vergi cezaları, resmi makamlarca konulan el koyma kararları vb.) tamamen Gönderen'e aittir.</p>
+
+                                    <h6>MADDE 3: TAŞIYICININ SORUMLULUK SINIRLARI</h6>
+                                    <p>Taşıyıcının sorumluluğu, gönderinin fiziksel olarak teslim alındığı andan itibaren başlar ve Alıcıya veya Alıcı yetkilisine teslim edildiği ana kadar sürer. Taşıyıcı, Türk Ticaret Kanunu (TTK) ve ilgili mevzuat çerçevesinde, kendi kusurundan kaynaklanmayan hasarlardan sorumlu tutulamaz. Gönderinin tabiatından kaynaklanan (akma, bozulma, sızma) durumlar ile mücbir sebepler (terör, doğal afet, olağanüstü hava şartları) taşıyıcının sorumluluğunu ortadan kaldırır.</p>
+
+                                    <h6>MADDE 4: TESLİMAT VE İADE PROSEDÜRÜ</h6>
+                                    <p>Normal şartlarda 0-600 km arası mesafeler 24 saat, 600 km üzeri mesafeler 48 saatte teslim edilir. Adresinde bulunamayan alıcılara bilgilendirme yapılır ve gönderi en fazla 3 iş günü şubede bekletilir. Bu süre sonunda teslim alınmayan kargolar, taşıma ücretinin %50'si tutarında bir iade bedeli eklenerek Gönderen'e geri gönderilir. İade sürecinden doğan ek masraflar Gönderen tarafından peşinen kabul edilmiştir.</p>
+
+                                    <h6>MADDE 5: YETKİLİ MERCİLER</h6>
+                                    <p>Bu sözleşmeden doğacak her türlü ihtilafta <strong>Kayseri Mahkemeleri ve İcra Daireleri</strong> münhasıran yetkilidir.</p>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade content-detail" id="ops" role="tabpanel">
+                                <h3 class="color-brand-2 mb-30">Operasyonel Taşıma ve Hizmet Standartları</h3>
+
+                                <h6>ÖLÇÜM, TARTIM VE DESİ (HACİMSEL AĞIRLIK) UYGULAMASI</h6>
+                                <p>
+                                    ÇOKKEÇECİ FAST sisteminde kargoların ücretlendirilmesi, kargonun kapladığı hacim (desi) veya gerçek ağırlığından hangisi daha yüksekse onun üzerinden hesaplanır. Ölçüm yapılırken; <br>
+                                    <strong>Yurtiçi Formülü:</strong> (En x Boy x Yükseklik) / 3.000 <br>
+                                    <strong>Yurtdışı Formülü:</strong> (En x Boy x Yükseklik) / 5.000 <br>
+                                    Taşıma sırasında Transfer Merkezlerinde yapılan otomatik ölçümler ile şube ölçümleri arasında fark olması durumunda sistemdeki en yüksek değer esas alınır.
+                                </p>
+
+                                <h6>TAKİP VE ZİMMET ZİNCİRİ (Kargo Okutma Standardı)</h6>
+                                <p>Her gönderi, kabul anından itibaren tekil bir barkod ile dijital sisteme dahil edilir. Gönderinin geçtiği her birim (Şube, Transfer Merkezi, Kurye Aracı) zimmet okutması yapmak zorundadır. Bu süreç, "Kargo Okutma Standardı" uyarınca gönderinin güvenliğini sağlar. Plastik mühürleme ve manifesto torbası kullanımı, özellikle "Mİ" (0.5-2 kg arası küçük emtia) statüsündeki ürünler için zorunludur.</p>
+
+                                <h6>MOBİL VE HİZMET DIŞI ALANLAR</h6>
+                                <p>Merkeze uzak köyler, beldeler veya resmi olarak "Mobil Alan" tanımlanan bölgeler için haftanın belirli günlerinde dağıtım yapılır. Dağıtım alanı dışında kalan (At Dışı) noktalar için kargo ancak en yakın şubeden teslim alınabilir. Bu bölgelerdeki gecikmeler taahhüt edilen sürelerin dışındadır.</p>
+                            </div>
+
+                            <div class="tab-pane fade content-detail" id="claims" role="tabpanel">
+                                <h3 class="color-brand-2 mb-30">Yasal Tazminat Prosedürü</h3>
+                                <p class="mb-20">Hasar veya kayıp durumunda tazminat süreci, 6102 sayılı Türk Ticaret Kanunu (TTK) ve uluslararası taşımacılık normlarına göre yürütülür.</p>
+
+                                <h6>HASAR TESPİT TUTANAĞI (HTT) ZORUNLULUĞU</h6>
+                                <p>Dış ambalajda yırtık, ezik, ıslaklık gibi fiziksel bir hasar varsa Alıcı kargoyu teslim almamalı ve HTT tutulmasını talep etmelidir. İhtirazi kayıt (çekince) koyulmadan ve HTT tutulmadan teslim alınan kargolar "kusursuz teslim edilmiş" sayılır. Gizli hasar (ambalaj sağlam, ürün hasarlı) durumunda bildirim süresi teslimattan itibaren en geç **7 iş günüdür**.</p>
+
+                                <h6>TAZMİNAT HESAPLAMALARI VE SDR LİMİTLERİ</h6>
+                                <p>Tazminat ödemeleri, gönderinin fatura bedeli üzerinden yapılır. Ürüne ait resmi fatura ibraz edilemiyorsa, TTK m. 882 uyarınca <strong>SDR (Özel Çekme Hakkı)</strong> kuru üzerinden hesaplama yapılır. SDR, merkez bankası tarafından günlük belirlenen bir kura tabi olup; formül: <strong>SDR Kuru x 8,33 x Desi</strong> şeklinde uygulanır. Dolaylı zararlar (kar kaybı, manevi tazminat) hiçbir koşulda tazmin edilmez.</p>
+
+                                <h6>TAZMİN İÇİN GEREKLİ BELGE LİSTESİ</h6>
+                                <ul class="list-ticks list-ticks-2">
+                                    <li>Iska imzalı Tazminat Başvuru Dilekçesi.</li>
+                                    <li>Kargo Ambar Tesellüm Fişi (ATF) ve İrsaliye.</li>
+                                    <li>Ürünün asıl faturası veya perakende satış fişi.</li>
+                                    <li>Hasar anına ait net fotoğraflar ve Hasar Tespit Tutanağı.</li>
+                                    <li>Başvuru sahibinin IBAN ve Kimlik bilgileri.</li>
+                                </ul>
+                            </div>
+
+                            <div class="tab-pane fade content-detail" id="rules" role="tabpanel">
+                                <h3 class="color-brand-2 mb-30">Ambalajlama ve Yasaklı Maddeler</h3>
+
+                                <h6>STANDART AMBALAJLAMA KRİTERLERİ</h6>
+                                <p>Ürün, içerisinde boşluk kalmayacak şekilde sabitlenmeli ve çift oluklu mukavva koli içerisinde taşınmalıdır. Sıvı ürünler sızdırmaz ek ambalajlarla korunmalıdır. Yetersiz ambalaj nedeniyle oluşan hasarlardan taşıyıcı sorumlu tutulamaz ve bu kargolar "Sorumluluk Belgesi" ile sigortasız kabul edilir.</p>
+
+                                <h6>KESİNLİKLE TAŞINMAYACAK MADDELER</h6>
+                                <ul class="list-ticks list-ticks-2">
+                                    <li>Yanıcı, parlayıcı, patlayıcı ve zehirleyici gaz veya sıvılar.</li>
+                                    <li>Nakit para, hamiline yazılı çek-senet, altın, gümüş ve ziynet eşyaları.</li>
+                                    <li>Canlı hayvan, insan organları, cenin veya tıbbi tahlil numuneleri.</li>
+                                    <li>Radyoaktif maddeler ve her türlü ateşli silah-mühimmat.</li>
+                                    <li>Yasa dışı maddeler, uyuşturucu ve suç unsuru içeren her türlü yayın/obje.</li>
+                                </ul>
+
+                                <h6>ÖZEL ŞARTLI VE SİGORTASIZ TAŞINANLAR</h6>
+                                <p>Aşağıdaki ürünler hasar riski nedeniyle taşıma güvencesi (sigorta) kapsamı dışındadır:</p>
+                                <ul class="list-ticks list-ticks-2">
+                                    <li>Cam, ayna, porselen ve mermer gibi kırılgan eşyalar.</li>
+                                    <li>Orijinal kutusunda olmayan ikinci el beyaz eşya ve elektronik ürünler.</li>
+                                    <li>Bozulabilir gıda maddeleri ve soğuk zincir gerektiren ürünler (Özel anlaşma yoksa).</li>
+                                    <li>Antika eşyalar, kürkler ve yüksek maddi değere sahip sanat eserleri.</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section pt-70 pb-70 bg-brand-2 text-center">
+            <div class="container">
+                <h2 class="color-white mb-20">Hukuki sorularınız mı var?</h2>
+                <p class="font-lg color-white mb-40">Mevzuat ve süreçlerle ilgili detaylı bilgi almak için hukuk servisimize ulaşabilirsiniz.</p>
+                <a class="btn btn-brand-1-big" href="mailto:hukuk@cokkececifast.com">Hukuk Departmanına Yazın</a>
+            </div>
+        </section>
+    </main>
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+</html>
+

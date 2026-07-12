@@ -1,0 +1,264 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    @await Component.InvokeAsync("_DefaultHeadComponentPartial")
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Kargo Sorgulama | ÇokkeçeciJET</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #0b1f38 0%, #1a365d 50%, #2a4365 100%);
+            padding: 100px 0 120px 0;
+            position: relative;
+            text-align: center;
+        }
+
+            .hero-section::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 50px;
+                background: #f8fafc;
+                clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 100%);
+            }
+
+        .search-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            max-width: 700px;
+            margin: -80px auto 50px auto;
+            position: relative;
+            z-index: 10;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .custom-search-group {
+            display: flex;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 16px;
+        }
+
+        .tracking-input {
+            height: 70px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            border-radius: 16px 0 0 16px !important;
+            border: 2px solid #e2e8f0;
+            border-right: none;
+            padding-left: 25px;
+            text-transform: uppercase;
+            flex: 1;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+            .tracking-input:focus {
+                border-color: #3b82f6;
+                box-shadow: none;
+            }
+
+        .search-btn {
+            height: 70px;
+            border-radius: 0 16px 16px 0 !important;
+            padding: 0 40px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            background: #3b82f6;
+            color: #fff;
+            border: 2px solid #3b82f6;
+            transition: all 0.3s;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .search-btn:hover {
+                background: #2563eb;
+            }
+
+        .feature-box {
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s;
+        }
+
+            .feature-box:hover {
+                transform: translateY(-5px);
+            }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 15px auto;
+            background: #eff6ff;
+            color: #3b82f6;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        @@media (max-width: 768px) {
+            .hero-section
+
+        {
+            padding: 60px 0 90px 0;
+        }
+
+        .hero-section h1.display-4 {
+            font-size: 2rem !important; 
+            font-weight: 800;
+        }
+
+        .hero-section p.fs-5 {
+            font-size: 1rem !important;
+            padding: 0 15px;
+        }
+
+        .search-card {
+            padding: 25px 20px;
+            margin-top: -45px;
+            border-radius: 20px;
+        }
+
+            .search-card h4 {
+                font-size: 1.25rem;
+            }
+
+    
+        .custom-search-group {
+            flex-direction: column;
+            box-shadow: none;
+            gap: 12px; 
+        }
+
+        .tracking-input {
+            height: 60px;
+            font-size: 1.1rem;
+            border-radius: 16px !important; 
+            border: 2px solid #e2e8f0 !important;
+            padding: 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .search-btn {
+            height: 60px;
+            border-radius: 16px !important; 
+            width: 100%;
+            font-size: 1.1rem;
+        }
+
+        .feature-box {
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+
+        }
+    </style>
+</head>
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+
+    <main>
+        <!-- ÜST MAVİ ALAN -->
+        <section class="hero-section">
+            <div class="container">
+                <span class="badge bg-white text-primary px-3 py-2 rounded-pill fw-bold mb-3 shadow-sm">
+                    <i class="bi bi-rocket-takeoff-fill me-1"></i> Yeni Nesil Lojistik Deneyimi
+                </span>
+                <h1 class="display-4 fw-bold text-white mb-3">Kargonuz Nerede?</h1>
+                <p class="text-white-50 fs-5 mb-0">ÇokkeçeciJET takip numaranızı girerek kargonuzun nerede olduğunu haritadan canlı izleyin.</p>
+            </div>
+        </section>
+
+        <div class="container px-3">
+            <div class="search-card">
+                <div class="text-center mb-4">
+                    <h4 class="fw-bold text-dark"><i class="bi bi-search text-primary me-2"></i>Gönderi Sorgulama</h4>
+                    <p class="text-muted small">Takip numaranız e-posta veya SMS ile size iletilmiştir.</p>
+                </div>
+
+                <form id="trackingForm" onsubmit="searchKargo(event)">
+                    <div class="custom-search-group">
+                        <input type="text" id="trackingCodeInput" class="tracking-input" placeholder="ÖRN: CJET-123456" required autocomplete="off">
+                        <button type="submit" class="search-btn">
+                            SORGULA <i class="bi bi-arrow-right-short fs-4 ms-1"></i>
+                        </button>
+                    </div>
+                    <div id="errorMsg" class="text-danger mt-3 small fw-bold text-center" style="display:none;">
+                        <i class="bi bi-exclamation-circle me-1"></i> Lütfen geçerli bir takip numarası giriniz.
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="container mb-5 pb-5">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                        <h5 class="fw-bold">Canlı Harita Takibi</h5>
+                        <p class="text-muted small">Kargonuz dağıtıma çıktığında kuryemizi harita üzerinden saniye saniye canlı takip edin.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon"><i class="bi bi-shield-check"></i></div>
+                        <h5 class="fw-bold">Güvenli Taşıma</h5>
+                        <p class="text-muted small">Gönderileriniz ÇokkeçeciJET güvencesiyle sigortalı olarak yeni nesil araçlarla taşınır.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon"><i class="bi bi-stopwatch"></i></div>
+                        <h5 class="fw-bold">Hızlı Teslimat</h5>
+                        <p class="text-muted small">Türkiye'nin her yerine en optimize rotalarla minimum sürede maksimum hızda teslimat sağlıyoruz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+
+    <script>
+        function searchKargo(event) {
+            event.preventDefault(); 
+
+            var codeInput = document.getElementById("trackingCodeInput").value.trim().toUpperCase();
+            var errorMsg = document.getElementById("errorMsg");
+
+            if (codeInput.length > 3) {
+                errorMsg.style.display = "none";
+
+ 
+                window.location.href = '/gönderi-takip/' + codeInput;
+            } else {
+                errorMsg.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

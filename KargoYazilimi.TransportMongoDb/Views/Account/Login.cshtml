@@ -1,0 +1,105 @@
+﻿@model LoginDto
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+
+    <main class="main">
+        <section class="section box-login">
+            <div class="row align-items-center m-0">
+                <div class="col-lg-6">
+                    <div class="box-login-left">
+                        <h2 class="color-brand-2 mb-10">Admin Paneline Giriş</h2>
+                        <p class="font-md color-grey-500">Lojistik yönetim sistemine erişmek için bilgilerinizi giriniz.</p>
+
+                        <div class="box-form-login">
+                            <form method="post" asp-controller="Account" asp-action="Login">
+
+                                <div class="form-group">
+                                    <input class="form-control" type="text" asp-for="Username" name="Username" placeholder="Kullanıcı Adı veya E-posta *" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <input class="form-control" type="password" asp-for="Password" name="Password" placeholder="Şifrenizi Giriniz" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="d-flex align-items-center" style="gap: 10px;">
+                                        <img src="@Url.Action("GetCaptchaImage", "Account")" id="captchaImage" alt="Güvenlik Kodu" style="border: 1px solid #e0e6f6; border-radius: 4px; height: 50px; width: 120px;" />
+
+                                        <button type="button" onclick="document.getElementById('captchaImage').src = '@Url.Action("GetCaptchaImage", "Account")?' + new Date().getTime();" class="btn btn-outline-secondary" style="height: 50px; padding: 0 15px; border-color: #e0e6f6; background: transparent;" title="Kodu Yenile">
+                                            <i class="bi bi-arrow-clockwise" style="font-size: 1.2rem; color: #444;"></i> 🔄
+                                        </button>
+
+                                        <input class="form-control m-0" type="text" name="captchaCode" placeholder="Resimdeki Kodu Giriniz *" autocomplete="off" required style="height: 50px; flex-grow: 1;">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="box-remember">
+                                            <label class="font-xs color-grey-900" for="rememberme">
+                                                <input id="rememberme" type="checkbox" asp-for="RememberMe" name="RememberMe"> Beni Hatırla
+                                            </label>
+                                        </div>
+                                        <div class="box-forgotpass">
+                                            <a class="font-xs color-brand-2" href="#">Şifremi Unuttum?</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                @if (ViewBag.Error != null)
+                                {
+                                    <div class="alert alert-danger p-2 small mt-2 mb-2" style="border-radius: 5px; background-color: #ffe5e5; color: #d90000; border: 1px solid #ffb3b3;">
+                                        <i class="bi bi-exclamation-triangle-fill me-2"></i> @ViewBag.Error
+                                    </div>
+                                }
+
+                                <div class="form-group mt-30">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="box-button-form-login">
+                                            <button class="btn btn-brand-1-big mr-20" type="submit">Giriş Yap</button>
+                                        </div>
+                                        <div class="box-text-form-login">
+                                            <span class="font-xs color-grey-500">Yetkiniz yok mu? </span>
+                                            <a class="font-xs color-brand-2" href="#">Destek Talebi</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="box-login-right">
+                        <div class="quote-shape shape-1"></div>
+                        <div class="box-info-bottom-img box-info-bottom-img-3">
+                            <div class="image-play">
+                                <img class="mb-15" src="~/templates/assets/imgs/template/icons/play.svg" alt="transp">
+                            </div>
+                            <div class="info-play">
+                                <h4 class="color-white mb-15">Yönetim Paneli Güvenliği</h4>
+                                <p class="font-sm color-white">
+                                    Admin paneli girişleri çift katmanlı şifreleme ve IP takibi ile korunmaktadır.
+                                    Yetkisiz erişim denemeleri sistem tarafından otomatik olarak loglanmaktadır.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+</html>

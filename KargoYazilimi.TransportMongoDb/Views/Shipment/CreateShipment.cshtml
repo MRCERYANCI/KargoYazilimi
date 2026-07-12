@@ -1,0 +1,194 @@
+﻿@model CreateShipmentDto
+@using static KargoYazilimi.TransportMongoDb.Entities.Enums
+
+@{
+    ViewData["Title"] = "Yeni Kargo Oluştur";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<br />
+<br />
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-white border-bottom py-3">
+                <h5 class="card-title mb-0 fw-bold text-primary">
+                    <i class="bi bi-box-seam-fill me-2"></i>Yeni Kargo Kaydı
+                    <span class="badge bg-primary ms-2 fs-6" style="opacity: 0.8;">ÇokkeçeciJET</span>
+                </h5>
+            </div>
+
+            <form method="post" class="mt-2">
+                <div class="card-body p-4">
+
+                    <div class="row g-4 mb-4">
+
+                        <div class="col-md-6">
+                            <div class="p-4 rounded-3 border bg-light h-100">
+                                <h6 class="fw-bold text-secondary mb-3 border-bottom pb-2">
+                                    <i class="bi bi-person-up me-1"></i> Gönderici Bilgileri
+                                </h6>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-semibold text-secondary small">Ad Soyad / Firma</label>
+                                        <input type="text" asp-for="SenderName" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-semibold text-secondary small">Telefon</label>
+                                        <input type="text" asp-for="SenderPhone" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label fw-semibold text-secondary small">İl</label>
+                                        <input type="text" asp-for="SenderCity" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label fw-semibold text-secondary small">İlçe</label>
+                                        <input type="text" asp-for="SenderDistrict" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label fw-semibold text-secondary small">Mahalle</label>
+                                        <input type="text" asp-for="SenderNeighborhood" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label class="form-label fw-semibold text-secondary small">Açık Adres</label>
+                                        <textarea asp-for="SenderAddress" class="form-control" rows="2" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="p-4 rounded-3 border bg-light h-100">
+                                <h6 class="fw-bold text-secondary mb-3 border-bottom pb-2">
+                                    <i class="bi bi-person-down me-1"></i> Alıcı Bilgileri
+                                </h6>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-semibold text-secondary small">Ad Soyad / Firma</label>
+                                        <input type="text" asp-for="ReceiverName" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-semibold text-secondary small">Telefon</label>
+                                        <input type="text" asp-for="ReceiverPhone" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label fw-semibold text-secondary small">İl</label>
+                                        <input type="text" asp-for="ReceiverCity" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label fw-semibold text-secondary small">İlçe</label>
+                                        <input type="text" asp-for="ReceiverDistrict" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label fw-semibold text-secondary small">Mahalle</label>
+                                        <input type="text" asp-for="ReceiverNeighborhood" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label class="form-label fw-semibold text-secondary small">Açık Adres</label>
+                                        <textarea asp-for="ReceiverAddress" class="form-control" rows="2" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <h6 class="fw-bold text-secondary mb-3 border-bottom pb-2 mt-4">
+                        <i class="bi bi-box-seam me-1"></i> Kargo ve Finans Detayları
+                    </h6>
+
+                    <div class="row g-4">
+                        <div class="col-md-8">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold text-secondary small">Çıkış Şubesi ID</label>
+                                    <input type="text" asp-for="OriginBranchId" class="form-control" placeholder="Örn: 64b1f... (Geçici Input)" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold text-secondary small">Varış Şubesi ID</label>
+                                    <input type="text" asp-for="DestinationBranchId" class="form-control" placeholder="Örn: 64b2c... (Geçici Input)" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label fw-semibold text-secondary small">Adet</label>
+                                    <input type="number" asp-for="PackageCount" class="form-control" value="1" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label fw-semibold text-secondary small">Ağırlık (KG)</label>
+                                    <input type="number" step="0.1" asp-for="TotalWeight" class="form-control" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label fw-semibold text-secondary small">Desi</label>
+                                    <input type="number" step="0.1" asp-for="TotalDesi" class="form-control" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label fw-semibold text-secondary small">Paket Tipi</label>
+                                    <select asp-for="PackageType" class="form-select">
+                                        <option value="Koli">Koli</option>
+                                        <option value="Zarf">Zarf</option>
+                                        <option value="Çuval">Çuval</option>
+                                        <option value="Palet">Palet</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="form-label fw-semibold text-secondary small">İçerik Açıklaması</label>
+                                    <input type="text" asp-for="ContentDescription" class="form-control" placeholder="Örn: Evrak, Elektronik, Tekstil...">
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="form-label fw-semibold text-secondary small">Teslimat Notu</label>
+                                    <input type="text" asp-for="DeliveryNotes" class="form-control" placeholder="Örn: Güvenliğe bırakılmasın.">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold text-secondary small">Ödeme Tipi</label>
+                                    <select asp-for="PaymentType" class="form-select border-primary" asp-items="Html.GetEnumSelectList<PaymentType>()">
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold text-secondary small">Kargo Ücreti (₺)</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light fw-bold text-success">₺</span>
+                                        <input type="number" step="0.01" asp-for="ShippingFee" class="form-control text-success fw-bold" required>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold text-secondary small">Kapıda Ödeme Tutarı (Tahsilat)</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light fw-bold text-primary">₺</span>
+                                        <input type="number" step="0.01" asp-for="CashOnDeliveryAmount" class="form-control">
+                                    </div>
+                                </div>
+
+                                <hr />
+
+                                <div class="form-check form-switch d-flex justify-content-between align-items-center p-0 mb-3">
+                                    <label class="form-check-label fw-bold text-danger mb-0" for="IsFragile"><i class="bi bi-cup-hot-fill me-1"></i> Kırılacak Eşya!</label>
+                                    <input class="form-check-input ms-0 border-danger" type="checkbox" asp-for="IsFragile" id="IsFragile" value="true" style="width: 2.5em; height: 1.25em;">
+                                </div>
+
+                                <div class="form-check form-switch d-flex justify-content-between align-items-center p-0">
+                                    <label class="form-check-label fw-bold text-primary mb-0" for="HasCashOnDelivery"><i class="bi bi-wallet2 me-1"></i> Kapıda Ödeme Var</label>
+                                    <input class="form-check-input ms-0 border-primary" type="checkbox" asp-for="HasCashOnDelivery" id="HasCashOnDelivery" value="true" style="width: 2.5em; height: 1.25em;">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="card-footer bg-light border-top py-4 px-4 text-end">
+                    <a href="/Admin/Shipment/Index" class="btn btn-outline-secondary px-4 me-2">İptal Et</a>
+                    <button type="submit" class="btn btn-primary px-5 fw-bold shadow-sm">
+                        <i class="bi bi-send-check-fill me-2"></i> Kargoyu Sisteme Kaydet
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,763 @@
+﻿@model List<ResultShipmentDto>
+@using static KargoYazilimi.TransportMongoDb.Entities.Enums
+@{
+    Layout = null;
+
+    var pendingDeliveries = Model.Where(x => x.CurrentStatus == ShipmentStatus.OutForDelivery).ToList();
+    var deliveredToday = Model.Where(x => x.CurrentStatus == ShipmentStatus.Delivered && x.CreatedDate.Date == DateTime.Today).Count();
+
+    // Verileri JSON'a çeviriyoruz (Türkçe karakter sorunu bitti)
+    var jsShipmentsData = System.Text.Json.JsonSerializer.Serialize(pendingDeliveries.Select(s => new
+    {
+        id = s.ShipmentId,
+        trackingNo = s.TrackingNumber,
+        receiver = s.ReceiverName,
+        phone = s.ReceiverPhone ?? "",
+        neighborhood = s.ReceiverNeighborhood,
+        address = s.ReceiverAddress,
+        cityInfo = $"{s.ReceiverDistrict} / {s.ReceiverCity}",
+        sender = s.SenderName,
+        packageInfo = $"{s.PackageCount} Prc | {s.TotalWeight} Kg",
+        payment = s.PaymentType,
+        lat = s.ReceiverLatitude != 0 ? s.ReceiverLatitude : 38.7205,
+        lng = s.ReceiverLongitude != 0 ? s.ReceiverLongitude : 35.4826
+    }));
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0b1f38">
+    <title>ÇokkeçeciJET | Kurye Terminali</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@@mdi/font@6.5.95/css/materialdesignicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+
+    <style>
+        :root {
+            --cjet-navy: #0b1f38;
+            --cjet-orange: #f97316;
+            --bg-dark: #cbd5e1;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --success: #15803d;
+            --danger: #dc2626;
+            --border-color: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            display: flex;
+            justify-content: center;
+        }
+
+        .terminal-container {
+            width: 100%;
+            max-width: 480px;
+            min-height: 100vh;
+            background-color: #e2e8f0;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            overflow-x: hidden;
+            padding-bottom: 120px;
+        }
+
+        /* HEADER */
+        .terminal-header {
+            background: var(--cjet-navy);
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 5px solid var(--cjet-orange);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+            .logo-area i {
+                font-size: 30px;
+                color: var(--cjet-orange);
+            }
+
+            .logo-area h1 {
+                font-size: 22px;
+                font-weight: 900;
+                letter-spacing: -0.5px;
+                margin: 0;
+                text-transform: uppercase;
+            }
+
+        .driver-badge {
+            background: #1e293b;
+            border: 2px solid #334155;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 900;
+            color: #f1f5f9;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+            .tab-content.active {
+                display: block;
+                animation: slideIn 0.2s ease-out forwards;
+            }
+        @@keyframes slideIn {
+            from
+
+        {
+            opacity: 0;
+            transform: translateX(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        }
+
+        /* KART TASARIMLARI */
+        .solid-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        /* BARKOD OKUYUCU */
+        .scanner-container {
+            background: #0f172a;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+            border: 2px solid var(--cjet-navy);
+        }
+
+        #reader {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            display: none;
+        }
+
+            #reader video {
+                object-fit: cover;
+            }
+
+        .start-scan-btn {
+            background: var(--cjet-orange);
+            color: #fff;
+            width: 100%;
+            border: none;
+            padding: 22px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 900;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            box-shadow: 0 5px 0 #c2410c;
+            margin-bottom: 10px;
+            transition: 0.1s;
+        }
+
+            .start-scan-btn:active {
+                transform: translateY(5px);
+                box-shadow: 0 0 0 #c2410c;
+            }
+
+        .manual-entry {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+            .manual-entry input {
+                flex: 1;
+                padding: 18px;
+                border: 2px solid var(--border-color);
+                border-radius: 8px;
+                font-size: 18px;
+                font-weight: 900;
+                outline: none;
+                text-transform: uppercase;
+                background: #fff;
+                color: var(--cjet-navy);
+            }
+
+                .manual-entry input:focus {
+                    border-color: var(--cjet-navy);
+                }
+
+            .manual-entry button {
+                background: var(--cjet-navy);
+                color: #fff;
+                border: none;
+                border-radius: 8px;
+                width: 65px;
+                font-size: 26px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+        /* FİŞ (RECEIPT) TASARIMI */
+        .receipt-card {
+            background: #fff;
+            border: 2px dashed var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            display: none;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .r-header {
+            background: var(--cjet-navy);
+            color: #fff;
+            padding: 12px;
+            text-align: center;
+            border-radius: 6px;
+            font-weight: 900;
+            font-size: 22px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .r-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px dotted #e2e8f0;
+            padding: 12px 0;
+        }
+
+            .r-row:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+
+        .r-label {
+            color: var(--text-muted);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .r-val {
+            color: var(--text-main);
+            font-size: 16px;
+            font-weight: 900;
+            text-align: right;
+            max-width: 60%;
+        }
+
+        .r-address {
+            background: #f1f5f9;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-top: 15px;
+            border-left: 5px solid var(--cjet-orange);
+            line-height: 1.5;
+        }
+
+        /* ROTA LİSTESİ */
+        #map {
+            height: 260px;
+            border-radius: 8px;
+            border: 2px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .route-item {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-left: 8px solid var(--cjet-navy);
+            border-radius: 8px;
+            padding: 18px;
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .rt-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .rt-name {
+            font-weight: 900;
+            font-size: 18px;
+            color: var(--text-main);
+        }
+
+        .rt-code {
+            background: var(--bg-dark);
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 900;
+            color: var(--cjet-navy);
+        }
+
+        .rt-addr {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .rt-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .rt-btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 900;
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border: 2px solid;
+            text-transform: uppercase;
+        }
+
+        .rt-call {
+            background: #f0fdf4;
+            color: var(--success);
+            border-color: var(--success);
+        }
+
+        .rt-nav {
+            background: #fff7ed;
+            color: var(--cjet-orange);
+            border-color: var(--cjet-orange);
+        }
+
+        /* ÖZET SEKME */
+        .stat-grid {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .stat-card {
+            flex: 1;
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px 10px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        /* SABİT ALT NAVİGASYON */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 480px;
+            background: #fff;
+            display: flex;
+            border-top: 2px solid var(--border-color);
+            z-index: 40;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+            .bottom-nav.hide {
+                transform: translateX(-50%) translateY(150%);
+            }
+
+        .nav-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px 0;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+            .nav-item i {
+                font-size: 26px;
+                margin-bottom: 4px;
+            }
+
+            .nav-item span {
+                font-size: 13px;
+                font-weight: 900;
+                text-transform: uppercase;
+            }
+
+            .nav-item.active {
+                color: var(--cjet-navy);
+                border-top: 4px solid var(--cjet-orange);
+                margin-top: -2px;
+                background: #f8fafc;
+            }
+
+        /* TESLİMAT AKSİYON BAR - ALT MENÜ GİZLENİNCE EN ALTA OTURACAK */
+        .action-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(200%);
+            width: 100%;
+            max-width: 460px;
+            background: #fff;
+            padding: 20px;
+            display: flex;
+            gap: 15px;
+            z-index: 60;
+            border: 2px solid var(--cjet-navy);
+            border-radius: 12px;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+            .action-bar.show {
+                transform: translateX(-50%) translateY(0);
+            }
+
+        .btn-deliver {
+            flex: 1;
+            background: var(--success);
+            color: #fff;
+            border: none;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 900;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 6px 0 #14532d;
+            cursor: pointer;
+        }
+
+            .btn-deliver:active {
+                transform: translateY(6px);
+                box-shadow: 0 0 0 #14532d;
+            }
+
+        .btn-cancel {
+            width: 70px;
+            background: #fff;
+            color: var(--danger);
+            border: 3px solid var(--danger);
+            border-radius: 8px;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="terminal-container">
+        <!-- HEADER -->
+        <header class="terminal-header">
+            <div class="logo-area">
+                <i class="mdi mdi-barcode-scan"></i>
+                <h1>ÇokkeçeciJET</h1>
+            </div>
+            <div class="driver-badge">OP-382</div>
+        </header>
+
+        <main class="content">
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="solid-card" style="background:#dcfce7; border-color:#22c55e; border-left:6px solid var(--success);">
+                    <span style="color:#14532d; font-weight:900; font-size:15px;"><i class="mdi mdi-check-circle me-1"></i> @TempData["SuccessMessage"]</span>
+                </div>
+            }
+
+            <!-- 1. SEKME: BARKOD/QR OKUTMA -->
+            <div id="tab-scan" class="tab-content active">
+                <div class="solid-card">
+                    <div class="scanner-container" id="scanner-box">
+                        <button class="start-scan-btn" id="scan-btn-ui" onclick="startRealCamera()">
+                            <i class="mdi mdi-barcode-scan"></i> BARKOD OKUT
+                        </button>
+                        <div id="reader"></div>
+                    </div>
+
+                    <div class="manual-entry">
+                        <input type="text" id="barcode-input" placeholder="TAKİP NO GİR">
+                        <button onclick="fetchCargoData()"><i class="mdi mdi-magnify"></i></button>
+                    </div>
+                </div>
+
+                <!-- KARGO BİLGİ EKRANI (FİŞ) -->
+                <div class="receipt-card" id="cargo-details">
+                    <div class="r-header" id="d-barcode">CJET-XXXXX</div>
+
+                    <div class="r-row">
+                        <span class="r-label">Alıcı Adı</span>
+                        <span class="r-val" id="d-receiver">...</span>
+                    </div>
+                    <div class="r-row">
+                        <span class="r-label">Telefon</span>
+                        <span class="r-val" id="d-phone">...</span>
+                    </div>
+                    <div class="r-address">
+                        <i class="mdi mdi-map-marker text-danger"></i> <span id="d-address">...</span>
+                    </div>
+                    <div class="r-row" style="margin-top:15px;">
+                        <span class="r-label">Gönderici</span>
+                        <span class="r-val" id="d-sender">...</span>
+                    </div>
+                    <div class="r-row">
+                        <span class="r-label">Paket</span>
+                        <span class="r-val" id="d-package">...</span>
+                    </div>
+                    <div class="r-row">
+                        <span class="r-label">Ödeme</span>
+                        <span class="r-val text-danger" id="d-payment">...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. SEKME: ROTA (HARİTA + LİSTE) -->
+            <div id="tab-pending" class="tab-content">
+                <div class="solid-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <h2 style="color: var(--cjet-navy); font-weight: 900; font-size: 20px; text-transform: uppercase;">Rotadaki Paketler (@pendingDeliveries.Count)</h2>
+                    </div>
+                    <div id="map"></div>
+                </div>
+
+                <div class="route-list">
+                    @if (pendingDeliveries.Any())
+                    {
+                        foreach (var item in pendingDeliveries)
+                        {
+                            <div class="route-item">
+                                <div class="rt-top">
+                                    <span class="rt-name">@item.ReceiverName</span>
+                                    <span class="rt-code">@item.TrackingNumber</span>
+                                </div>
+                                <div class="rt-addr">
+                                    <span style="color:var(--text-main);">@item.ReceiverNeighborhood Mah. @item.ReceiverAddress</span> <br>
+                                    @item.ReceiverDistrict / @item.ReceiverCity
+                                </div>
+                                <div class="rt-actions">
+                                    @if (!string.IsNullOrEmpty(item.ReceiverPhone))
+                                    {
+                                        <a href="tel:@item.ReceiverPhone" class="rt-btn rt-call"><i class="mdi mdi-phone"></i> ARA</a>
+                                    }
+                                    <a href="https://www.google.com/maps/dir/?api=1&destination=@item.ReceiverLatitude.ToString().Replace(",", "."),@item.ReceiverLongitude.ToString().Replace(",", ".")" target="_blank" class="rt-btn rt-nav"><i class="mdi mdi-navigation"></i> HARİTA</a>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="solid-card" style="text-align:center; padding:40px 10px;">
+                            <i class="mdi mdi-check-all" style="font-size:60px; color:var(--success);"></i>
+                            <h3 style="color:var(--cjet-navy); font-weight:900; margin-top:15px; font-size:24px;">İŞLEM TAMAM</h3>
+                            <p style="color:var(--text-muted); font-weight:700; font-size:16px;">Dağıtılacak kargo kalmadı.</p>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <!-- 3. SEKME: ÖZET -->
+            <div id="tab-profile" class="tab-content">
+                <div class="solid-card" style="text-align: center; border-top: 6px solid var(--cjet-navy); padding: 40px 20px;">
+                    <i class="mdi mdi-truck-check" style="font-size: 70px; color: var(--cjet-navy);"></i>
+                    <h2 style="color: var(--text-main); font-weight: 900; font-size: 24px; text-transform: uppercase; margin-top: 10px;">Burak Çokkeçeci</h2>
+                    <p style="color: var(--text-muted); font-weight: 900; font-size: 16px;">Araç: 38 CJT 202</p>
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-card" style="border-top: 6px solid var(--success);">
+                        <div style="font-size: 40px; font-weight: 900; color: var(--success);">@deliveredToday</div>
+                        <div style="font-size: 13px; font-weight: 900; color: var(--text-muted); text-transform: uppercase; margin-top:5px;">Teslim Edilen</div>
+                    </div>
+                    <div class="stat-card" style="border-top: 6px solid var(--cjet-orange);">
+                        <div style="font-size: 40px; font-weight: 900; color: var(--cjet-orange);">@pendingDeliveries.Count</div>
+                        <div style="font-size: 13px; font-weight: 900; color: var(--text-muted); text-transform: uppercase; margin-top:5px;">Kalan Paket</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- TESLİMAT ONAY BAR -->
+        <div class="action-bar" id="action-bar">
+            <button class="btn-cancel" onclick="resetApp()"><i class="mdi mdi-close-thick"></i></button>
+            <button class="btn-deliver" onclick="completeDelivery()"><i class="mdi mdi-check-bold"></i> ONAYLA VE TESLİM ET</button>
+        </div>
+
+        <!-- ALT NAVİGASYON -->
+        <nav class="bottom-nav" id="main-bottom-nav">
+            <div class="nav-item active" onclick="switchTab('tab-scan', this)"><i class="mdi mdi-barcode-scan"></i><span>Okut</span></div>
+            <div class="nav-item" onclick="switchTab('tab-pending', this)"><i class="mdi mdi-clipboard-text"></i><span>Görevler</span></div>
+            <div class="nav-item" onclick="switchTab('tab-profile', this)"><i class="mdi mdi-chart-box"></i><span>Özet</span></div>
+        </nav>
+    </div>
+
+    <script>
+        const shipments = @Html.Raw(jsShipmentsData);
+        let html5QrCode;
+        let map;
+        let activeShipmentId = "";
+
+        function switchTab(tabId, element) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+            element.classList.add('active');
+            if(tabId === 'tab-pending') setTimeout(initLeafletMap, 100);
+        }
+
+        function initLeafletMap() {
+            if (map) { map.invalidateSize(); return; }
+            map = L.map('map', { zoomControl: false }).setView([38.7312, 35.4787], 12);
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png').addTo(map);
+
+            let bounds = [];
+            shipments.forEach(s => {
+                if(s.lat && s.lng) {
+                    L.marker([s.lat, s.lng]).addTo(map).bindPopup(`<b>${s.receiver}</b><br>${s.trackingNo}`);
+                    bounds.push([s.lat, s.lng]);
+                }
+            });
+            if(bounds.length > 0) map.fitBounds(bounds, {padding: [20, 20], maxZoom: 14});
+        }
+
+        function startRealCamera() {
+            document.getElementById('scan-btn-ui').style.display = 'none';
+            document.getElementById('reader').style.display = 'block';
+
+            html5QrCode = new Html5Qrcode("reader");
+            html5QrCode.start(
+                { facingMode: "environment" },
+                { fps: 15, qrbox: { width: 300, height: 150 } },
+                (decodedText) => {
+                    html5QrCode.stop().then(() => {
+                        document.getElementById('reader').style.display = 'none';
+                        document.getElementById('scan-btn-ui').style.display = 'flex';
+                        document.getElementById('barcode-input').value = decodedText;
+                        fetchCargoData();
+                    });
+                },
+                (err) => {}
+            );
+        }
+
+        // --- İŞTE SİHİRLİ AKIŞ BURADA BAŞLIYOR ---
+        function fetchCargoData() {
+            const inputVal = document.getElementById('barcode-input').value.trim().toUpperCase();
+            if(inputVal === "") return;
+
+            const found = shipments.find(x => x.trackingNo.toUpperCase() === inputVal);
+            if(found) {
+                activeShipmentId = found.id;
+
+                // 1. Kargo Bilgilerini Doldur
+                document.getElementById('d-barcode').innerText = found.trackingNo;
+                document.getElementById('d-receiver').innerText = found.receiver;
+                document.getElementById('d-phone').innerText = found.phone || "-";
+                document.getElementById('d-address').innerText = `${found.neighborhood} Mah. ${found.address} \n${found.cityInfo}`;
+                document.getElementById('d-sender').innerText = found.sender;
+                document.getElementById('d-package').innerText = found.packageInfo;
+                document.getElementById('d-payment').innerText = found.payment || "-";
+
+                // 2. Kargo Fişini Görünür Yap ve Alt Menüyü GİZLE
+                document.getElementById('cargo-details').style.display = 'block';
+                document.getElementById('main-bottom-nav').classList.add('hide');
+
+                // 3. Fişin okunması için yavaşça aşağı kaydır
+                setTimeout(() => {
+                    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+                }, 100);
+
+                // 4. Kullanıcıya okuması için biraz zaman ver (700 ms), sonra Teslim Et Butonunu YUKARI KAYDIR
+                setTimeout(() => {
+                    document.getElementById('action-bar').classList.add('show');
+                }, 700);
+
+            } else {
+                alert("Uyarı: Bu kargo sistemdeki dağıtım listenizde yok!");
+            }
+        }
+
+        function completeDelivery() {
+            if(activeShipmentId !== "") {
+                window.location.href = '/Courier/MarkAsDelivered/' + activeShipmentId;
+            }
+        }
+
+        function resetApp() {
+            // İptale basınca her şeyi eski haline getir
+            document.getElementById('barcode-input').value = "";
+            document.getElementById('cargo-details').style.display = 'none';
+            document.getElementById('action-bar').classList.remove('show');
+            activeShipmentId = "";
+
+            // Alt menüyü geri getir ve ekranı en başa kaydır
+            setTimeout(() => {
+                document.getElementById('main-bottom-nav').classList.remove('hide');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 300);
+        }
+    </script>
+</body>
+</html>

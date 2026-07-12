@@ -1,0 +1,149 @@
+﻿@model GetOfferByIdDto
+
+@{
+    ViewData["Title"] = "Hizmet Güncelle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+
+<br />
+<br />
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card shadow-sm">
+            <div class="card-header bg-white border-bottom py-3">
+                <h5 class="card-title mb-0 fw-bold text-primary">
+                    <i class="bi bi-pencil-square me-2"></i>Hizmet Güncelleme Alanı
+                </h5>
+            </div>
+
+            <form method="post" class="mt-2">
+                <input type="hidden" asp-for="OfferId">
+                <div class="card-body p-4">
+                    <div class="row g-4">
+                        <div class="col-md-8">
+                            <div class="row g-3">
+                                <div class="col-md-7">
+                                    <label class="form-label fw-semibold text-secondary">Hizmet Başlığı</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light"><i class="bi bi-truck"></i></span>
+                                        <input type="text" asp-for="Title" id="TitleInput" class="form-control form-control-lg" placeholder="Örn: Deniz Taşımacılığı" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-5">
+                                    <label class="form-label fw-semibold text-secondary">URL Uzantısı (Slug)</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light"><i class="bi bi-link-45deg"></i></span>
+                                        <input type="text" asp-for="Slug" id="SlugInput" class="form-control form-control-lg bg-light" readonly>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 mt-3">
+                                    <label class="form-label fw-semibold text-secondary">Kısa Açıklama (Kart Üzerinde Görünecek)</label>
+                                    <textarea asp-for="ShortDescription" id="ShortDescInput" class="form-control" rows="2" placeholder="Hizmet hakkında kısa ve etkileyici bir özet yazın..." required></textarea>
+                                </div>
+
+                                <div class="col-md-12 mt-3">
+                                    <label class="form-label fw-semibold text-secondary">Hizmet Detaylı Açıklaması (Zengin Metin Editörü)</label>
+                                    <textarea asp-for="FullDescription" id="FullDescriptionEditor" class="form-control"></textarea>
+                                    <div class="form-text">Mevcut detaylı açıklamayı buradan güncelleyebilirsiniz.</div>
+                                </div>
+
+                                <div class="col-md-8 mt-3">
+                                    <label class="form-label fw-semibold text-secondary">İkon / Görsel URL</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light"><i class="bi bi-image"></i></span>
+                                        <input type="text" asp-for="IconUrl" id="iconUrlInput" class="form-control" oninput="previewServiceIcon(this)" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 mt-3">
+                                    <label class="form-label fw-semibold text-secondary">Görüntüleme Sırası</label>
+                                    <input type="number" asp-for="OrderNo" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 border-start ps-4">
+                            <label class="form-label fw-semibold text-secondary mb-3">Kart Önizlemesi</label>
+
+                            <div class="card-offer shadow-sm border rounded-4 p-3 bg-white" style="max-width: 300px; margin: 0 auto;">
+                                <div class="card-image text-center mb-3 py-3 rounded-3" style="background: #f8f9fa;">
+                                    <img id="iconPreview" src="@Model.IconUrl" alt="Önizleme" style="height: 60px; object-fit: contain;">
+                                    <i id="iconPlaceholder" class="bi bi-box-seam display-4 text-light-emphasis d-none"></i>
+                                </div>
+                                <div class="card-info">
+                                    <h5 class="color-brand-2 mb-2 fs-16 fw-bold text-dark" id="titlePreview">@Model.Title</h5>
+                                    <p class="font-sm color-grey-900 small text-muted" id="descPreview">@Model.ShortDescription</p>
+                                </div>
+                            </div>
+
+                            <div class="p-3 rounded-3 bg-light border mt-4">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" asp-for="IsActive" id="IsActive" style="cursor: pointer;">
+                                    <label class="form-check-label fw-bold ms-2" for="IsActive" style="cursor: pointer;">Hizmeti Yayına Al</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer bg-white border-top py-4 px-4 text-end">
+                    <button type="button" onclick="history.back()" class="btn btn-outline-secondary px-4 me-2">Geri Dön</button>
+                    <button type="submit" class="btn btn-primary px-5 fw-bold shadow-sm">
+                        <i class="bi bi-save2 me-2"></i> Değişiklikleri Kaydet
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    // CKEditor Başlatma
+    CKEDITOR.replace('FullDescriptionEditor', {
+        height: 350,
+        removeButtons: 'About',
+        placeholder: 'Hizmet detaylarını güncelleyin...'
+    });
+
+    function previewServiceIcon(input) {
+        var preview = document.getElementById('iconPreview');
+        var placeholder = document.getElementById('iconPlaceholder');
+
+        if (input.value) {
+            preview.src = input.value;
+            preview.classList.remove('d-none');
+            placeholder.classList.add('d-none');
+
+            preview.onerror = function() {
+                preview.classList.add('d-none');
+                placeholder.classList.remove('d-none');
+                placeholder.className = "bi bi-exclamation-triangle text-danger display-4";
+            };
+        } else {
+            preview.classList.add('d-none');
+            placeholder.classList.remove('d-none');
+            placeholder.className = "bi bi-box-seam display-4 text-light-emphasis";
+        }
+    }
+
+    // Başlık ve Slug yönetimi
+    document.getElementById('TitleInput').addEventListener('input', function() {
+        document.getElementById('titlePreview').innerText = this.value || "Hizmet Başlığı";
+
+        let text = this.value.toLowerCase()
+            .replace(/[ğ]/g, 'g').replace(/[ü]/g, 'u').replace(/[ş]/g, 's')
+            .replace(/[ı]/g, 'i').replace(/[ö]/g, 'o').replace(/[ç]/g, 'c')
+            .replace(/[^a-z0-9]/g, '-')
+            .replace(/-+/g, '-')
+            .replace(/^-|-$/g, '');
+        document.getElementById('SlugInput').value = text;
+    });
+
+    document.getElementById('ShortDescInput').addEventListener('input', function() {
+        document.getElementById('descPreview').innerText = this.value || "Kısa açıklama...";
+    });
+</script>

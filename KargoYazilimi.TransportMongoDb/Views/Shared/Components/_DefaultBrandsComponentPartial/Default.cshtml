@@ -1,0 +1,72 @@
+﻿@model List<ResultBrandDto>
+
+<div class="section bg-2 pt-65 pb-35">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-3 mb-30">
+                <p class="font-2xl-bold color-brand-2">Dünyanın <span class="color-brand-1">Önde Gelen Markaları</span> Bize Güveniyor</p>
+            </div>
+            <div class="col-lg-9 mb-30">
+                <div class="box-swiper">
+                    <div id="brand-swiper-container" class="swiper-container pb-0">
+                        <div class="swiper-wrapper">
+                            @foreach (var item in Model.Where(x => x.IsActive).OrderBy(x => x.OrderNo))
+                            {
+                                <div class="swiper-slide">
+                                    <div class="brand-logo-container">
+                                        <img src="@item.ImageUrl" alt="@item.BrandName">
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Logoların canlı ve orijinal renklerinde olması */
+    .brand-logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        width: 100%;
+    }
+
+        .brand-logo-container img {
+            max-height: 100%;
+            max-width: 140px;
+            object-fit: contain;
+            filter: none !important;
+            opacity: 1 !important;
+        }
+
+    /* Kesintisiz (Linear) akışın sırrı: Geçiş efektini doğrusallaştır */
+    #brand-swiper-container .swiper-wrapper {
+        transition-timing-function: linear !important;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var brandSwiper = new Swiper('#brand-swiper-container', {
+            slidesPerView: 2,         // Mobilde 2 logo
+            spaceBetween: 50,         // Logolar arası boşluk
+            loop: true,               // Sonsuz döngü
+            speed: 4000,              // 4 saniyede bir tur (Hızlandırmak için düşür, yavaşlatmak için artır)
+            freeMode: true,           // Serbest mod (Akıcılık sağlar)
+            allowTouchMove: false,    // Kullanıcı müdahalesini kapat (Akış bozulmasın)
+            autoplay: {
+                delay: 0,             // Bekleme süresi SIFIR (Hiç durmadan kayar)
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                768: { slidesPerView: 4 },
+                1024: { slidesPerView: 6 } // Masaüstünde 6 logo
+            }
+        });
+    });
+</script>

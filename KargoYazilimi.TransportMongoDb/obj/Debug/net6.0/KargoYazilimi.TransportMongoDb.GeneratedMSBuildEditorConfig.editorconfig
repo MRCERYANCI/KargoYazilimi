@@ -1,0 +1,455 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = KargoYazilimi.TransportMongoDb
+build_property.RootNamespace = KargoYazilimi.TransportMongoDb
+build_property.ProjectDir = C:\Users\burak\OneDrive\Masaüstü\KargoTakipYazilimi\KargoYazilimi\KargoYazilimi.TransportMongoDb\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\burak\OneDrive\Masaüstü\KargoTakipYazilimi\KargoYazilimi\KargoYazilimi.TransportMongoDb
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 6.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/About/AboutList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcQWJvdXRMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/About/CreateAbout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcQ3JlYXRlQWJvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/About/UpdateAbout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcVXBkYXRlQWJvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/AdminLayout/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5MYXlvdXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Branch/BranchList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmNoXEJyYW5jaExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Branch/BranchUIList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmNoXEJyYW5jaFVJTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Branch/CreateBranch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmNoXENyZWF0ZUJyYW5jaC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Branch/UpdateBranch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmNoXFVwZGF0ZUJyYW5jaC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Brand/BrandList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcQnJhbmRMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Brand/CreateBrand.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcQ3JlYXRlQnJhbmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Brand/UpdateBrand.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcVXBkYXRlQnJhbmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Career/CareerList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZWVyXENhcmVlckxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Courier/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cmllclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Default/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVmYXVsdFxBYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Default/CerezPolitikasi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVmYXVsdFxDZXJlelBvbGl0aWthc2kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Default/DagitimAgi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVmYXVsdFxEYWdpdGltQWdpLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Default/EticaretLogistis.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVmYXVsdFxFdGljYXJldExvZ2lzdGlzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Default/GeriBildirim.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVmYXVsdFxHZXJpQmlsZGlyaW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Default/GizlilikPolitikasi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVmYXVsdFxHaXpsaWxpa1BvbGl0aWthc2kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Default/GonderiAra.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVmYXVsdFxHb25kZXJpQXJhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Default/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVmYXVsdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Default/KargoTakip.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVmYXVsdFxLYXJnb1Rha2lwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Default/Kariyer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVmYXVsdFxLYXJpeWVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Default/KullanimSartlari.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVmYXVsdFxLdWxsYW5pbVNhcnRsYXJpLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Default/KuryeCagir.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVmYXVsdFxLdXJ5ZUNhZ2lyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Default/MisyonVizyon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVmYXVsdFxNaXN5b25WaXp5b24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Default/Tazmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVmYXVsdFxUYXptaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Default/Yoneticiler.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVmYXVsdFxZb25ldGljaWxlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/GetInTouchSection/CreateGetInTouchSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2V0SW5Ub3VjaFNlY3Rpb25cQ3JlYXRlR2V0SW5Ub3VjaFNlY3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/GetInTouchSection/GetInTouchSectionList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2V0SW5Ub3VjaFNlY3Rpb25cR2V0SW5Ub3VjaFNlY3Rpb25MaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/GetInTouchSection/UpdateGetInTouchSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2V0SW5Ub3VjaFNlY3Rpb25cVXBkYXRlR2V0SW5Ub3VjaFNlY3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/HowItWork/CreateHowItWork.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG93SXRXb3JrXENyZWF0ZUhvd0l0V29yay5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/HowItWork/HowItWorkList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG93SXRXb3JrXEhvd0l0V29ya0xpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/HowItWork/UpdateHowItWork.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG93SXRXb3JrXFVwZGF0ZUhvd0l0V29yay5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Offer/CreateOffer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2ZmZXJcQ3JlYXRlT2ZmZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Offer/OfferDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2ZmZXJcT2ZmZXJEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Offer/OfferList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2ZmZXJcT2ZmZXJMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Offer/UpdateOffer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2ZmZXJcVXBkYXRlT2ZmZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/ProjectSection/CreateProjectSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFNlY3Rpb25cQ3JlYXRlUHJvamVjdFNlY3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/ProjectSection/GetProjectDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFNlY3Rpb25cR2V0UHJvamVjdERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/ProjectSection/ProjectSectionList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFNlY3Rpb25cUHJvamVjdFNlY3Rpb25MaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/ProjectSection/UpdateProjectSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFNlY3Rpb25cVXBkYXRlUHJvamVjdFNlY3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Question/CreateQuestion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25cQ3JlYXRlUXVlc3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Question/QuestionList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25cUXVlc3Rpb25MaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Question/UpdateQuestion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25cVXBkYXRlUXVlc3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Services/BreakBulkTransportation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcQnJlYWtCdWxrVHJhbnNwb3J0YXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Services/BulkCargoTransportation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcQnVsa0NhcmdvVHJhbnNwb3J0YXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Services/ContainerShipping.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcQ29udGFpbmVyU2hpcHBpbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Services/DangerousGoodsTransportation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcRGFuZ2Vyb3VzR29vZHNUcmFuc3BvcnRhdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Services/DistributionCenterOperations.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcRGlzdHJpYnV0aW9uQ2VudGVyT3BlcmF0aW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Services/EcommerceLogisticsServices.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcRWNvbW1lcmNlTG9naXN0aWNzU2VydmljZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Services/ExpressTransportation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcRXhwcmVzc1RyYW5zcG9ydGF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Services/GeneralCargo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcR2VuZXJhbENhcmdvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Services/IntermodalTransportation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcSW50ZXJtb2RhbFRyYW5zcG9ydGF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Services/OversizedCargo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcT3ZlcnNpemVkQ2FyZ28uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Services/PartialLoadTransportation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcUGFydGlhbExvYWRUcmFuc3BvcnRhdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Services/PerishableFoodTransportation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcUGVyaXNoYWJsZUZvb2RUcmFuc3BvcnRhdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Services/ProjectCargoTransportation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcUHJvamVjdENhcmdvVHJhbnNwb3J0YXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Services/RailwayForwarderServices.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcUmFpbHdheUZvcndhcmRlclNlcnZpY2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Services/RailwayLogisticsConsulting.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcUmFpbHdheUxvZ2lzdGljc0NvbnN1bHRpbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Services/RailwayTerminalServices.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcUmFpbHdheVRlcm1pbmFsU2VydmljZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Services/RailwayTransportation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcUmFpbHdheVRyYW5zcG9ydGF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Services/ReverseLogistics.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcUmV2ZXJzZUxvZ2lzdGljcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Services/RoadTransport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcUm9hZFRyYW5zcG9ydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Services/RoRoTransportation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcUm9Sb1RyYW5zcG9ydGF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Services/SpecialTransportation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcU3BlY2lhbFRyYW5zcG9ydGF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Services/StockManagement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcU3RvY2tNYW5hZ2VtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Services/StorageServices.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcU3RvcmFnZVNlcnZpY2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shared/Components/_AdminLayoutFooterComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0FkbWluTGF5b3V0Rm9vdGVyQ29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shared/Components/_AdminLayoutHeadComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0FkbWluTGF5b3V0SGVhZENvbXBvbmVudFBhcnRpYWxcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shared/Components/_AdminLayoutScriptComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0FkbWluTGF5b3V0U2NyaXB0Q29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shared/Components/_AdminLayoutSidebarComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0FkbWluTGF5b3V0U2lkZWJhckNvbXBvbmVudFBhcnRpYWxcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shared/Components/_AdminLayoutTopBarComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0FkbWluTGF5b3V0VG9wQmFyQ29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shared/Components/_DefaultAboutComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0RlZmF1bHRBYm91dENvbXBvbmVudFBhcnRpYWxcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shared/Components/_DefaultBoxBarComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0RlZmF1bHRCb3hCYXJDb21wb25lbnRQYXJ0aWFsXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shared/Components/_DefaultBrandsComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0RlZmF1bHRCcmFuZHNDb21wb25lbnRQYXJ0aWFsXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shared/Components/_DefaultCalculatorShippingComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0RlZmF1bHRDYWxjdWxhdG9yU2hpcHBpbmdDb21wb25lbnRQYXJ0aWFsXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shared/Components/_DefaultContactComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0RlZmF1bHRDb250YWN0Q29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shared/Components/_DefaultFooterComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0RlZmF1bHRGb290ZXJDb21wb25lbnRQYXJ0aWFsXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shared/Components/_DefaultFrequentlyAskedQuestionsComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0RlZmF1bHRGcmVxdWVudGx5QXNrZWRRdWVzdGlvbnNDb21wb25lbnRQYXJ0aWFsXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shared/Components/_DefaultGetInTouchComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0RlZmF1bHRHZXRJblRvdWNoQ29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shared/Components/_DefaultGetQuoteComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0RlZmF1bHRHZXRRdW90ZUNvbXBvbmVudFBhcnRpYWxcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shared/Components/_DefaultHeadComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0RlZmF1bHRIZWFkQ29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shared/Components/_DefaultHeaderComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0RlZmF1bHRIZWFkZXJDb21wb25lbnRQYXJ0aWFsXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shared/Components/_DefaultHowItWorksComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0RlZmF1bHRIb3dJdFdvcmtzQ29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shared/Components/_DefaultMobileMenuComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0RlZmF1bHRNb2JpbGVNZW51Q29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shared/Components/_DefaultOfferComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0RlZmF1bHRPZmZlckNvbXBvbmVudFBhcnRpYWxcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shared/Components/_DefaultScriptsComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0RlZmF1bHRTY3JpcHRzQ29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shared/Components/_DefaultSliderComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0RlZmF1bHRTbGlkZXJDb21wb25lbnRQYXJ0aWFsXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shared/Components/_DefaultStatisticsComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0RlZmF1bHRTdGF0aXN0aWNzQ29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shared/Components/_DefaultTestimonialComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0RlZmF1bHRUZXN0aW1vbmlhbENvbXBvbmVudFBhcnRpYWxcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shared/Components/_DefaultWhatWeHaveDoneComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0RlZmF1bHRXaGF0V2VIYXZlRG9uZUNvbXBvbmVudFBhcnRpYWxcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shipment/AddMovement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpcG1lbnRcQWRkTW92ZW1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shipment/CreateShipment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpcG1lbnRcQ3JlYXRlU2hpcG1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shipment/PrintBarcode.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpcG1lbnRcUHJpbnRCYXJjb2RlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shipment/ShipmentList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpcG1lbnRcU2hpcG1lbnRMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Slider/CreateSlider.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2xpZGVyXENyZWF0ZVNsaWRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Slider/SliderList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2xpZGVyXFNsaWRlckxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Slider/UpdateSlider.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2xpZGVyXFVwZGF0ZVNsaWRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Testimonial/CreateTestimonial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdGltb25pYWxcQ3JlYXRlVGVzdGltb25pYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Testimonial/TestimonialList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdGltb25pYWxcVGVzdGltb25pYWxMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Testimonial/UpdateTestimonial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdGltb25pYWxcVXBkYXRlVGVzdGltb25pYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/burak/OneDrive/Masaüstü/KargoTakipYazilimi/KargoYazilimi/KargoYazilimi.TransportMongoDb/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-ph9n2jys7u

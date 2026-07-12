@@ -1,0 +1,101 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+
+    <main class="main" style="background-color: #ffffff; color: #333; line-height: 1.8;">
+
+        <!-- 1. GÖRKEMLİ HERO (Arka planda büyük görsel) -->
+        <section class="section" style="padding: 160px 0; background: linear-gradient(rgba(11, 28, 61, 0.8), rgba(11, 28, 61, 0.8)), url('/templates/assets/imgs/page/homepage1/menu5.png') center/cover fixed;">
+            <div class="container text-center">
+                <span class="text-uppercase fw-bold" style="color: #ffbc00; letter-spacing: 4px;">Profesyonel Lojistik</span>
+                <h1 class="text-white mt-3 mb-4" style="font-size: 4rem; font-weight: 900;">Dökme Yük Taşımacılığı</h1>
+                <p class="text-white opacity-75 font-lg" style="max-width: 700px; margin: 0 auto;">
+                    Endüstrilerin can damarı olan hammaddeleri, dünya limanları arasında en güvenli ve verimli yöntemlerle taşıyoruz.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. DETAYLI METİN VE İLK GÖRSEL (Sağda) -->
+        <section class="section pt-100 pb-100">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h2 class="mb-4" style="font-size: 2.5rem; color: #0b1c3d;">Stratejik Operasyonel Yönetim</h2>
+                        <p class="font-lg color-grey-700 mb-4">
+                            Dökme yük taşımacılığı, sadece bir nakliye işlemi değil; karmaşık bir operasyonel disiplin gerektiren süreçler bütünüdür.
+                            Yükünüzün karakterine uygun gemi tipi seçimi ve liman operasyonlarındaki hızımızla, projenizin başarısını garanti altına alıyoruz.
+                        </p>
+                        <p class="font-lg color-grey-700">
+                            Handysize, Supramax veya Panamax tipi gemi tedariğimiz ile yük miktarınız ne olursa olsun, en rekabetçi navlun oranlarını sunuyoruz.
+                        </p>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="/templates/assets/imgs/page/homepage1/menu1.png" alt="Dökme Yük Operasyonu" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. DETAYLI METİN VE İKİNCİ GÖRSEL (Solda) -->
+        <section class="section pt-100 pb-100" style="background-color: #f8f9fa;">
+            <div class="container">
+                <div class="row align-items-center flex-row-reverse">
+                    <div class="col-lg-6">
+                        <h2 class="mb-4" style="font-size: 2.5rem; color: #0b1c3d;">Liman ve Terminal Gücü</h2>
+                        <p class="font-lg color-grey-700 mb-4">
+                            Hammadde ticaretinin akışını hızlandırmak adına liman sahalarındaki operasyonel hakimiyetimizle öne çıkıyoruz.
+                            Tahliye, elleçleme ve stoklama süreçlerini, gümrükleme hizmetlerimizle bütünleştirerek uçtan uca bir lojistik zinciri kuruyoruz.
+                        </p>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">✅ <strong>Hızlı Tahliye:</strong> Bekleme süresini minimize eden koordinasyon.</li>
+                            <li class="mb-3">✅ <strong>Güvenli Stoklama:</strong> Uluslararası standartlarda liman sahaları.</li>
+                            <li class="mb-3">✅ <strong>7/24 Raporlama:</strong> Yük durumunuz hakkında anlık bilgi akışı.</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="/templates/assets/imgs/page/homepage1/menu2.png" alt="Liman Hizmetleri" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SEKTÖREL ÇÖZÜMLER (İkonik Kartlar) -->
+        <section class="section pt-100 pb-100">
+            <div class="container">
+                <div class="text-center mb-60">
+                    <h2>Sektörel Uzmanlık Alanlarımız</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 text-center">
+                        <img src="/templates/assets/imgs/page/homepage1/menu3.png" alt="Enerji" style="width: 80px; margin-bottom: 20px;">
+                        <h4 class="mb-3">Enerji & Maden</h4>
+                        <p class="text-muted">Kömür, demir cevheri gibi ağır sanayi ürünlerinde profesyonel taşıma.</p>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <img src="/templates/assets/imgs/page/homepage1/menu4.png" alt="Tarım" style="width: 80px; margin-bottom: 20px;">
+                        <h4 class="mb-3">Tarımsal Emtialar</h4>
+                        <p class="text-muted">Tahıl ve yem hammaddelerinde nem hassasiyetine uygun sevkiyatlar.</p>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <img src="/templates/assets/imgs/page/homepage1/menu5.png" alt="İnşaat" style="width: 80px; margin-bottom: 20px;">
+                        <h4 class="mb-3">İnşaat & Endüstri</h4>
+                        <p class="text-muted">Çimento, klinker ve yapı malzemelerinde yüksek tonajlı lojistik.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+</html>

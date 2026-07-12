@@ -1,0 +1,193 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+
+    <main class="main" style="background-color: #f8fafc; color: #333; line-height: 1.8; font-family: 'Segoe UI', sans-serif;">
+
+        <!-- 1. FARKLI HERO BÖLÜMÜ (Yan Yana Dinamik Yapı) -->
+        <section class="section pt-100 pb-100" style="background: linear-gradient(135deg, #1f2937 0%, #0f172a 100%); position: relative; overflow: hidden;">
+            <!-- Arka plan yol çizgisi efekti -->
+            <div style="position: absolute; top: 0; right: 20%; width: 2px; height: 100%; background: repeating-linear-gradient(to bottom, rgba(255,255,255,0.1) 0, rgba(255,255,255,0.1) 20px, transparent 20px, transparent 40px); transform: rotate(15deg); z-index: 0;"></div>
+
+            <div class="container position-relative" style="z-index: 2;">
+                <div class="row align-items-center">
+                    <!-- Sol: Güçlü Tipografi -->
+                    <div class="col-lg-6 mb-5 mb-lg-0 pe-lg-5">
+                        <div class="d-inline-flex align-items-center mb-4" style="background: rgba(249, 115, 22, 0.15); padding: 8px 20px; border-radius: 50px; border: 1px solid rgba(249, 115, 22, 0.3);">
+                            <span style="display: block; width: 10px; height: 10px; background: #f97316; border-radius: 50%; margin-right: 10px; box-shadow: 0 0 10px #f97316;"></span>
+                            <span style="color: #f97316; font-weight: 700; letter-spacing: 2px; font-size: 13px;">KITALAR ARASI KESİNTİSİZ AĞ</span>
+                        </div>
+                        <h1 class="text-white mb-4" style="font-size: clamp(3rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.1;">
+                            Karayoluyla <br> <span style="color: #f97316;">Sınırları Aşıyoruz</span>
+                        </h1>
+                        <p class="font-lg text-white opacity-75 mb-5" style="max-width: 550px;">
+                            Avrupa, Asya ve Orta Doğu'ya uzanan geniş güzergahlarımız, Euro 6 standartlarındaki çevreci özmal filomuz ve kapıdan kapıya teslimat çözümlerimizle lojistiğe yön veriyoruz.
+                        </p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="/Contact/Index" class="btn" style="background: #f97316; color: white; padding: 16px 35px; font-weight: bold; border-radius: 8px; font-size: 16px; border: none;">Navlun Teklifi Al</a>
+                            <a href="#services" class="btn" style="background: rgba(255,255,255,0.1); color: white; padding: 16px 35px; font-weight: bold; border-radius: 8px; font-size: 16px; border: 1px solid rgba(255,255,255,0.2);">Hizmetleri İncele</a>
+                        </div>
+                    </div>
+                    <!-- Sağ: Üst Üste Binen Resimler (Kolaj) -->
+                    <div class="col-lg-6 position-relative">
+                        <img src="/templates/assets/imgs/page/homepage1/menu3.png" alt="Tır Filosu" style="width: 80%; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); position: relative; z-index: 2;">
+                        <img src="/templates/assets/imgs/page/homepage1/menu1.png" alt="Lojistik Depo" style="width: 50%; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); position: absolute; bottom: -30px; right: 0; z-index: 3; border: 5px solid #1f2937;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. İSTATİSTİK ŞERİDİ (Güven Veren Rakamlar) -->
+        <section class="section pt-40 pb-40" style="background: #ffffff; border-bottom: 1px solid #e2e8f0;">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-6 col-md-3 mb-4 mb-md-0">
+                        <h3 style="color: #1e3a8a; font-weight: 800; font-size: 2.5rem; margin-bottom: 5px;">500+</h3>
+                        <p class="text-muted font-sm font-weight-bold text-uppercase mb-0">Özmal Araç Filosu</p>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4 mb-md-0">
+                        <h3 style="color: #1e3a8a; font-weight: 800; font-size: 2.5rem; margin-bottom: 5px;">40+</h3>
+                        <p class="text-muted font-sm font-weight-bold text-uppercase mb-0">Ülkeye Teslimat</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h3 style="color: #1e3a8a; font-weight: 800; font-size: 2.5rem; margin-bottom: 5px;">7/24</h3>
+                        <p class="text-muted font-sm font-weight-bold text-uppercase mb-0">Uydu Takip Sistemi</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h3 style="color: #1e3a8a; font-weight: 800; font-size: 2.5rem; margin-bottom: 5px;">%100</h3>
+                        <p class="text-muted font-sm font-weight-bold text-uppercase mb-0">Sigorta Güvencesi</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. ANA HİZMETLER (Yepyeni Dikey Görsel Kart Yapısı) -->
+        <section id="services" class="section pt-100 pb-100">
+            <div class="container">
+                <div class="row mb-60 text-center justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="mb-3" style="color: #0f172a;">Yükünüze Uygun Taşıma Modelleri</h2>
+                        <p class="font-lg text-muted">İster tek bir palet, ister komple bir tır dolusu yükünüz olsun; ihtiyacınıza en uygun karayolu taşıma modelini sunuyoruz.</p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <!-- FTL Kartı -->
+                    <div class="col-lg-4">
+                        <div style="position: relative; height: 450px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); group;">
+                            <img src="/templates/assets/imgs/page/homepage1/menu2.png" alt="FTL" style="width: 100%; height: 100%; object-fit: cover;">
+                            <!-- Koyu Gradyan Katmanı -->
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.2) 100%);"></div>
+                            <!-- Metin İçeriği (Aşağıda Hizalı) -->
+                            <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px 30px;">
+                                <span style="background: #f97316; color: white; padding: 5px 15px; border-radius: 5px; font-size: 12px; font-weight: bold; margin-bottom: 15px; display: inline-block;">FULL TRUCK LOAD</span>
+                                <h3 class="text-white mb-2">FTL (Komple Taşıma)</h3>
+                                <p class="text-white opacity-75 mb-0 font-sm">Aracın tamamının sadece sizin yükünüze tahsis edildiği, en kısa transit süresine sahip, aktarmasız direkt teslimat modeli.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LTL Kartı -->
+                    <div class="col-lg-4">
+                        <div style="position: relative; height: 450px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); group;">
+                            <img src="/templates/assets/imgs/page/homepage1/menu4.png" alt="LTL" style="width: 100%; height: 100%; object-fit: cover;">
+                            <!-- Koyu Gradyan Katmanı -->
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.2) 100%);"></div>
+                            <!-- Metin İçeriği -->
+                            <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px 30px;">
+                                <span style="background: #3b82f6; color: white; padding: 5px 15px; border-radius: 5px; font-size: 12px; font-weight: bold; margin-bottom: 15px; display: inline-block;">LESS THAN TRUCKLOAD</span>
+                                <h3 class="text-white mb-2">LTL (Parsiyel Taşıma)</h3>
+                                <p class="text-white opacity-75 mb-0 font-sm">Farklı müşterilere ait yüklerin aynı araçta birleştirildiği, düzenli haftalık çıkışlarla maliyet avantajı sağlayan taşıma modeli.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Minivan Kartı -->
+                    <div class="col-lg-4">
+                        <div style="position: relative; height: 450px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); group;">
+                            <img src="/templates/assets/imgs/page/homepage1/menu5.png" alt="Minivan" style="width: 100%; height: 100%; object-fit: cover;">
+                            <!-- Koyu Gradyan Katmanı -->
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.2) 100%);"></div>
+                            <!-- Metin İçeriği -->
+                            <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px 30px;">
+                                <span style="background: #ef4444; color: white; padding: 5px 15px; border-radius: 5px; font-size: 12px; font-weight: bold; margin-bottom: 15px; display: inline-block;">EXPRESS SOLUTION</span>
+                                <h3 class="text-white mb-2">Minivan Ekspres</h3>
+                                <p class="text-white opacity-75 mb-0 font-sm">Hava kargoya alternatif olan; sınır kapılarında otomobil statüsünde geçiş yaparak Avrupa'ya 24-48 saatte ulaşan acil teslimat.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. TEKNOLOJİ VE FİLO (Zikzak Tasarım Düzeni) -->
+        <section class="section pt-80 pb-80" style="background: #ffffff;">
+            <div class="container">
+                <!-- 1. Satır (Yazı Solda, Resim Sağda) -->
+                <div class="row align-items-center mb-100">
+                    <div class="col-lg-5 pe-lg-5 mb-5 mb-lg-0">
+                        <div style="font-size: 50px; margin-bottom: 20px;">🚛</div>
+                        <h3 class="mb-4" style="color: #0f172a;">Çevreci ve Genç Özmal Filo</h3>
+                        <p class="text-muted font-lg mb-4">
+                            Tamamı çevre dostu Euro 6 motor teknolojisine sahip araçlarımızla karbon ayak izimizi düşürüyoruz. Mega, tenteli, askılı ve frigo treyler seçeneklerimizle otomotivden tekstile her sektöre uygun filo altyapısına sahibiz.
+                        </p>
+                        <ul class="list-unstyled">
+                            <li class="mb-3 d-flex align-items-center"><i class="fa fa-check-circle" style="color: #f97316; font-size: 20px; margin-right: 15px;"></i> Mega ve Standart Tenteli Araçlar</li>
+                            <li class="mb-3 d-flex align-items-center"><i class="fa fa-check-circle" style="color: #f97316; font-size: 20px; margin-right: 15px;"></i> Isı Kontrollü (Frigo) Treylerler</li>
+                            <li class="mb-3 d-flex align-items-center"><i class="fa fa-check-circle" style="color: #f97316; font-size: 20px; margin-right: 15px;"></i> Askılı Tekstil Taşımacılığı Araçları</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-7">
+                        <div style="border-radius: 20px; overflow: hidden; background: #f8fafc; padding: 20px;">
+                            <img src="/templates/assets/imgs/page/homepage1/menu3.png" alt="Filo" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Satır (Resim Solda, Yazı Sağda) -->
+                <div class="row align-items-center flex-row-reverse">
+                    <div class="col-lg-5 ps-lg-5 mb-5 mb-lg-0">
+                        <div style="font-size: 50px; margin-bottom: 20px;">📡</div>
+                        <h3 class="mb-4" style="color: #0f172a;">Uçtan Uca Dijital İzlenebilirlik</h3>
+                        <p class="text-muted font-lg mb-4">
+                            Kargonuz yola çıktığı andan itibaren kör nokta bırakmıyoruz. Araçlarımızdaki gelişmiş uydu takip (GPS) sistemleri sayesinde, yükünüzün nerede olduğunu müşteri portalımız üzerinden 7/24 canlı olarak izleyebilirsiniz.
+                        </p>
+                        <a href="/login.html" class="btn text-white" style="background: #1e3a8a; padding: 12px 30px; border-radius: 8px; font-weight: bold;">Müşteri Portalına Giriş</a>
+                    </div>
+                    <div class="col-lg-7">
+                        <div style="border-radius: 20px; overflow: hidden; background: #f8fafc; padding: 20px;">
+                            <img src="/templates/assets/imgs/page/homepage1/menu1.png" alt="Dijital Takip" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. KESKİN CTA BÖLÜMÜ (Modern ve Şık) -->
+        <section class="section" style="padding: 100px 0; background: url('/templates/assets/imgs/page/homepage1/menu5.png') center/cover; position: relative;">
+            <!-- Koyu Katman -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.85);"></div>
+
+            <div class="container position-relative text-center" style="z-index: 2;">
+                <h2 class="text-white mb-4" style="font-size: 2.8rem;">Karayolunda Güvenilir Çözüm Ortağınız</h2>
+                <p class="text-white opacity-75 font-lg mb-5 mx-auto" style="max-width: 600px;">
+                    İhracat ve ithalat operasyonlarınızda zaman ve maliyet avantajı sağlamak için rota planlamanızı birlikte yapalım.
+                </p>
+                <a href="/Contact/Index" class="btn" style="background: #f97316; color: white; padding: 18px 50px; font-weight: bold; border-radius: 50px; font-size: 18px; box-shadow: 0 15px 30px rgba(249, 115, 22, 0.3);">Hemen İletişime Geçin</a>
+            </div>
+        </section>
+
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+</html>

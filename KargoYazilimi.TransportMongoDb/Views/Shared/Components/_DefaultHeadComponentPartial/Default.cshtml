@@ -1,0 +1,226 @@
+﻿<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="msapplication-TileColor" content="#0E0E0E">
+    <meta name="template-color" content="#0E0E0E">
+    <meta name="description" content="Index page">
+    <meta name="keywords" content="index, page">
+    <meta name="author" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/template/favicon.svg">
+    <link href="~/templates/assets/css/style.css?v=3.0.0" rel="stylesheet">
+    <title>çokkeçeciJET - Sektörün Yenilikçi Çözümü</title>
+</head>
+
+
+
+@* <div id="projectDisclaimer" class="modal-overlay">
+    <div class="modal-container">
+        <div class="modal-side-accent"></div>
+
+        <div class="modal-main-content">
+            <header class="modal-header">
+                <div class="status-badge">Akademik Çalışma</div>
+                <h1>Yazılım Geliştirme ve Kullanım Beyanı</h1>
+            </header>
+
+            <div class="modal-body text-layout">
+                <section class="main-desc">
+                    <p>Bu platform, bir <strong>Yazılım Mühendisi öğrencisi</strong> tarafından geliştirilen teknik bir portfolyo çalışmasıdır. Uygulamanın temel amacı, karmaşık sistem mimarilerini kurgulamak ve modern teknolojileri gerçek dünya senaryolarında test etmektir.</p>
+                </section>
+
+                <div class="info-columns">
+                    <div class="col">
+                        <h3>Proje Statüsü</h3>
+                        <p>Bu yazılım hiçbir ticari kurum veya kuruluşla bağlantılı olmayıp, tamamen bireysel öğrenim süreci kapsamında inşa edilmiştir. Sunulan özellikler demo niteliğindedir.</p>
+                    </div>
+                    <div class="col">
+                        <h3>Etik ve Güvenlik</h3>
+                        <p>Sistem üzerinde kesinlikle kötü amaçlı yazılım veya veri madenciliği yapılmamaktadır. Güvenlik prensipleri gereği, hassas gerçek verilerinizi kullanmamanız önerilir.</p>
+                    </div>
+                </div>
+
+                <div class="legal-notice">
+                    <p><strong>Yasal Not:</strong> Bu sitenin kullanımından doğabilecek dolaylı veya doğrudan hiçbir teknik aksaklık veya veri durumundan geliştirici sorumlu tutulamaz. Siteye giriş yaparak bu projeyi bir "öğrenci çalışması" olarak kabul ettiğinizi beyan edersiniz.</p>
+                </div>
+            </div>
+
+            <footer class="modal-footer">
+                <button onclick="dismissDisclaimer()" class="primary-btn">Koşulları Kabul Ediyorum ve Devam Et</button>
+            </footer>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Geniş ve Modern Layout */
+    .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.95);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10000;
+        padding: 20px;
+        font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    .modal-container {
+        background: #ffffff;
+        width: 100%;
+        max-width: 850px; /* Daha geniş alan */
+        border-radius: 20px;
+        display: flex;
+        overflow: hidden;
+        box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5);
+        animation: slideUp 0.5s ease-out;
+    }
+
+    @@keyframes slideUp {
+        from
+
+    {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    }
+
+    /* Yan taraftaki mavi şerit */
+    .modal-side-accent {
+        width: 12px;
+        background: linear-gradient(to bottom, #2563eb, #3b82f6);
+    }
+
+    .modal-main-content {
+        flex: 1;
+        padding: 50px;
+    }
+
+    .status-badge {
+        display: inline-block;
+        background: #eff6ff;
+        color: #2563eb;
+        padding: 6px 14px;
+        border-radius: 99px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        margin: 0 0 25px 0;
+        color: #0f172a;
+        font-size: 1.8rem;
+        font-weight: 800;
+    }
+
+    .main-desc p {
+        font-size: 17px;
+        color: #334155;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+
+    .info-columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+        .info-columns h3 {
+            font-size: 15px;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .info-columns p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+    .legal-notice {
+        background: #f8fafc;
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+    }
+
+        .legal-notice p {
+            font-size: 13px;
+            color: #475569;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+    .modal-footer {
+        margin-top: 40px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .primary-btn {
+        background: #0f172a;
+        color: #ffffff;
+        border: none;
+        padding: 16px 35px;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+        .primary-btn:hover {
+            background: #1e293b;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+    /* Mobil Uyumluluk */
+    @@media (max-width: 768px) {
+        .modal-main-content
+
+    {
+        padding: 30px;
+    }
+
+    .info-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-side-accent {
+        display: none;
+    }
+
+    }
+</style>
+
+<script>
+    function dismissDisclaimer() {
+        const modal = document.getElementById('projectDisclaimer');
+        modal.style.opacity = '0';
+        modal.style.transition = 'opacity 0.4s ease';
+        setTimeout(() => {
+            modal.style.display = 'none';
+            localStorage.setItem('wide_disclaimer_accepted', 'true');
+        }, 400);
+    }
+
+    window.onload = function() {
+        if (localStorage.getItem('wide_disclaimer_accepted') === 'true') {
+            document.getElementById('projectDisclaimer').style.display = 'none';
+        }
+    }
+</script> *@

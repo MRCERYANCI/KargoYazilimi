@@ -1,0 +1,131 @@
+﻿@model CreateAboutDto
+
+@{
+    ViewData["Title"] = "CreateAbout";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<br /><br />
+<div class="row justify-content-center">
+    <div class="col-xl-12">
+        <div class="card shadow-lg border-0 border-radius-15">
+            <div class="card-header bg-white border-bottom py-3">
+                <h5 class="card-title mb-0 fw-bold text-dark">
+                    <i class="bi bi-plus-circle-fill me-2 text-primary"></i>Yeni Hakkımızda İçeriği Oluştur
+                </h5>
+            </div>
+
+            <div class="card-body p-4">
+                <form method="post">
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <label class="form-label fw-bold text-secondary">Hakkımızda Başlığı</label>
+                            <input type="text" asp-for="Title" class="form-control form-control-lg border-radius-10" placeholder="Örn: En modern teknolojiyle hızlı sevkiyat" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-bold text-secondary">Ana Görsel URL (ImageUrl)</label>
+                            <input type="text" asp-for="ImageUrl" class="form-control border-radius-10" placeholder="Resim yolunu giriniz...">
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-bold text-secondary">Küçük İkon URL (IconUrl)</label>
+                            <input type="text" asp-for="IconUrl" class="form-control border-radius-10" placeholder="İkon yolunu giriniz...">
+                        </div>
+
+                        <div class="col-md-12 mb-4">
+                            <label class="form-label fw-bold text-secondary">Kurumsal Açıklama Metni</label>
+                            <textarea asp-for="Description" class="form-control border-radius-10" rows="5" placeholder="Marka hikayenizi buraya yazın..."></textarea>
+                        </div>
+
+                        <hr class="text-muted opacity-25">
+
+                        <div class="col-md-12 mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <label class="form-label fw-bold text-primary m-0">
+                                    <i class="bi bi-list-stars me-1"></i> Marka Özellikleri (Tick Listesi)
+                                </label>
+                                <button type="button" id="btnAddFeature" class="btn btn-soft-primary btn-sm rounded-pill">
+                                    <i class="bi bi-plus-lg me-1"></i> Yeni Madde Ekle
+                                </button>
+                            </div>
+
+                            <div id="featureContainer">
+                                <div class="input-group mb-2 feature-row">
+                                    <span class="input-group-text bg-light border-radius-left-10"><i class="bi bi-check2-circle text-success"></i></span>
+                                    <input type="text" asp-for="Features" class="form-control" placeholder="Özellik metni giriniz..." required>
+                                    <button class="btn btn-outline-danger btn-remove-feature" type="button"><i class="bi bi-x-lg"></i></button>
+                                </div>
+                            </div>
+                            <small class="text-muted">Müşterilerinize sunduğunuz avantajları madde madde buraya ekleyin.</small>
+                        </div>
+
+                        <div class="col-md-12 text-end mt-3">
+                            <a href="/About/AboutList" class="btn btn-light border-radius-10 px-4 me-2 text-dark">Vazgeç</a>
+                            <button type="submit" class="btn btn-primary border-radius-10 px-5 shadow-sm">
+                                <i class="bi bi-cloud-arrow-up-fill me-2"></i>İçeriği Kaydet
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .border-radius-15 {
+        border-radius: 15px !important;
+    }
+
+    .border-radius-10 {
+        border-radius: 10px !important;
+    }
+
+    .border-radius-left-10 {
+        border-top-left-radius: 10px !important;
+        border-bottom-left-radius: 10px !important;
+    }
+
+    .btn-soft-primary {
+        background-color: #e7f1ff;
+        color: #007bff;
+        border: 1px solid #cce3ff;
+    }
+
+        .btn-soft-primary:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+    .form-control:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.1);
+    }
+</style>
+
+<script>
+    document.getElementById('btnAddFeature').addEventListener('click', function () {
+        const container = document.getElementById('featureContainer');
+        const newRow = document.createElement('div');
+        newRow.className = 'input-group mb-2 feature-row';
+        newRow.innerHTML = `
+            <span class="input-group-text bg-light border-radius-left-10"><i class="bi bi-check2-circle text-success"></i></span>
+            <input type="text" name="Features" class="form-control" placeholder="Özellik metni giriniz..." required>
+            <button class="btn btn-outline-danger btn-remove-feature" type="button"><i class="bi bi-x-lg"></i></button>
+        `;
+        container.appendChild(newRow);
+    });
+
+    document.addEventListener('click', function (e) {
+        if (e.target && (e.target.classList.contains('btn-remove-feature') || e.target.closest('.btn-remove-feature'))) {
+            const rows = document.querySelectorAll('.feature-row');
+            if (rows.length > 1) {
+                e.target.closest('.feature-row').remove();
+            } else {
+                alert("En az bir özellik maddesi kalmalıdır.");
+            }
+        }
+    });
+</script>

@@ -1,0 +1,156 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+
+    <main class="main" style="background-color: #ffffff; color: #333; line-height: 1.8;">
+
+        <!-- 1. TİPOGRAFİ ODAKLI VE ARKA PLANI SÜSLENMİŞ HERO BÖLÜMÜ -->
+        <section class="section pt-120 pb-60" style="position: relative; overflow: hidden; background-color: #f8fafc;">
+
+            <!-- ARKA PLAN EFEKTLERİ (Grid ve Işık Yansımaları) -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(#cbd5e0 1.5px, transparent 1.5px); background-size: 35px 35px; opacity: 0.5; z-index: 0;"></div>
+            <div style="position: absolute; top: -150px; left: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(54,97,237,0.15) 0%, rgba(255,255,255,0) 70%); z-index: 0; border-radius: 50%;"></div>
+            <div style="position: absolute; bottom: 100px; right: -150px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(255,188,0,0.1) 0%, rgba(255,255,255,0) 70%); z-index: 0; border-radius: 50%;"></div>
+
+            <!-- İÇERİK (Z-index ile öne alındı) -->
+            <div class="container text-center" style="position: relative; z-index: 2;">
+                <span class="d-inline-block mb-3" style="background: rgba(54, 97, 237, 0.1); color: #3661ed; padding: 8px 25px; border-radius: 50px; font-weight: 700; letter-spacing: 2px; font-size: 14px; backdrop-filter: blur(5px);">HAVA YOLU TAŞIMACILIĞI</span>
+
+                <h1 class="mb-4" style="font-size: clamp(3rem, 6vw, 5rem); font-weight: 900; color: #0b1c3d; letter-spacing: -1px;">
+                    Genel Kargo
+                </h1>
+
+                <p class="font-lg mb-5 mx-auto" style="color: #64748b; max-width: 750px;">
+                    Dünyanın her noktasına hızla ulaştırılması gereken ticari yükleriniz için, zamanla yarışan, güvenli ve uçtan uca hava kargo çözümleri sunuyoruz.
+                </p>
+
+                <a href="/Contact/Index" class="btn btn-brand-1 hover-up" style="padding: 16px 45px; font-weight: bold; border-radius: 50px; background-color: #3661ed; color: white; border: none; box-shadow: 0 15px 30px rgba(54, 97, 237, 0.25);">
+                    Uçuş Planı İsteyin
+                </a>
+
+                <!-- ZARİF GÖRSEL (Yazının altında) -->
+                <div class="mt-5 pt-4">
+                    <img src="/templates/assets/imgs/page/homepage1/menu2.png" alt="Hava Yolu Genel Kargo" style="width: 100%; max-width: 1100px; height: 450px; object-fit: cover; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); position: relative; z-index: 3;">
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. HİZMET DETAYLARI (Yatay Kutular) -->
+        <section class="section pt-80 pb-100" style="background-color: #ffffff;">
+            <div class="container">
+                <div class="row justify-content-center mb-60">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="mb-3" style="color: #0b1c3d;">Hız ve Güvenlik Bir Arada</h2>
+                        <p class="font-lg" style="color: #64748b;">
+                            Tehlikeli madde veya bozulabilir ürün sınıfına girmeyen tekstil, yedek parça, teknoloji ve evrak gönderileriniz için IATA standartlarında, kıtalararası express çözümler üretiyoruz.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2x2 Ferah Grid -->
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="d-flex p-4" style="background: #f8fbff; border-radius: 20px; border: 1px solid #eef2f6; transition: 0.3s;">
+                            <div style="font-size: 40px; margin-right: 20px;">✈️</div>
+                            <div>
+                                <h4 class="mb-2 color-brand-1">Geniş Uçuş Ağı</h4>
+                                <p class="mb-0 text-muted">Önde gelen havayolu şirketleriyle global ölçekte direkt veya en hızlı aktarmalı uçuş garantisi.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex p-4" style="background: #f8fbff; border-radius: 20px; border: 1px solid #eef2f6; transition: 0.3s;">
+                            <div style="font-size: 40px; margin-right: 20px;">📦</div>
+                            <div>
+                                <h4 class="mb-2 color-brand-1">Konsolidasyon</h4>
+                                <p class="mb-0 text-muted">Parsiyel kargolarınızı optimize ederek, hava yolu maliyetlerinizde ciddi avantaj sağlıyoruz.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex p-4" style="background: #f8fbff; border-radius: 20px; border: 1px solid #eef2f6; transition: 0.3s;">
+                            <div style="font-size: 40px; margin-right: 20px;">🏢</div>
+                            <div>
+                                <h4 class="mb-2 color-brand-1">Gümrük & Depolama</h4>
+                                <p class="mb-0 text-muted">Havalimanı antrepolarında güvenli bekleme ve uzman ekibimizle sorunsuz gümrükleme.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex p-4" style="background: #f8fbff; border-radius: 20px; border: 1px solid #eef2f6; transition: 0.3s;">
+                            <div style="font-size: 40px; margin-right: 20px;">🚪</div>
+                            <div>
+                                <h4 class="mb-2 color-brand-1">Door-to-Door</h4>
+                                <p class="mb-0 text-muted">Yükünüzü fabrikanızdan alıp, dünyanın diğer ucundaki alıcının kapısına kadar teslim ediyoruz.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. OPERASYON SÜRECİ (Karanlık Tema Timeline) -->
+        <section class="section pt-100 pb-120" style="background-color: #0b1c3d; color: white;">
+            <div class="container">
+                <div class="text-center mb-60">
+                    <h2 class="text-white">Operasyon Sürecimiz</h2>
+                    <p style="color: #94a3b8;">Hava kargonuzun 4 adımda kusursuz teslimat döngüsü.</p>
+                </div>
+
+                <div class="row text-center position-relative mt-5">
+                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                        <div class="mx-auto mb-4 d-flex align-items-center justify-content-center" style="width: 70px; height: 70px; background: rgba(54, 97, 237, 0.2); border-radius: 50%; font-size: 24px; font-weight: bold; color: #3661ed; border: 2px solid #3661ed;">1</div>
+                        <h5 class="text-white mb-3">Rezervasyon</h5>
+                        <p style="color: #cbd5e0; font-size: 14px;">Ölçü ve ağırlığa göre anında uçuş planlaması.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                        <div class="mx-auto mb-4 d-flex align-items-center justify-content-center" style="width: 70px; height: 70px; background: rgba(54, 97, 237, 0.2); border-radius: 50%; font-size: 24px; font-weight: bold; color: #3661ed; border: 2px solid #3661ed;">2</div>
+                        <h5 class="text-white mb-3">Güvenlik (X-Ray)</h5>
+                        <p style="color: #cbd5e0; font-size: 14px;">Havalimanı transferi ve güvenlik taramaları.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                        <div class="mx-auto mb-4 d-flex align-items-center justify-content-center" style="width: 70px; height: 70px; background: rgba(54, 97, 237, 0.2); border-radius: 50%; font-size: 24px; font-weight: bold; color: #3661ed; border: 2px solid #3661ed;">3</div>
+                        <h5 class="text-white mb-3">Uçuş</h5>
+                        <p style="color: #cbd5e0; font-size: 14px;">Kargonun uçağa yüklenmesi ve varış noktasına seyri.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="mx-auto mb-4 d-flex align-items-center justify-content-center" style="width: 70px; height: 70px; background: #ffbc00; border-radius: 50%; font-size: 24px; font-weight: bold; color: #0b1c3d; border: 2px solid #ffbc00;">4</div>
+                        <h5 class="text-white mb-3">Teslimat</h5>
+                        <p style="color: #cbd5e0; font-size: 14px;">Gümrükleme işlemlerinin ardından alıcıya teslim.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. YÜZEN ÇAĞRI KUTUSU (Havalı CTA) -->
+        <div class="container" style="margin-top: -60px; position: relative; z-index: 10;">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div style="background: linear-gradient(135deg, #ffbc00 0%, #ff9800 100%); border-radius: 20px; padding: 40px 50px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+                        <div class="mb-3 mb-md-0">
+                            <h3 style="color: #0b1c3d; margin-bottom: 5px;">Hızlı Çözümler İçin Biz Buradayız</h3>
+                            <p style="color: #0b1c3d; margin-bottom: 0; font-size: 16px; font-weight: 500;">İhracat ve ithalat kargolarınız için anında fiyat teklifi alın.</p>
+                        </div>
+                        <a href="/Contact/Index" class="btn hover-up" style="background: #0b1c3d; color: white; padding: 15px 35px; font-weight: bold; border-radius: 50px; font-size: 16px;">İletişime Geçin</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alt Boşluk -->
+        <div style="height: 100px; background-color: #ffffff;"></div>
+
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+</html>

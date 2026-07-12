@@ -1,0 +1,157 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+    <main class="main" style="background-color: #ffffff; color: #333; line-height: 1.8;">
+
+        <!-- 1. TİPOGRAFİ ODAKLI HERO BÖLÜMÜ (Mühendislik ve Güç Teması) -->
+        <section class="section pt-120 pb-60" style="position: relative; overflow: hidden; background-color: #f8fafc;">
+
+            <!-- ARKA PLAN EFEKTLERİ (Grid ve Teknik Cyan Işık Yansımaları) -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(148, 163, 184, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.2) 1px, transparent 1px); background-size: 40px 40px; opacity: 0.5; z-index: 0;"></div>
+            <!-- Sol üstte kurumsal mavi yansıma -->
+            <div style="position: absolute; top: -150px; left: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(54,97,237,0.1) 0%, rgba(255,255,255,0) 70%); z-index: 0; border-radius: 50%;"></div>
+            <!-- Sağ altta tekniği ve mühendisliği temsil eden Siyan (Cyan) yansıma -->
+            <div style="position: absolute; bottom: 100px; right: -150px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, rgba(255,255,255,0) 70%); z-index: 0; border-radius: 50%;"></div>
+
+            <!-- İÇERİK (Z-index ile öne alındı) -->
+            <div class="container text-center" style="position: relative; z-index: 2;">
+                <span class="d-inline-block mb-3" style="background: rgba(6, 182, 212, 0.15); color: #0891b2; padding: 8px 25px; border-radius: 50px; font-weight: 700; letter-spacing: 2px; font-size: 14px; backdrop-filter: blur(5px);">AĞIR YÜK & HAVACILIK MÜHENDİSLİĞİ</span>
+
+                <h1 class="mb-4" style="font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 900; color: #0b1c3d; letter-spacing: -1px; line-height: 1.1;">
+                    Gabari Dışı Kargo <br> <span style="color: #06b6d4;">(Oversized / OOG)</span>
+                </h1>
+
+                <p class="font-lg mb-5 mx-auto" style="color: #64748b; max-width: 800px;">
+                    Standart kargo uçaklarının sınırlarını aşan devasa boyutlardaki ve tonajlardaki yükleriniz için; Antonov ve B747 Freighter gibi özel uçak kiralama (Charter) çözümleri ve Loadmaster eşliğinde uçtan uca mühendislik hizmeti sunuyoruz.
+                </p>
+
+                <a href="/Contact/Index" class="btn hover-up" style="padding: 16px 45px; font-weight: bold; border-radius: 50px; background-color: #06b6d4; color: white; border: none; box-shadow: 0 15px 30px rgba(6, 182, 212, 0.3);">
+                    Proje Dosyanızı İletin
+                </a>
+
+                <!-- ZARİF GÖRSEL (Yazının altında sinematik şerit) -->
+                <div class="mt-5 pt-4">
+                    <img src="/templates/assets/imgs/page/homepage1/menu5.png" alt="Gabari Dışı Hava Kargo" style="width: 100%; max-width: 1100px; height: 450px; object-fit: cover; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); position: relative; z-index: 3;">
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. HİZMET DETAYLARI (Yatay Kutular - Havacılık Odaklı) -->
+        <section class="section pt-80 pb-100" style="background-color: #ffffff;">
+            <div class="container">
+                <div class="row justify-content-center mb-60">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="mb-3" style="color: #0b1c3d;">Sınırları Zorlayan Lojistik</h2>
+                        <p class="font-lg" style="color: #64748b;">
+                            Petrol ve gaz endüstrisi ekipmanları, jeneratörler, helikopterler, uzay ve havacılık parçaları veya dev araçlar... Ağırlığı ve hacmi ne olursa olsun, yükünüzü havalandırmak için gerekli tüm teknik hesaplamaları yapıyoruz.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2x2 Teknik Grid -->
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="d-flex p-4" style="background: #ecfeff; border-radius: 20px; border: 1px solid #cffafe; transition: 0.3s;">
+                            <div style="font-size: 40px; margin-right: 20px;">✈️</div>
+                            <div>
+                                <h4 class="mb-2 color-brand-1">Uçak Kiralama (Charter)</h4>
+                                <p class="mb-0 text-muted">B747F, Antonov AN-124 ve Ilyushin IL-76 gibi burundan yüklemeli dev kargo uçaklarının projenize özel tahsisi.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex p-4" style="background: #ecfeff; border-radius: 20px; border: 1px solid #cffafe; transition: 0.3s;">
+                            <div style="font-size: 40px; margin-right: 20px;">🏗️</div>
+                            <div>
+                                <h4 class="mb-2 color-brand-1">Loadmaster Eşliğinde Yükleme</h4>
+                                <p class="mb-0 text-muted">Vinç operasyonları ve uçağın içine yerleştirme süreçleri, uçuş güvenliği uzmanları (Loadmaster) gözetiminde yapılır.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex p-4" style="background: #ecfeff; border-radius: 20px; border: 1px solid #cffafe; transition: 0.3s;">
+                            <div style="font-size: 40px; margin-right: 20px;">⚖️</div>
+                            <div>
+                                <h4 class="mb-2 color-brand-1">Kütle ve Denge Planlaması</h4>
+                                <p class="mb-0 text-muted">Uçağın ağırlık merkezinin bozulmaması için yükün tabana yayılması ve özel lashing (bağlama) planlarının çizilmesi.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex p-4" style="background: #ecfeff; border-radius: 20px; border: 1px solid #cffafe; transition: 0.3s;">
+                            <div style="font-size: 40px; margin-right: 20px;">🚛</div>
+                            <div>
+                                <h4 class="mb-2 color-brand-1">Uçtan Uca Multimodal</h4>
+                                <p class="mb-0 text-muted">Yükün fabrikadan Lowbed araçlarla alınıp Apron'a (uçak altına) kadar polis eskortuyla getirilmesi ve varışta teslimi.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. OPERASYON SÜRECİ (Karanlık Tema - Mühendislik Süreci) -->
+        <section class="section pt-100 pb-120" style="background-color: #0b1c3d; color: white;">
+            <div class="container">
+                <div class="text-center mb-60">
+                    <h2 class="text-white">Proje Kargo Uçuş Prosedürü</h2>
+                    <p style="color: #94a3b8;">Her aşaması milimetrik olarak hesaplanan "Sıfır Hata" operasyon döngüsü.</p>
+                </div>
+
+                <div class="row text-center position-relative mt-5">
+                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                        <div class="mx-auto mb-4 d-flex align-items-center justify-content-center" style="width: 70px; height: 70px; background: rgba(6, 182, 212, 0.15); border-radius: 50%; font-size: 24px; font-weight: bold; color: #06b6d4; border: 2px solid #06b6d4;">1</div>
+                        <h5 class="text-white mb-3">Teknik Çizim & Fizibilite</h5>
+                        <p style="color: #cbd5e0; font-size: 14px;">Yükün 3D ölçüleri ve ağırlık noktaları analiz edilerek, uçağın kargo kapısından sığıp sığmayacağı hesaplanır.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                        <div class="mx-auto mb-4 d-flex align-items-center justify-content-center" style="width: 70px; height: 70px; background: rgba(6, 182, 212, 0.15); border-radius: 50%; font-size: 24px; font-weight: bold; color: #06b6d4; border: 2px solid #06b6d4;">2</div>
+                        <h5 class="text-white mb-3">Uçak Tahsisi & İzinler</h5>
+                        <p style="color: #cbd5e0; font-size: 14px;">Yüke en uygun ağır nakliye uçağı (Freighter) kiralanır ve ülkeler arası üst uçuş/iniş izinleri alınır.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                        <div class="mx-auto mb-4 d-flex align-items-center justify-content-center" style="width: 70px; height: 70px; background: rgba(6, 182, 212, 0.15); border-radius: 50%; font-size: 24px; font-weight: bold; color: #06b6d4; border: 2px solid #06b6d4;">3</div>
+                        <h5 class="text-white mb-3">Tarmac (Apron) Operasyonu</h5>
+                        <p style="color: #cbd5e0; font-size: 14px;">Ağır tonajlı vinçler ve yükleme rampaları kullanılarak uçak gövdesine hasarsız yükleme sağlanır.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="mx-auto mb-4 d-flex align-items-center justify-content-center" style="width: 70px; height: 70px; background: #06b6d4; border-radius: 50%; font-size: 24px; font-weight: bold; color: #ffffff; border: 2px solid #06b6d4;">4</div>
+                        <h5 class="text-white mb-3">Tahliye & Şantiye Teslim</h5>
+                        <p style="color: #cbd5e0; font-size: 14px;">Uçak varış havalimanına indiğinde aynı özenle tahliye edilir ve lowbed araçlarla nihai şantiyeye ulaştırılır.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. YÜZEN ÇAĞRI KUTUSU (Mühendislik Odaklı CTA) -->
+        <div class="container" style="margin-top: -60px; position: relative; z-index: 10;">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div style="background: linear-gradient(135deg, #0891b2 0%, #164e63 100%); border-radius: 20px; padding: 40px 50px; box-shadow: 0 20px 40px rgba(8, 145, 178, 0.3); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+                        <div class="mb-3 mb-md-0">
+                            <h3 style="color: #ffffff; margin-bottom: 5px;">Devasa Yükler, Sınır Tanımayan Çözümler</h3>
+                            <p style="color: #cffafe; margin-bottom: 0; font-size: 16px; font-weight: 500;">Gabari dışı projeleriniz için uçak kiralama maliyetlerini ve teknik fizibilite raporunu öğrenin.</p>
+                        </div>
+                        <a href="/Contact/Index" class="btn hover-up" style="background: #ffffff; color: #0891b2; padding: 15px 35px; font-weight: bold; border-radius: 50px; font-size: 16px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">Proje Ekibine Ulaşın</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alt Boşluk -->
+        <div style="height: 100px; background-color: #ffffff;"></div>
+
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+</html>

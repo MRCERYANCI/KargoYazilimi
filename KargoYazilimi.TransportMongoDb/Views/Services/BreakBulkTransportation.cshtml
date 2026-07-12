@@ -1,0 +1,89 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+
+    <main class="main" style="background-color: #ffffff; color: #333; line-height: 1.8;">
+
+        <!-- 1. GÖRKEMLİ HERO (Break Bulk Görseli ile) -->
+        <section class="section" style="padding: 160px 0; background: linear-gradient(rgba(11, 28, 61, 0.85), rgba(11, 28, 61, 0.85)), url('/templates/assets/imgs/page/homepage1/menu4.png') center/cover fixed;">
+            <div class="container text-center">
+                <span class="text-uppercase fw-bold" style="color: #ffbc00; letter-spacing: 4px;">Özel Proje Taşımacılığı</span>
+                <h1 class="text-white mt-3 mb-4" style="font-size: 4rem; font-weight: 900;">Break Bulk Taşımacılığı</h1>
+                <p class="text-white opacity-75 font-lg" style="max-width: 750px; margin: 0 auto;">
+                    Standart ölçülerin dışında kalan, devasa ve ağır yükleriniz için; mühendislik becerisi gerektiren profesyonel taşıma çözümleri.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. DETAYLI METİN VE MÜHENDİSLİK VURGUSU -->
+        <section class="section pt-100 pb-100">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h2 class="mb-4" style="font-size: 2.5rem; color: #0b1c3d;">Sınırsız Boyutlar, Kusursuz Planlama</h2>
+                        <p class="font-lg color-grey-700 mb-4">
+                            Break Bulk taşımacılığı, konteyner içine girmeyen ancak parça bazlı olarak taşınması gereken yükler için uygulanan en uzman lojistik yöntemidir. Türbinler, endüstriyel makine parçaları, çelik borular veya devasa kazanlar gibi ürünleriniz, gemi ambarlarında veya güvertesinde özel sabitleme (lashing) sistemleriyle korunur.
+                        </p>
+                        <p class="font-lg color-grey-700">
+                            Bu süreçte lojistik bilgisi kadar, teknik mühendislik ve yük güvenliği standartları da devreye girer. Yükünüzün "lashing" (bağlama) planından vinç kapasitesine kadar her detayı sizin yerinize planlıyoruz.
+                        </p>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="/templates/assets/imgs/page/homepage1/menu2.png" alt="Break Bulk Taşımacılığı" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. OPERASYONEL GÜVENLİK (Özellik Kartları) -->
+        <section class="section pt-100 pb-100" style="background-color: #f8f9fa;">
+            <div class="container">
+                <div class="text-center mb-60">
+                    <h2>Neden Break Bulk Hizmetimizde Fark Yaratıyoruz?</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 text-center">
+                        <div class="p-4" style="background: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%;">
+                            <h4 class="mb-3 color-brand-1">Özel Lashing & Securing</h4>
+                            <p class="text-muted">Yükünüzün deniz yolculuğu boyunca en ufak bir hareket etmemesi için uluslararası standartlarda bağlama (lashing) teknikleri.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <div class="p-4" style="background: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%;">
+                            <h4 class="mb-3 color-brand-1">Proje Mühendisliği</h4>
+                            <p class="text-muted">Yükün ağırlık merkezi ve kaldırma noktalarının belirlenmesi ile liman öncesi teknik analizler.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <div class="p-4" style="background: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%;">
+                            <h4 class="mb-3 color-brand-1">Limanda Uzmanlık</h4>
+                            <p class="text-muted">Ağır tonajlı vinç operasyonları ve liman sahasında yükün güvenli elleçlenmesi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. ÇAĞRI (CTA) -->
+        <section class="section pt-80 pb-80 text-center" style="background: #0b1c3d; color: white;">
+            <div class="container">
+                <h2 class="mb-4">Standart Dışı Yükleriniz İçin Teklif Alın</h2>
+                <p class="font-lg mb-4" style="color: #cbd5e0;">Projenize özel mühendislik çözümleri ve rekabetçi navlun oranları için uzmanlarımızla görüşün.</p>
+                <a href="/Contact/Index" class="btn btn-brand-1" style="padding: 15px 40px; font-weight: bold;">Hemen İletişime Geç</a>
+            </div>
+        </section>
+
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+</html>

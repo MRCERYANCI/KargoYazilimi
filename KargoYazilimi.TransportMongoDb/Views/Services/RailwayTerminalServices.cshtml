@@ -1,0 +1,172 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+
+    <main class="main" style="background-color: #f8fafc; color: #333; line-height: 1.8; font-family: 'Segoe UI', sans-serif;">
+
+        <!-- 1. GÖRKEMLİ HERO BÖLÜMÜ (Endüstriyel Terminal Teması) -->
+        <section class="section pt-120 pb-120" style="position: relative; background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1541888081696-6e9324d5ba76?auto=format&fit=crop&q=80&w=1920') center/cover fixed;">
+            <!-- Çelik Ağ / Tel Örgü Deseni -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: repeating-linear-gradient(45deg, rgba(245, 158, 11, 0.03) 0px, rgba(245, 158, 11, 0.03) 2px, transparent 2px, transparent 15px); z-index: 1;"></div>
+
+            <div class="container text-center position-relative" style="z-index: 2;">
+                <span class="d-inline-block mb-3" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b; padding: 8px 25px; border-radius: 50px; font-weight: 700; letter-spacing: 2px; font-size: 14px; border: 1px solid rgba(245, 158, 11, 0.3);">AĞIR YÜK & SAHA OPERASYONLARI</span>
+
+                <h1 class="text-white mb-4" style="font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 900; line-height: 1.1;">
+                    Demiryolu Terminal <br> <span style="color: #f59e0b;">Hizmetleri</span>
+                </h1>
+
+                <p class="font-lg text-white opacity-75 mb-5 mx-auto" style="max-width: 780px;">
+                    Lojistik zincirinizin kalbi olan terminallerde; devasa reach stacker vinçlerimiz, uzman saha ekiplerimiz ve 7/24 kesintisiz güvenlik altyapımızla konteyner elleçleme, depolama ve vagon yükleme operasyonlarınızı kusursuzca yönetiyoruz.
+                </p>
+
+                <a href="/Contact/Index" class="btn" style="background: #f59e0b; color: #0f172a; padding: 16px 45px; font-weight: bold; border-radius: 8px; font-size: 16px; border: none; box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);">
+                    Saha Operasyonu Planla
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. HİZMET TANITIMI (Asimetrik Görsel ve Bilgi) -->
+        <section class="section pt-100 pb-80" style="background-color: #ffffff;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0 pe-lg-5">
+                        <h2 class="mb-4" style="color: #0f172a; font-size: 2.5rem;">Dinamik, Güçlü ve <br><span style="color: #f59e0b;">Kesintisiz Aktarma</span></h2>
+                        <p class="text-muted font-lg mb-4">
+                            Demiryolu taşımacılığının başarısı, terminaldeki operasyon hızına ve güvenliğine bağlıdır. Bir trenin hatta bekletilmesi ekstra maliyet demektir. Bu nedenle terminal sahalarımızda "Sıfır Bekleme" prensibiyle çalışıyoruz.
+                        </p>
+                        <p class="text-muted font-lg mb-4">
+                            Karayolundan demiryoluna (veya tam tersi) geçiş yapan yükleriniz, yüksek tonajlı iş makinelerimiz ve uzman sapan/lashing personellerimiz tarafından hızla aktarılır. Açık veya kapalı saha depolama ihtiyaçlarınız, 7/24 kameralı güvenlik sistemleriyle izlenen alanlarımızda karşılanır.
+                        </p>
+                        <div class="d-flex align-items-center p-3 mt-4" style="background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 0 10px 10px 0;">
+                            <div style="font-size: 24px; margin-right: 15px;">🏗️</div>
+                            <p class="mb-0" style="color: #b45309; font-weight: 500;">Her türlü ağır tonajlı ve gabari dışı yük terminalimizde elleçlenebilir.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- Gerçek Unsplash Görseli (Terminal / Vinç Operasyonu) -->
+                        <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15); border: 5px solid #f8fafc;">
+                            <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=800" alt="Demiryolu Terminal Operasyonu" style="width: 100%; display: block;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. TEMEL TERMİNAL HİZMETLERİ (Özel İkonlu Kart Yapısı) -->
+        <section class="section pt-100 pb-100" style="background-color: #f8fafc;">
+            <div class="container">
+                <div class="text-center mb-60">
+                    <h2 style="color: #0f172a;">Saha Operasyon Çözümlerimiz</h2>
+                    <p class="text-muted font-lg">Terminal sınırlarımız içinde yükünüze uygulanan endüstriyel işlemler.</p>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Elleçleme -->
+                    <div class="col-lg-6">
+                        <div class="d-flex p-4" style="background: #ffffff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%; border-top: 4px solid #f59e0b; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <div style="background: #fffbeb; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-right: 20px; flex-shrink: 0;">🏗️</div>
+                            <div>
+                                <h4 class="mb-2" style="color: #0f172a;">Konteyner Elleçleme (Handling)</h4>
+                                <p class="text-muted mb-0 font-sm">Dolu veya boş konteynerlerin, Reach Stacker veya portal vinçler yardımıyla tırdan vagona, vagondan sahaya güvenli bir şekilde aktarılması ve istiflenmesi.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lashing -->
+                    <div class="col-lg-6">
+                        <div class="d-flex p-4" style="background: #ffffff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%; border-top: 4px solid #f59e0b; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <div style="background: #fffbeb; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-right: 20px; flex-shrink: 0;">⛓️</div>
+                            <div>
+                                <h4 class="mb-2" style="color: #0f172a;">Lashing (Sabitleme ve Bağlama)</h4>
+                                <p class="text-muted mb-0 font-sm">Demiryolu seyri sırasındaki sarsıntılara karşı, yüklerinizin vagon üzerinde çelik halatlar, spanzetler ve takozlarla uluslararası standartlara uygun sabitlenmesi.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CFS -->
+                    <div class="col-lg-6">
+                        <div class="d-flex p-4" style="background: #ffffff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%; border-top: 4px solid #f59e0b; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <div style="background: #fffbeb; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-right: 20px; flex-shrink: 0;">📦</div>
+                            <div>
+                                <h4 class="mb-2" style="color: #0f172a;">CFS (İç Dolum & Boşaltım)</h4>
+                                <p class="text-muted mb-0 font-sm">Terminal içerisinde dökme veya paletli kargolarınızın konteyner içine yerleştirilmesi (stuffing) veya konteynerden çıkarılarak ayrıştırılması (stripping) işlemleri.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Depolama -->
+                    <div class="col-lg-6">
+                        <div class="d-flex p-4" style="background: #ffffff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%; border-top: 4px solid #f59e0b; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <div style="background: #fffbeb; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-right: 20px; flex-shrink: 0;">🏢</div>
+                            <div>
+                                <h4 class="mb-2" style="color: #0f172a;">Saha Depolama & Antrepo</h4>
+                                <p class="text-muted mb-0 font-sm">Gümrüklü veya gümrüksüz saha ayrımı yapılarak, ürünlerinizin hava şartlarından etkilenmeyecek şekilde açık veya kapalı alanlarda bekletilmesi.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. GÜVENLİK VE ALTYAPI (Karanlık Tema - Endüstriyel Vurgu) -->
+        <section class="section pt-80 pb-100" style="background-color: #1e293b; color: white;">
+            <div class="container">
+                <div class="row align-items-center mb-60">
+                    <div class="col-lg-6">
+                        <h2 class="text-white mb-0">Güvenlik ve Teknolojik Altyapı</h2>
+                    </div>
+                    <div class="col-lg-6 text-lg-end mt-4 mt-lg-0">
+                        <p style="color: #94a3b8; margin-bottom: 0;">Ağır sanayi sahalarında hiçbir hata şansa bırakılmaz.<br>Terminalimiz uluslararası ISPS kodlarına uygun korunur.</p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="p-5 text-center" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 15px; height: 100%;">
+                            <div style="font-size: 40px; margin-bottom: 20px; display: inline-block; background: rgba(245, 158, 11, 0.15); width: 80px; height: 80px; line-height: 80px; border-radius: 50%; color: #f59e0b;">🎥</div>
+                            <h4 class="text-white mb-3">7/24 CCTV İzleme</h4>
+                            <p style="color: #94a3b8; font-size: 14px; mb-0">Terminal sahasının her bir karesi gece görüşlü, yüksek çözünürlüklü kameralarla anlık olarak kayıt altındadır.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-5 text-center" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 15px; height: 100%;">
+                            <div style="font-size: 40px; margin-bottom: 20px; display: inline-block; background: rgba(245, 158, 11, 0.15); width: 80px; height: 80px; line-height: 80px; border-radius: 50%; color: #f59e0b;">🚧</div>
+                            <h4 class="text-white mb-3">Kontrollü Giriş (Gate)</h4>
+                            <p style="color: #94a3b8; font-size: 14px; mb-0">Tır ve yaya girişleri plakalarına, mühür numaralarına ve barkodlara göre dijital eşleşme ile sağlanır.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-5 text-center" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 15px; height: 100%;">
+                            <div style="font-size: 40px; margin-bottom: 20px; display: inline-block; background: rgba(245, 158, 11, 0.15); width: 80px; height: 80px; line-height: 80px; border-radius: 50%; color: #f59e0b;">🛡️</div>
+                            <h4 class="text-white mb-3">Tam Kapsamlı Sigorta</h4>
+                            <p style="color: #94a3b8; font-size: 14px; mb-0">Terminalimize giren her ekipman ve yük, oluşabilecek olası fiziki hasarlara karşı terminal sorumluluk sigortası altındadır.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. GÜÇLÜ ÇAĞRI (CTA) -->
+        <section class="section pt-80 pb-80 text-center" style="background: #ffffff; border-top: 5px solid #f59e0b;">
+            <div class="container">
+                <h2 class="mb-4" style="color: #0f172a;">Lojistik Sahasında Hız Kazanın</h2>
+                <p class="font-lg mb-5 mx-auto text-muted" style="max-width: 650px;">Ağır tonajlı vinç talepleriniz, lashing (sabitleme) veya terminal içi depolama/elleçleme fiyatlandırmaları için uzman ekibimize ulaşın.</p>
+                <a href="/Contact/Index" class="btn" style="background: #0f172a; color: white; padding: 18px 50px; font-weight: bold; border-radius: 8px; font-size: 18px; box-shadow: 0 10px 20px rgba(0,0,0,0.15);">Terminal Operasyon Ekibine Ulaş</a>
+            </div>
+        </section>
+
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+</html>

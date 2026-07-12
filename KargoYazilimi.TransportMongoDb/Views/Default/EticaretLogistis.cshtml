@@ -1,0 +1,109 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+    <main class="main">
+        <section class="section box-pageheader-1" style="background: linear-gradient(rgba(3, 68, 96, 0.8), rgba(3, 68, 96, 0.8)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; padding: 120px 0;">
+            <div class="container text-center">
+                <span class="btn btn-tag mb-15" style="background: rgba(254, 194, 1, 0.2); color: #FEC201; border: 1px solid #FEC201;">Dijital Ticaret Çözümleri</span>
+                <h1 class="color-white mb-20 font-bold-800" style="font-size: 48px;">E-Ticaret Lojistiği</h1>
+                <p class="font-md color-white opacity-75 max-width-600 mx-auto">Mağazanızla tam entegre, uçtan uca akıllı teslimat süreçleri ve teknolojik altyapı.</p>
+            </div>
+        </section>
+
+        <section class="section pt-100 pb-100 bg-white">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-40">
+                        <div class="box-image-entegrasyon shadow-lg bd-rd16 overflow-hidden border">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="E-ticaret Entegrasyonu" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-40 pl-50 pl-md-15">
+                        <h2 class="color-brand-2 mb-30">API Tabanlı Kusursuz Entegrasyon</h2>
+                        <p class="font-md color-grey-700 mb-20" style="line-height: 1.8;">
+                            **ÇOKKEÇECİ FAST**, sadece bir kargo firması değil, aynı zamanda bir teknoloji çözüm ortağıdır. Trendyol, Hepsiburada, Shopify ve WooCommerce gibi platformlarla **C# ve .NET Core** tabanlı yüksek performanslı API altyapımız sayesinde saniyeler içinde entegre oluyoruz.
+                        </p>
+                        <p class="font-md color-grey-700 mb-40" style="line-height: 1.8;">
+                            Siparişleriniz mağazanıza düştüğü an sistemimize aktarılır, barkodunuz otomatik oluşturulur ve kuryemiz yola çıkar. Size sadece satışlarınızı izlemek kalır.
+                        </p>
+
+                        <div class="list-features-ecommerce">
+                            <div class="d-flex align-items-center mb-25">
+                                <div class="icon-circle mr-20" style="min-width: 48px; height: 48px; background: #FEC201; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <i class="mdi mdi-api color-brand-2" style="font-size: 24px;"></i>
+                                </div>
+                                <h6 class="color-brand-2 m-0 font-bold-700" style="font-size: 17px;">Otomatik Sipariş Aktarımı</h6>
+                            </div>
+                            <div class="d-flex align-items-center mb-25">
+                                <div class="icon-circle mr-20" style="min-width: 48px; height: 48px; background: #FEC201; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <i class="mdi mdi-truck-fast color-brand-2" style="font-size: 24px;"></i>
+                                </div>
+                                <h6 class="color-brand-2 m-0 font-bold-700" style="font-size: 17px;">Aynı Gün Teslimat Seçenekleri</h6>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="icon-circle mr-20" style="min-width: 48px; height: 48px; background: #FEC201; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <i class="mdi mdi-refresh color-brand-2" style="font-size: 24px;"></i>
+                                </div>
+                                <h6 class="color-brand-2 m-0 font-bold-700" style="font-size: 17px;">Kolay İade Yönetimi (Reverse Logistics)</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section pt-100 pb-100 bg-grey-100">
+            <div class="container text-center mb-60">
+                <h2 class="color-brand-2 mb-20">E-Ticaret İçin Özel Çözümler</h2>
+                <p class="font-md color-grey-500">İşletmenizin büyüklüğüne göre ölçeklenebilir lojistik modelleri.</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-30">
+                    <div class="card-offer p-40 bd-rd16 border bg-white shadow-sm h-100 hover-up" style="transition: 0.3s;">
+                        <div class="mb-25"><i class="mdi mdi-package-variant-closed color-brand-1" style="font-size: 40px;"></i></div>
+                        <h4 class="color-brand-2 mb-15">Depolama & Fulfillment</h4>
+                        <p class="font-sm color-grey-700" style="line-height: 1.7;">Ürünlerinizi Kayseri merkezli depolarımızda muhafaza ediyor, sipariş geldiğinde paketleyip gönderiyoruz.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-30">
+                    <div class="card-offer p-40 bd-rd16 border bg-white shadow-sm h-100 hover-up" style="transition: 0.3s;">
+                        <div class="mb-25"><i class="mdi mdi-clock-fast color-brand-1" style="font-size: 40px;"></i></div>
+                        <h4 class="color-brand-2 mb-15">Jet Dağıtım</h4>
+                        <p class="font-sm color-grey-700" style="line-height: 1.7;">E-ticaret müşterilerinizin beklentisi olan hız için Kayseri içinde ve çevre illerde aynı gün teslimat yapıyoruz.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-30">
+                    <div class="card-offer p-40 bd-rd16 border bg-white shadow-sm h-100 hover-up" style="transition: 0.3s;">
+                        <div class="mb-25"><i class="mdi mdi-webhook color-brand-1" style="font-size: 40px;"></i></div>
+                        <h4 class="color-brand-2 mb-15">Özel Entegrasyon</h4>
+                        <p class="font-sm color-grey-700" style="line-height: 1.7;">Kendi özel yazılımınızı kullanan işletmeler için Node.js ve Go tabanlı esnek SDK'lar sunuyoruz.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section pt-100 pb-100 text-center" style="background: linear-gradient(rgba(3, 68, 96, 0.9), rgba(3, 68, 96, 0.9)), url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center;">
+            <div class="container">
+                <h2 class="color-white mb-20 font-bold-800" style="font-size: 36px;">Dijital Mağazanızı Geleceğe Taşıyın</h2>
+                <p class="font-lg color-white opacity-75 mb-40 max-width-700 mx-auto">Kayseri merkezli teknolojik altyapımızla e-ticaret operasyonlarınızı hızlandırmak ve maliyetlerinizi düşürmek için buradayız.</p>
+                <a href="contact.html" class="btn btn-brand-1-big" style="background: #FEC201; color: #034460; font-weight: 800; border: none; padding: 18px 35px; border-radius: 8px;">API DOKÜMANTASYONU VE TEKLİF ALIN</a>
+            </div>
+        </section>
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+</html>
+

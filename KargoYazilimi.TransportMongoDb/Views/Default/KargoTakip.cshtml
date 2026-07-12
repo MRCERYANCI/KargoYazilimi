@@ -1,0 +1,733 @@
+﻿@model GetShipmentByIdDto
+@using static KargoYazilimi.TransportMongoDb.Entities.Enums
+@{
+    Layout = null;
+
+    int currentStep = 1;
+    if (Model.CurrentStatus == ShipmentStatus.Created) currentStep = 1;
+    else if (Model.CurrentStatus == ShipmentStatus.InTransit) currentStep = 2;
+    else if (Model.CurrentStatus == ShipmentStatus.ArrivedAtBranch) currentStep = 3;
+    else if (Model.CurrentStatus == ShipmentStatus.OutForDelivery) currentStep = 4;
+    else if (Model.CurrentStatus == ShipmentStatus.Delivered) currentStep = 5;
+}
+
+@functions {
+    public string GetStatusText(ShipmentStatus status)
+    {
+        switch (status)
+        {
+            case ShipmentStatus.Created: return "Kabul Edildi";
+            case ShipmentStatus.InTransit: return "Transferde";
+            case ShipmentStatus.ArrivedAtBranch: return "Varış Şubesinde";
+            case ShipmentStatus.OutForDelivery: return "Dağıtıma Çıktı";
+            case ShipmentStatus.Delivered: return "Teslim Edildi";
+            case ShipmentStatus.FailedAttempt: return "Teslim Edilemedi";
+            case ShipmentStatus.Canceled: return "İptal Edildi";
+            case ShipmentStatus.Returned: return "İade Edildi";
+            default: return status.ToString();
+        }
+    }
+
+    public string MaskText(string text)
+    {
+        if (string.IsNullOrEmpty(text)) return "-";
+        var words = text.Split(' ');
+        for (int i = 0; i < words.Length; i++)
+        {
+            if (words[i].Length > 2)
+                words[i] = words[i].Substring(0, 2) + new string('*', words[i].Length - 2);
+        }
+        return string.Join(" ", words);
+    }
+
+    public string MaskAddress(string address)
+    {
+        if (string.IsNullOrEmpty(address)) return "-";
+        var words = address.Split(' ');
+        for (int i = 0; i < words.Length; i++)
+        {
+            if (words[i].Length > 3)
+                words[i] = words[i].Substring(0, 3) + new string('*', words[i].Length - 3);
+        }
+        return string.Join(" ", words);
+    }
+
+    public string MaskPhone(string phone)
+    {
+        if (string.IsNullOrEmpty(phone) || phone.Length < 10) return phone;
+        return phone.Substring(0, 4) + " *** ** " + phone.Substring(phone.Length - 2);
+    }
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    @await Component.InvokeAsync("_DefaultHeadComponentPartial")
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #f4f7f9;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .header-bg {
+            background: linear-gradient(135deg, #0b1f38 0%, #1a365d 50%, #2a4365 100%);
+            padding: 60px 0 80px 0;
+            color: white;
+            text-align: center;
+            border-bottom: 4px solid #3b82f6;
+        }
+
+        /* --- KUSURSUZ YATAY TAKİP ÇUBUĞU --- */
+        .tracker-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: -50px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            position: relative;
+        }
+
+        .tracker-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .step-container {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            min-width: 750px;
+            padding-bottom: 10px;
+        }
+
+        .progress-line-bg {
+            position: absolute;
+            top: 100px;
+            left: 10%;
+            right: 10%;
+            height: 4px;
+            background: #e2e8f0;
+            z-index: 1;
+        }
+
+        .progress-line-fill {
+            position: absolute;
+            top: 100px;
+            left: 10%;
+            width: @((currentStep - 1) * 25)%;
+            height: 4px;
+            background: #3b82f6;
+            z-index: 2;
+            transition: width 1s ease-in-out;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+        }
+
+        .step-box {
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 3;
+        }
+
+        .step-icon {
+            height: 75px;
+            margin-bottom: 15px;
+            background: transparent;
+        }
+
+            .step-icon img {
+                height: 100%;
+                object-fit: contain;
+                background: transparent;
+                transition: 0.4s;
+                filter: drop-shadow(0 10px 10px rgba(0,0,0,0.05));
+            }
+
+        .step-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #e2e8f0;
+            border: 3px solid white;
+            margin-bottom: 15px;
+            transition: 0.4s;
+            box-shadow: 0 0 0 4px white;
+        }
+
+        .step-text h6 {
+            font-weight: 800;
+            color: #1e293b;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .step-text p {
+            font-weight: 600;
+            color: #64748b;
+            margin: 5px 0 0 0;
+            font-size: 0.8rem;
+        }
+
+        .step-box.active .step-dot {
+            background: #3b82f6;
+            box-shadow: 0 0 0 4px white, 0 0 12px rgba(59, 130, 246, 0.4);
+        }
+
+        .step-box.active .step-icon img {
+            transform: scale(1.15);
+            filter: drop-shadow(0 15px 15px rgba(59, 130, 246, 0.2));
+        }
+
+        .step-box.inactive .step-icon img {
+            filter: grayscale(100%);
+            opacity: 0.3;
+        }
+
+        .step-box.inactive .step-text h6 {
+            color: #94a3b8;
+        }
+
+        /* --- DETAY KARTLARI --- */
+        .detail-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            border: 1px solid #f1f5f9;
+        }
+
+        .detail-card-header {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px dashed #e2e8f0;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .info-label {
+            color: #64748b;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .info-value {
+            color: #0f172a;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-align: right;
+        }
+
+        .tl-container {
+            position: relative;
+            padding-left: 30px;
+        }
+
+            .tl-container::before {
+                content: '';
+                position: absolute;
+                left: 6px;
+                top: 0;
+                bottom: 0;
+                width: 2px;
+                background: #e2e8f0;
+            }
+
+        .tl-item {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .tl-dot {
+            position: absolute;
+            left: -29.5px;
+            top: 4px;
+            width: 12px;
+            height: 12px;
+            background: #3b82f6;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px #eff6ff;
+        }
+
+        .tl-date {
+            font-size: 0.75rem;
+            color: #64748b;
+            font-weight: 700;
+            display: inline-block;
+            background: #f1f5f9;
+            padding: 2px 8px;
+            border-radius: 6px;
+            margin-bottom: 5px;
+        }
+
+        /* MOBİL UYUMLULUK */
+        @@media (max-width: 768px) {
+            .header-bg
+
+        {
+            padding: 40px 0 50px 0;
+        }
+
+        .header-bg h1.display-4 {
+            font-size: 1.8rem;
+            margin-top: 10px;
+        }
+
+        .tracker-card {
+            padding: 20px 15px;
+            margin-top: -30px;
+        }
+
+        .detail-card {
+            padding: 15px;
+        }
+
+        .route-arrow {
+            font-size: 1.5rem !important;
+        }
+
+        .route-city {
+            font-size: 1rem !important;
+        }
+
+        .route-badge {
+            font-size: 0.7rem !important;
+        }
+
+        .tracker-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        .tracker-wrapper {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        }
+    </style>
+
+</head>
+
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+
+    <main>
+        <!-- HEADER -->
+        <section class="header-bg">
+            <div class="container px-3">
+                <span class="badge bg-info px-4 py-2 rounded-pill mb-2 fs-6 shadow-sm text-white">
+                    <i class="bi bi-box-seam me-2"></i>@GetStatusText(Model.CurrentStatus)
+                </span>
+
+                <h1 class="display-4 fw-bold mb-2 text-white text-break">@Model.TrackingNumber</h1>
+
+                <p class="text-white-50 fw-bold mt-2 mb-0" style="letter-spacing: 1px; font-size: 0.85rem;">KARGO TAKİP VE DETAY EKRANI</p>
+            </div>
+        </section>
+
+        <div class="container mb-5 px-3">
+            <!-- 1. ŞEFFAF İKONLU YATAY İLERLEME ÇUBUĞU -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="tracker-card">
+                        <div class="tracker-wrapper">
+                            <div class="step-container">
+                                <div class="progress-line-bg"></div>
+                                <div class="progress-line-fill"></div>
+
+                                <div class="step-box @(currentStep >= 1 ? "active" : "inactive")">
+                                    <div class="step-icon"><img src="https://images.bilgiakademisi.net.tr/cokkececi-resimler/2026/05/28/cokkececijet-kargo-kabul-edildi.png" alt="Kabul"></div>
+                                    <div class="step-dot"></div>
+                                    <div class="step-text text-center">
+                                        <h6>Kabul Edildi</h6>
+                                        <p>@Model.OriginBranchName <br> @Model.SenderCity</p>
+                                    </div>
+                                </div>
+
+                                <div class="step-box @(currentStep >= 2 ? "active" : "inactive")">
+                                    <div class="step-icon"><img src="https://images.bilgiakademisi.net.tr/cokkececi-resimler/2026/05/28/cokkececijet-kargo-transferde.png" alt="Transfer"></div>
+                                    <div class="step-dot"></div>
+                                    <div class="step-text text-center">
+                                        <h6>Transferde</h6>
+                                        <p>Araç Yolda</p>
+                                    </div>
+                                </div>
+
+                                <div class="step-box @(currentStep >= 3 ? "active" : "inactive")">
+                                    <div class="step-icon"><img src="https://images.bilgiakademisi.net.tr/cokkececi-resimler/2026/05/28/cokkececijet-karo-teslimat-%C5%9Fubesinde.png" alt="Varış"></div>
+                                    <div class="step-dot"></div>
+                                    <div class="step-text text-center">
+                                        <h6>Varış Şubesi</h6>
+                                        <p>@Model.DestinationBranchName <br> @Model.ReceiverCity</p>
+                                    </div>
+                                </div>
+
+                                <div class="step-box @(currentStep >= 4 ? "active" : "inactive")">
+                                    <div class="step-icon"><img src="https://images.bilgiakademisi.net.tr/cokkececi-resimler/2026/05/28/cokkececijet-kargo-dagitimda.png" alt="Dağıtım"></div>
+                                    <div class="step-dot"></div>
+                                    <div class="step-text text-center">
+                                        <h6>Dağıtımda</h6>
+                                        <p>@Model.ReceiverDistrict İçi <br> Kuryede</p>
+                                    </div>
+                                </div>
+
+                                <div class="step-box @(currentStep >= 5 ? "active" : "inactive")">
+                                    <div class="step-icon"><img src="https://images.bilgiakademisi.net.tr/cokkececi-resimler/2026/05/28/cokkececijet-kargo-teslim-edildi.png" alt="Teslim"></div>
+                                    <div class="step-dot"></div>
+                                    <div class="step-text text-center">
+                                        <h6>Teslim Edildi</h6>
+                                        <p>Süreç Tamamlandı</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kargo SADECE "Dağıtımda" ise Canlı Haritayı Göster -->
+            @if (Model.CurrentStatus == ShipmentStatus.OutForDelivery)
+            {
+                <!-- Leaflet Harita Kütüphaneleri -->
+                <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+                <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+                <style>
+                    /* CANLI TAKİP PREMİUM TASARIM CSS'İ */
+                    .map-wrapper {
+                        position: relative;
+                        border-radius: 24px;
+                        overflow: hidden;
+                        box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+                        border: 4px solid #fff;
+                    }
+
+                    /* Harita Üzerinde Yüzen Şeffaf Bilgi Kartı */
+                    .floating-status {
+                        position: absolute;
+                        top: 20px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        z-index: 1000;
+                        background: rgba(255, 255, 255, 0.95);
+                        backdrop-filter: blur(10px);
+                        border-radius: 50px;
+                        padding: 12px 25px;
+                        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: 15px;
+                        border: 1px solid rgba(59, 130, 246, 0.15);
+                        width: 90%;
+                        max-width: 400px;
+                    }
+
+                    .pulse-dot {
+                        width: 12px;
+                        height: 12px;
+                        background: #ef4444;
+                        border-radius: 50%;
+                        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+                        animation: pulse-red 1.5s infinite;
+                    }
+                    @@keyframes pulse-red {
+                        0%
+
+                    {
+                        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+                    }
+
+                    70% {
+                        box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+                    }
+
+                    100% {
+                        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+                    }
+
+                    }
+
+                    /* Müşteri Evi İçin Profesyonel Damla Pin ve Sinyal Efekti */
+                    .home-pin-container {
+                        position: relative;
+                        width: 40px;
+                        height: 50px;
+                    }
+
+                    .home-pin {
+                        width: 36px;
+                        height: 36px;
+                        background: #10b981;
+                        border: 3px solid white;
+                        border-radius: 50% 50% 50% 0;
+                        transform: rotate(-45deg);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        box-shadow: -4px 4px 10px rgba(0,0,0,0.3);
+                        position: absolute;
+                        top: 0;
+                        left: 2px;
+                        z-index: 2;
+                    }
+
+                        .home-pin i {
+                            transform: rotate(45deg);
+                            color: white;
+                            font-size: 16px;
+                            margin-top: -2px;
+                            margin-left: -2px;
+                        }
+
+                    .home-pulse {
+                        position: absolute;
+                        bottom: 0px;
+                        left: 10px;
+                        width: 20px;
+                        height: 8px;
+                        background: rgba(16, 185, 129, 0.6);
+                        border-radius: 50%;
+                        animation: pulse-green 2s infinite;
+                        z-index: 1;
+                    }
+                    @@keyframes pulse-green {
+                        0%
+
+                    {
+                        transform: scale(1);
+                        opacity: 1;
+                    }
+
+                    100% {
+                        transform: scale(3.5);
+                        opacity: 0;
+                    }
+
+                    }
+                </style>
+
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <div class="map-wrapper">
+
+                            <!-- HARİTA KUTUSU -->
+                            <div id="liveCourierMap" style="height: 500px; width: 100%; z-index: 1;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        // 1. Müşterinin Ev Koordinatları (DB'de 0 ise, adresi bulamadığı için merkeze atar)
+                        var homeLat = @(Model.ReceiverLatitude != 0 ? Model.ReceiverLatitude.ToString().Replace(",", ".") : "38.7205");
+                        var homeLng = @(Model.ReceiverLongitude != 0 ? Model.ReceiverLongitude.ToString().Replace(",", ".") : "35.4826");
+
+                        // Harita stili (Daha açık, modern renkler)
+                        var map = L.map('liveCourierMap', { zoomControl: false }).setView([homeLat, homeLng], 15);
+                        L.tileLayer('http://mt0.google.com/vt/lyrs=m&hl=tr&x={x}&y={y}&z={z}', {
+                        attribution: '© Google Haritalar',
+                        maxZoom: 20
+                    }).addTo(map);
+
+                        // Zoom butonlarını sağ alta alıyoruz
+                        L.control.zoom({ position: 'bottomright' }).addTo(map);
+
+                        // 2. MÜŞTERİNİN EVİ (Profesyonel Pin ve Sinyal Dalgaları)
+                        // iconAnchor: [20, 50] kısmı pini tam adrese iğne ucuyla batırır (Kaymayı engeller)
+                        var customHomeIcon = L.divIcon({
+                            html: `<div class="home-pin-container">
+                                     <div class="home-pin"><i class="bi bi-house-door-fill"></i></div>
+                                     <div class="home-pulse"></div>
+                                   </div>`,
+                            className: '',
+                            iconSize: [40, 50],
+                            iconAnchor: [20, 50],
+                            popupAnchor: [0, -40]
+                        });
+
+                        L.marker([homeLat, homeLng], { icon: customHomeIcon }).addTo(map)
+                         .bindPopup("<div class='text-center p-1'><h6 class='fw-bold mb-1'>Teslimat Noktası</h6><small class='text-muted'>@MaskAddress(Model.ReceiverAddress)</small></div>");
+
+                        // 3. KURYE ARACI (Drift atan ikon)
+                        var courierMarker = null;
+
+                        async function fetchCourierPosition() {
+                            try {
+                                var deviceId = '@Model.CourierDeviceId';
+                                // Güvenli C# Proxy İsteği
+                                var url = `/GetCourierLocation/${deviceId}`;
+
+                                const response = await fetch(url, { headers: { 'Accept': 'application/json' }});
+                                if (!response.ok) return;
+
+                                const data = await response.json();
+
+                                if (data && data.length > 0) {
+                                    var latestPosition = data[data.length - 1];
+                                    var lat = latestPosition.latitude;
+                                    var lng = latestPosition.longitude;
+                                    var course = latestPosition.course;
+
+                                    var vehicleIcon = L.divIcon({
+                                        html: `<div style="transform: rotate(${course}deg); transition: transform 1.2s ease-out; width: 65px; height: 65px;">
+                                                 <img src="https://images.bilgiakademisi.net.tr/cokkececi-resimler/2026/05/28/cokkececi-jet-dagitim-araci.png" style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0px 8px 12px rgba(0,0,0,0.4));">
+                                               </div>`,
+                                        className: '',
+                                        iconSize: [65, 65],
+                                        iconAnchor: [32, 32]
+                                    });
+
+                                    if (courierMarker === null) {
+                                        courierMarker = L.marker([lat, lng], { icon: vehicleIcon }).addTo(map)
+                                            .bindPopup("<b class='text-primary'>Kurye Yolda!</b>");
+
+                                        // Haritayı hem kuryeyi hem evi kapsayacak şekilde yumuşakça ortala
+                                        var bounds = L.latLngBounds([homeLat, homeLng], [lat, lng]);
+                                        map.fitBounds(bounds, { padding: [80, 80], maxZoom: 16 });
+                                    } else {
+                                        // Saniye saniye konum ve yön güncellemesi
+                                        courierMarker.setLatLng([lat, lng]);
+                                        courierMarker.setIcon(vehicleIcon);
+                                    }
+                                }
+                            } catch (error) {
+                                console.error("Kurye konumu alınamadı:", error);
+                            }
+                        }
+
+                        fetchCourierPosition();
+                        setInterval(fetchCourierPosition, 10000);
+                    });
+                </script>
+            }
+            <!-- 2. İÇERİK KARTLARI (TÜM BİLGİLER BURADA) -->
+            <div class="row g-4">
+
+                <!-- SOL TARAF: TİMELİNE -->
+                <div class="col-lg-5">
+                    <div class="detail-card h-100">
+                        <div class="detail-card-header"><i class="bi bi-clock-history me-2 text-primary fs-6"></i>Kargo Hareket Dökümü</div>
+                        <div class="tl-container mt-4">
+                            @if (Model.Movements != null && Model.Movements.Any())
+                            {
+                                foreach (var move in Model.Movements.OrderByDescending(x => x.ProcessDate))
+                                {
+                                    <div class="tl-item">
+                                        <div class="tl-dot"></div>
+                                        <span class="tl-date">@move.ProcessDate.ToString("dd MMMM yyyy, HH:mm")</span>
+
+                                        <!-- TEK SATIR MANTIKLI GÖRÜNÜM (AÇIKLAMA - LOKASYON) -->
+                                        <div class="tl-title text-primary mt-1" style="font-size: 1.05rem;">
+                                            <i class="bi bi-arrow-right-short fs-5 align-middle"></i>
+                                            @move.Description - @move.Location
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <div class="alert alert-light border rounded-3 text-secondary text-center py-4">
+                                    <i class="bi bi-info-circle fs-4 d-block mb-2"></i> Hareket kaydı bulunmuyor.
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SAĞ TARAF: BÜTÜN DETAY KARTLARI -->
+                <div class="col-lg-7">
+                    <div class="row g-3">
+
+                        <!-- ROTA VE ŞUBE KARTI -->
+                        <div class="col-12">
+                            <div class="detail-card mb-0 bg-light border-0">
+                                <div class="detail-card-header text-primary"><i class="bi bi-signpost-split-fill me-2"></i>Rota ve Şube Bilgileri</div>
+                                <div class="row text-center align-items-center">
+                                    <div class="col-5">
+                                        <h5 class="fw-bold text-dark mb-1 route-city">@Model.SenderCity</h5>
+                                        <p class="text-secondary small mb-1">@Model.SenderDistrict</p>
+                                        <span class="badge bg-white text-dark border route-badge text-wrap">Çıkış: @Model.OriginBranchName</span>
+                                    </div>
+                                    <div class="col-2 text-primary fs-1 route-arrow"><i class="bi bi-arrow-right"></i></div>
+                                    <div class="col-5">
+                                        <h5 class="fw-bold text-dark mb-1 route-city">@Model.ReceiverCity</h5>
+                                        <p class="text-secondary small mb-1">@Model.ReceiverDistrict</p>
+                                        <span class="badge bg-white text-dark border route-badge text-wrap">Varış: @Model.DestinationBranchName</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PAKET VE FİNANS KARTI -->
+                        <div class="col-md-6">
+                            <div class="detail-card mb-0 h-100">
+                                <div class="detail-card-header"><i class="bi bi-box-seam-fill me-2 text-warning"></i>Kargo Detayları</div>
+                                <div class="info-row"><span class="info-label">Paket Tipi</span> <span class="info-value">@Model.PackageType</span></div>
+                                <div class="info-row"><span class="info-label">Parça Sayısı</span> <span class="info-value">@Model.PackageCount Adet</span></div>
+                                <div class="info-row"><span class="info-label">Toplam Ağırlık</span> <span class="info-value">@Model.TotalWeight Kg</span></div>
+                                <div class="info-row"><span class="info-label">Toplam Desi</span> <span class="info-value">@Model.TotalDesi Ds</span></div>
+                                <hr class="border-light my-2">
+                                <div class="info-row"><span class="info-label">Ödeme Tipi</span> <span class="info-value text-primary">@Model.PaymentType</span></div>
+                                <div class="info-row"><span class="info-label">Ödeme Durumu</span> <span class="info-value">@Model.PaymentStatus</span></div>
+                            </div>
+                        </div>
+
+                        <!-- GÖNDERİCİ KARTI (KVKK) -->
+                        <div class="col-md-6">
+                            <div class="detail-card mb-0 h-100">
+                                <div class="detail-card-header"><i class="bi bi-person-up me-2 text-info"></i>Gönderici Bilgileri</div>
+                                <div class="info-row"><span class="info-label">Ad Soyad</span> <span class="info-value">@MaskText(Model.SenderName)</span></div>
+                                <div class="info-row"><span class="info-label">Telefon</span> <span class="info-value">@MaskPhone(Model.SenderPhone)</span></div>
+                                <div class="info-row"><span class="info-label">İl / İlçe</span> <span class="info-value text-end">@Model.SenderCity / @Model.SenderDistrict</span></div>
+                                <div class="info-row"><span class="info-label">Mahalle</span> <span class="info-value text-end">@Model.SenderNeighborhood</span></div>
+                                <hr class="border-light my-2">
+                                <div class="info-row"><span class="info-label">Açık Adres</span> <span class="info-value small text-end">@MaskAddress(Model.SenderAddress)</span></div>
+                            </div>
+                        </div>
+
+                        <!-- ALICI KARTI (KVKK) -->
+                        <div class="col-12">
+                            <div class="detail-card mb-0 border-primary border-opacity-25" style="background: #f8fafc;">
+                                <div class="detail-card-header"><i class="bi bi-person-down me-2 text-success"></i>Teslimat / Alıcı Bilgileri</div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="info-row"><span class="info-label">Ad Soyad</span> <span class="info-value">@MaskText(Model.ReceiverName)</span></div>
+                                        <div class="info-row"><span class="info-label">Telefon</span> <span class="info-value">@MaskPhone(Model.ReceiverPhone)</span></div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="info-row"><span class="info-label">İl / İlçe</span> <span class="info-value text-end">@Model.ReceiverCity / @Model.ReceiverDistrict</span></div>
+                                        <div class="info-row"><span class="info-label">Mahalle</span> <span class="info-value text-end">@Model.ReceiverNeighborhood</span></div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="info-row mt-2 pt-2 border-top border-light"><span class="info-label">Açık Adres</span> <span class="info-value text-end">@MaskAddress(Model.ReceiverAddress)</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+</html>

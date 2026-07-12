@@ -1,0 +1,168 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+
+    <main class="main" style="background-color: #f8fafc; color: #333; line-height: 1.8; font-family: 'Segoe UI', sans-serif;">
+
+        <!-- 1. GÖRKEMLİ HERO BÖLÜMÜ (Dönüşüm ve İade Teması) -->
+        <section class="section pt-120 pb-120" style="position: relative; background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1577705998148-6da4f3963bc8?auto=format&fit=crop&q=80&w=1920') center/cover fixed;">
+            <!-- Dönüşüm/Döngü Deseni -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(rgba(20, 184, 166, 0.15) 1px, transparent 1px); background-size: 40px 40px; z-index: 1;"></div>
+
+            <div class="container text-center position-relative" style="z-index: 2;">
+                <span class="d-inline-block mb-3" style="background: rgba(20, 184, 166, 0.2); color: #14b8a6; padding: 8px 25px; border-radius: 50px; font-weight: 700; letter-spacing: 2px; font-size: 14px; border: 1px solid rgba(20, 184, 166, 0.4);">İADELERİ DEĞERE DÖNÜŞTÜRÜN</span>
+
+                <h1 class="text-white mb-4" style="font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 900; line-height: 1.1;">
+                    Tersine <br> <span style="color: #14b8a6;">Lojistik</span>
+                </h1>
+
+                <p class="font-lg text-white opacity-80 mb-5 mx-auto" style="max-width: 780px;">
+                    E-ticaret ve perakende operasyonlarında iadeler kaçınılmazdır; önemli olan bu süreci nasıl yönettiğinizdir. İade edilen ürünleri hızla teslim alıyor, kalite kontrolden (QC) geçiriyor ve yeniden satılabilir olanları saniyeler içinde tekrar stoğunuza kazandırıyoruz.
+                </p>
+
+                <a href="/Contact/Index" class="btn" style="background: #0d9488; color: white; padding: 16px 45px; font-weight: bold; border-radius: 8px; font-size: 16px; border: none; box-shadow: 0 10px 20px rgba(13, 148, 136, 0.3);">
+                    İade Sürecinizi Optimize Edin
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. KONSEPT AÇIKLAMASI (Kalite Kontrol ve Hız) -->
+        <section class="section pt-100 pb-80" style="background-color: #ffffff;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0 pe-lg-5">
+                        <h2 class="mb-4" style="color: #0f172a; font-size: 2.5rem;">Krizi Fırsata Çeviren <br><span style="color: #0d9488;">Akıllı Operasyon</span></h2>
+                        <p class="text-muted font-lg mb-4">
+                            İade süreci, müşterinizin markanızla kurduğu güven bağının en büyük testidir. Hızlı onaylanan ve sorunsuz gerçekleşen bir iade, o müşterinin size tekrar geri dönmesini (sadakatini) garantiler.
+                        </p>
+                        <p class="text-muted font-lg mb-4">
+                            Ancak arka planda durum daha karmaşıktır. Deponuza dönen bir ürünün sağlam olup olmadığı, yeniden paketlenip paketlenemeyeceği veya imha edilip edilmeyeceği çok hızlı kararlaştırılmalıdır. ÇokkeçeciJET Tersine Lojistik ekibi, iade kargolarınızı sizin adınıza açar, kriterlerinize göre denetler ve sisteminize entegre eder.
+                        </p>
+                        <div class="d-flex align-items-center p-3 mt-4" style="background: #f0fdfa; border-left: 4px solid #0d9488; border-radius: 0 10px 10px 0;">
+                            <div style="font-size: 24px; margin-right: 15px;">🔍</div>
+                            <p class="mb-0" style="color: #115e59; font-weight: 500;">Ürünlerin depoda ölü stok olarak beklemesini engelliyor, nakit akışınızı hızlandırıyoruz.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 position-relative">
+                        <!-- Gerçek Unsplash Görseli (Kutu kontrolü / Barkod) -->
+                        <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                            <img src="https://images.unsplash.com/photo-1580674684081-77673315a55b?auto=format&fit=crop&q=80&w=800" alt="İade Kalite Kontrolü" style="width: 100%; display: block;">
+                            <!-- Yüzen Kutu -->
+                            <div style="position: absolute; bottom: 30px; left: 30px; background: rgba(255,255,255,0.95); padding: 15px 25px; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-left: 4px solid #0d9488;">
+                                <h6 class="mb-0" style="color: #0f172a; font-weight: bold;">Kusursuz Denetim</h6>
+                                <p class="text-muted font-sm mb-0">Hızlı Kalite Kontrol (QC)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. TERSİNE LOJİSTİK AKIŞI (4 Adımlı Süreç) -->
+        <section class="section pt-80 pb-100" style="background-color: #f8fafc;">
+            <div class="container">
+                <div class="text-center mb-60">
+                    <h2 style="color: #0f172a;">4 Adımda İade Yönetimi</h2>
+                    <p class="text-muted font-lg">Tüketiciden deponuza uzanan şeffaf ve pürüzsüz geri dönüşüm akışı.</p>
+                </div>
+
+                <div class="row g-4 position-relative">
+                    <!-- Bağlantı Çizgisi -->
+                    <div class="d-none d-lg-block" style="position: absolute; top: 50px; left: 15%; width: 70%; height: 2px; background: #e2e8f0; z-index: 1;"></div>
+
+                    <!-- Adım 1: Toplama -->
+                    <div class="col-lg-3 col-md-6 text-center position-relative" style="z-index: 2;">
+                        <div class="mx-auto mb-4" style="width: 80px; height: 80px; background: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; color: #0d9488; border: 3px solid #0d9488; box-shadow: 0 10px 20px rgba(13, 148, 136, 0.1);">📦</div>
+                        <h5 style="color: #0f172a; margin-bottom: 10px;">1. İade Toplama</h5>
+                        <p class="text-muted font-sm px-2">Tüketicinin iade ettiği ürünler kargo ağımızla veya şubelerimizden hızla teslim alınarak operasyon merkezimize sevk edilir.</p>
+                    </div>
+
+                    <!-- Adım 2: Kalite Kontrol -->
+                    <div class="col-lg-3 col-md-6 text-center position-relative" style="z-index: 2;">
+                        <div class="mx-auto mb-4" style="width: 80px; height: 80px; background: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; color: #0d9488; border: 3px solid #0d9488; box-shadow: 0 10px 20px rgba(13, 148, 136, 0.1);">🕵️‍♂️</div>
+                        <h5 style="color: #0f172a; margin-bottom: 10px;">2. Kalite Kontrol (QC)</h5>
+                        <p class="text-muted font-sm px-2">Merkeze ulaşan ürünlerin ambalajı açılır; hasar, eksik parça veya kullanım durumu firmanızın belirlediği kriterlere göre incelenir.</p>
+                    </div>
+
+                    <!-- Adım 3: Sınıflandırma -->
+                    <div class="col-lg-3 col-md-6 text-center position-relative" style="z-index: 2;">
+                        <div class="mx-auto mb-4" style="width: 80px; height: 80px; background: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; color: #0d9488; border: 3px solid #0d9488; box-shadow: 0 10px 20px rgba(13, 148, 136, 0.1);">🔀</div>
+                        <h5 style="color: #0f172a; margin-bottom: 10px;">3. Sınıflandırma</h5>
+                        <p class="text-muted font-sm px-2">İncelenen ürünler; "Yeniden Satılabilir", "Tamir Edilecek", "İade (Tedarikçiye)" veya "İmha Edilecek" olarak barkodlanarak ayrılır.</p>
+                    </div>
+
+                    <!-- Adım 4: Değer Kazanımı -->
+                    <div class="col-lg-3 col-md-6 text-center position-relative" style="z-index: 2;">
+                        <div class="mx-auto mb-4" style="width: 80px; height: 80px; background: #0d9488; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white; border: 3px solid #0d9488; box-shadow: 0 10px 25px rgba(13, 148, 136, 0.3);">♻️</div>
+                        <h5 style="color: #0f172a; margin-bottom: 10px;">4. Stoğa Kazandırma</h5>
+                        <p class="text-muted font-sm px-2">Sağlam ürünler tekrar katlanıp, etiketlenip (yeniden ambalajlanarak) anında WMS sisteminde "aktif stok" haline getirilir.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. AVANTAJLAR (Koyu Gece Mavisi Tema) -->
+        <section class="section pt-80 pb-100" style="background-color: #0f172a; color: white;">
+            <div class="container">
+                <div class="row align-items-center mb-60">
+                    <div class="col-lg-6">
+                        <span style="color: #14b8a6; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Neden ÇokkeçeciJET?</span>
+                        <h2 class="text-white mt-2 mb-0">İade Yükünüzü<br>Hafifleten Avantajlar</h2>
+                    </div>
+                    <div class="col-lg-6 text-lg-end mt-4 mt-lg-0">
+                        <p style="color: #94a3b8; margin-bottom: 0;">Markanızın arka plandaki operasyon gücü olarak,<br>karmakarışık iade yığınlarını sisteme dönüştürüyoruz.</p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="p-5" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 15px; height: 100%; transition: 0.3s;" onmouseover="this.style.background='rgba(13, 148, 136, 0.1)'; this.style.borderColor='#0d9488'" onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.borderColor='rgba(255,255,255,0.05)'">
+                            <div style="font-size: 35px; margin-bottom: 20px;">⏱️</div>
+                            <h4 class="text-white mb-3">Hızlı Para İadesi Altyapısı</h4>
+                            <p style="color: #94a3b8; font-size: 14px; mb-0">Ürün depomuza girip kontrolü yapıldığı an API üzerinden sitenize "onay" sinyali gider. Müşterinize para iadesi anında yansır, marka güveniniz artar.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-5" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 15px; height: 100%; transition: 0.3s;" onmouseover="this.style.background='rgba(13, 148, 136, 0.1)'; this.style.borderColor='#0d9488'" onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.borderColor='rgba(255,255,255,0.05)'">
+                            <div style="font-size: 35px; margin-bottom: 20px;">👕</div>
+                            <h4 class="text-white mb-3">Yeniden Ambalajlama (VAS)</h4>
+                            <p style="color: #94a3b8; font-size: 14px; mb-0">Açılmış, poşeti yırtılmış ama ürünün sağlam olduğu durumlarda ütüleme, katlama, yeniden jelatinleme ve etiketleme hizmetleri sunarız.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-5" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 15px; height: 100%; transition: 0.3s;" onmouseover="this.style.background='rgba(13, 148, 136, 0.1)'; this.style.borderColor='#0d9488'" onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.borderColor='rgba(255,255,255,0.05)'">
+                            <div style="font-size: 35px; margin-bottom: 20px;">♻️</div>
+                            <h4 class="text-white mb-3">Çevreci İmha ve Geri Dönüşüm</h4>
+                            <p style="color: #94a3b8; font-size: 14px; mb-0">Yeniden satışı veya tamiri mümkün olmayan hasarlı ürünleri, çevre mevzuatlarına uygun olarak ayrıştırır ve lisanslı tesislerde geri dönüşüme yollarız.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. CTA BÖLÜMÜ -->
+        <section class="section pt-80 pb-80 text-center" style="background: #ffffff; border-top: 5px solid #0d9488;">
+            <div class="container">
+                <h2 class="mb-4" style="color: #0f172a;">İadelerinizi Kontrol Altına Alın</h2>
+                <p class="font-lg mb-5 mx-auto text-muted" style="max-width: 650px;">E-ticaret hacminize uygun tersine lojistik ve kalite kontrol çözümlerimizle tanışın, iadeleri depo sorunu olmaktan çıkarın.</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="/Contact/Index" class="btn" style="background: #0d9488; color: white; padding: 18px 45px; font-weight: bold; border-radius: 8px; font-size: 16px; box-shadow: 0 10px 20px rgba(13, 148, 136, 0.3);">Hizmet Detayları İçin Ulaşın</a>
+                    <a href="/Hizmetler/E-Ticaret-Lojistik" class="btn" style="background: white; color: #0f172a; padding: 18px 45px; font-weight: bold; border-radius: 8px; font-size: 16px; border: 2px solid #e2e8f0;">E-Ticaret Hizmetlerimiz</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+</html>

@@ -1,0 +1,121 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+
+    <main class="main" style="background-color: #f4f7f9;">
+        <section class="section box-pageheader-1" style="background: linear-gradient(135deg, rgba(3, 68, 96, 0.9) 0%, rgba(2, 45, 64, 0.95) 100%), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80'); background-attachment: fixed; background-size: cover; padding: 120px 0;">
+            <div class="container text-center">
+                <h1 class="color-white mb-20 font-bold-800" style="font-size: 56px; text-shadow: 2px 2px 10px rgba(0,0,0,0.3);">Liderlik Kadromuz</h1>
+                <p class="font-md color-white opacity-75 max-width-600 mx-auto" style="letter-spacing: 0.5px;">Kayseri’den Türkiye’ye uzanan operasyonun ardındaki stratejik akıl.</p>
+            </div>
+        </section>
+
+        <section class="section pt-100 pb-100">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6 mb-40">
+                        <div class="management-card position-relative overflow-hidden bd-rd16 shadow-lg bg-white" style="height: 500px; transition: 0.4s; isolation: isolate;">
+                            <div class="image-wrapper h-100 w-100" style="position: absolute; top: 0; left: 0; z-index: 1;">
+                                <img src="~/templates/assets/imgs/template/burak-cokkececi.jpeg" alt="Burak Çokkeçeci" class="w-100 h-100" style="object-fit: cover; display: block; transition: 0.5s;">
+                            </div>
+
+                            <div class="info-overlay-permanent p-30 w-100" style="position: absolute; bottom: 0; left: 0; background: linear-gradient(to top, rgba(3, 68, 96, 0.95), transparent); transition: 0.4s; z-index: 2;">
+                                <h4 class="color-white mb-5 font-bold-800">Burak Çokkeçeci</h4>
+                                <p class="color-brand-1 font-sm-bold uppercase mb-0">Yönetim Kurulu Başkanı</p>
+                            </div>
+
+                            <div class="info-overlay-hover p-30 d-flex flex-column justify-content-end w-100 h-100" style="position: absolute; bottom: -100%; left: 0; background: rgba(3, 68, 96, 0.9); transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); z-index: 3;">
+                                <p class="color-white font-sm mb-30" style="line-height: 1.6; opacity: 0.9;">Lojistik sektöründe 20 yılı aşkın tecrübesiyle şirketimizin stratejik vizyonunu ve büyüme hedeflerini belirlemektedir.</p>
+                                <div class="d-flex align-items-center border-top pt-20">
+                                    <a href="mailto:burak.cokkececi@cokkececijet.com" class="btn btn-tag mr-10" style="background: #FEC201; color: #034460; border: none; padding: 10px 15px;"><i class="mdi mdi-email mr-5"></i> Mesaj Gönder</a>
+                                    <a href="#" class="color-white font-24 hover-up"><i class="mdi mdi-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-40">
+                        <div class="management-card position-relative overflow-hidden bd-rd16 shadow-lg bg-white" style="height: 500px; transition: 0.4s; isolation: isolate;">
+                            <div class="image-wrapper h-100 w-100" style="position: absolute; top: 0; left: 0; z-index: 1;">
+                                <img src="~/templates/assets/imgs/template/enes-altiok.jpeg" alt="Enes Altıok" class="w-100 h-100" style="object-fit: cover; display: block; transition: 0.5s;">
+                            </div>
+                            <div class="info-overlay-permanent p-30 w-100" style="position: absolute; bottom: 0; left: 0; background: linear-gradient(to top, rgba(3, 68, 96, 0.95), transparent); transition: 0.4s; z-index: 2;">
+                                <h4 class="color-white mb-5 font-bold-800">Enes Altıok</h4>
+                                <p class="color-brand-1 font-sm-bold uppercase mb-0">Operasyon Direktörü (COO)</p>
+                            </div>
+                            <div class="info-overlay-hover p-30 d-flex flex-column justify-content-end w-100 h-100" style="position: absolute; bottom: -100%; left: 0; background: rgba(3, 68, 96, 0.9); transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); z-index: 3;">
+                                <p class="color-white font-sm mb-30" style="line-height: 1.6; opacity: 0.9;">Tüm Türkiye dağıtım ağının operasyonel verimliliğinden, kurye yönetiminden ve teslimat süreçlerinden sorumludur.</p>
+                                <div class="d-flex align-items-center border-top pt-20">
+                                    <a href="mailto:enes.altiok@cokkececijet.com" class="btn btn-tag mr-10" style="background: #FEC201; color: #034460; border: none; padding: 10px 15px;"><i class="mdi mdi-email mr-5"></i> Mesaj Gönder</a>
+                                    <a href="#" class="color-white font-24 hover-up"><i class="mdi mdi-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-40">
+                        <div class="management-card position-relative overflow-hidden bd-rd16 shadow-lg bg-white" style="height: 500px; transition: 0.4s; isolation: isolate;">
+                            <div class="image-wrapper h-100 w-100" style="position: absolute; top: 0; left: 0; z-index: 1;">
+                                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&h=800&q=80" alt="Mehmet Özdemir" class="w-100 h-100" style="object-fit: cover; display: block; transition: 0.5s;">
+                            </div>
+                            <div class="info-overlay-permanent p-30 w-100" style="position: absolute; bottom: 0; left: 0; background: linear-gradient(to top, rgba(3, 68, 96, 0.95), transparent); transition: 0.4s; z-index: 2;">
+                                <h4 class="color-white mb-5 font-bold-800">Mehmet Özdemir</h4>
+                                <p class="color-brand-1 font-sm-bold uppercase mb-0">Mali İşler Direktörü (CFO)</p>
+                            </div>
+                            <div class="info-overlay-hover p-30 d-flex flex-column justify-content-end w-100 h-100" style="position: absolute; bottom: -100%; left: 0; background: rgba(3, 68, 96, 0.9); transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); z-index: 3;">
+                                <p class="color-white font-sm mb-30" style="line-height: 1.6; opacity: 0.9;">Şirketin mali performansını denetleyerek lojistik yatırımları ve finansal sürdürülebilirliği yönetmektedir.</p>
+                                <div class="d-flex align-items-center border-top pt-20">
+                                    <a href="mailto:mehmet@cokkececifast.com" class="btn btn-tag mr-10" style="background: #FEC201; color: #034460; border: none; padding: 10px 15px;"><i class="mdi mdi-email mr-5"></i> Mesaj Gönder</a>
+                                    <a href="#" class="color-white font-24 hover-up"><i class="mdi mdi-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <style>
+            .management-card {
+                /* Resmin taşmasını engeller */
+                -webkit-mask-image: -webkit-radial-gradient(white, black);
+            }
+
+                .management-card:hover .info-overlay-hover {
+                    bottom: 0;
+                }
+
+                .management-card:hover .info-overlay-permanent {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+
+                .management-card:hover img {
+                    transform: scale(1.1);
+                    filter: grayscale(30%); /* Tamamen gri yapmadık ki yüzler belli olsun */
+                }
+
+            /* Resmin wrapper içine tam yayılması için garanti */
+            .image-wrapper img {
+                object-position: top center; /* Kafaların kesilmemesi için önemli */
+            }
+        </style>
+    </main>
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿@model List<ResultSliderDto>
+
+<section class="section d-block">
+    <div class="box-swiper">
+        <div class="swiper-container swiper-group-1 swiper-banner-1">
+            <div class="swiper-wrapper">
+                @foreach (var item in Model.Where(x => x.IsActive).OrderBy(x => x.OrderNo))
+                {
+                    <div class="swiper-slide">
+                        <div class="banner-1" style="background-image:url(@item.ImageUrl)">
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-12">
+                                        <p class="font-md color-white mb-15">@item.SmallTitle</p>
+                                        <h1 class="color-white mb-25">
+                                            @Html.Raw(item.MainTitle)
+                                        </h1>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <p class="font-md color-white mb-20">@item.Description</p>
+                                            </div>
+                                        </div>
+                                        <div class="box-button mt-30">
+                                            @if (!string.IsNullOrEmpty(item.Button1Url))
+                                            {
+                                                <a class="btn btn-brand-1-big hover-up mr-40" href="@item.Button1Url">@item.Button1Text</a>
+                                            }
+
+                                            @if (!string.IsNullOrEmpty(item.VideoUrl))
+                                            {
+                                                <a class="btn btn-play popup-youtube hover-up" href="@item.VideoUrl">
+                                                    <img src="~/templates/assets/imgs/template/icons/play.svg" alt="">İzle
+                                                </a>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="swiper-pagination swiper-pagination-banner"></div>
+        </div>
+    </div>
+</section>

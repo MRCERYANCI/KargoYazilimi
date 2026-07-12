@@ -1,0 +1,93 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+    <main class="main">
+        <section class="section box-pageheader-1" style="background: linear-gradient(rgba(3, 68, 96, 0.9), rgba(3, 68, 96, 0.9)), url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1600&q=80'); background-size: cover; padding: 100px 0;">
+            <div class="container text-center">
+                <h1 class="color-white mb-20 font-bold-800">Gizlilik Politikası</h1>
+                <p class="font-md color-white opacity-75">Kişisel verilerinizin güvenliği ve yasal haklarınız hakkında bilgilendirme.</p>
+            </div>
+        </section>
+
+        <section class="section pt-80 pb-80 bg-white">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="box-privacy-content color-grey-700" style="line-height: 1.8;">
+
+                            <p class="mb-40 font-md">Bu gizlilik politikası, <strong>ÇOKKEÇECİ FAST DAĞITIM HİZMETLERİ ve LOJİSTİK A.Ş.</strong> internet sitesi kapsamında kişisel verilerinizin nasıl toplandığı, kullanıldığı ve korunduğu hakkında sizi bilgilendirmeyi amaçlamaktadır. Güvenliğiniz bizim için önemli; paylaştığınız veriler hassasiyetle korunmaktadır.</p>
+
+                            <h3 class="color-brand-2 mb-25">1. Kişisel Verilerin İşlenmesi ve Saklanması</h3>
+                            <p class="mb-20">Kişisel verileriniz, KVKK uyarınca hukuka ve dürüstlük kurallarına uygun olarak, meşru amaçlar için ve işlendikleri amaçla sınırlı olmak üzere işlenir. Doğru ve güncel tutulması için gerekli tüm teknik önlemler alınır.</p>
+                            <p class="mb-30">İlgili mevzuatta öngörülen süre kadar muhafaza edilen verileriniz, sürenin sonunda silinir. <strong>Log dosyaları için bu süre 1 yıldan az, 2 yıldan fazla olamaz.</strong></p>
+
+                            <h3 class="color-brand-2 mb-25">2. Veri Sorumlusu Bilgileri</h3>
+                            <p class="mb-20">Kişisel Verilerin Korunması Kanununa göre veri sorumlusu, verilerin işlenme amacını ve yöntemini belirleyen <strong>ÇOKKEÇECİ FAST DAĞITIM HİZMETLERİ ve LOJİSTİK A.Ş.</strong>'dir.</p>
+                            <div class="p-30 bd-rd16 mb-40 border bg-grey-100">
+                                <ul class="list-info">
+                                    <li class="mb-10"><strong>Adres:</strong> Kayseri, Türkiye</li>
+                                    <li class="mb-10"><strong>E-posta:</strong> info@cokkececijet.com</li>
+                                    <li class="mb-10"><strong>İrtibat Kişisi:</strong> Burak Çokkeçeci - info@cokkececijet.com</li>
+                                </ul>
+                            </div>
+
+                            <h3 class="color-brand-2 mb-25">3. Toplanan Veriler ve İşlenme Amaçları</h3>
+                            <p class="mb-20">Sitemiz aracılığıyla <strong>Cihaz Bilgileri</strong> ve <strong>IP Adresi</strong> gibi veriler toplanmaktadır. Bu veriler şu amaçlarla kullanılır:</p>
+                            <ul class="list-bullet mb-40" style="list-style-type: disc; padding-left: 20px;">
+                                <li>Hizmet kalitesinin artırılması ve kesintisiz iletişim sağlanması.</li>
+                                <li>Yasal yükümlülüklerin yerine getirilmesi.</li>
+                                <li>Güvenlik denetimleri ve gerektiğinde yasal mercilerle bilgi paylaşımı.</li>
+                            </ul>
+
+                            <h3 class="color-brand-2 mb-25">4. Kullanılan Servisler ve Altyapı</h3>
+                            <div class="row mb-40">
+                                <div class="col-md-6 mb-20">
+                                    <div class="p-20 border bd-rd12 h-100">
+                                        <h6 class="color-brand-1 mb-10"><i class="mdi mdi-cloud-outline mr-5"></i> AWS & Cloudflare</h6>
+                                        <p class="font-xs m-0">Verileriniz güvenli bulut depolama için AWS sunucularında saklanabilir. Cloudflare ile DDoS koruması ve SSL güvenliği sağlanmaktadır.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-20">
+                                    <div class="p-20 border bd-rd12 h-100">
+                                        <h6 class="color-brand-1 mb-10"><i class="mdi mdi-chart-bar mr-5"></i> Google Analytics</h6>
+                                        <p class="font-xs m-0">Ziyaretçi davranışlarını analiz etmek, trafik raporları oluşturmak ve kullanıcı deneyimini iyileştirmek için kullanılmaktadır.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3 class="color-brand-2 mb-25">5. Yasal Haklarınız (KVKK Madde 11)</h3>
+                            <p class="mb-20">Veri sorumlusuna başvurarak kendinizle ilgili şu haklara sahipsiniz:</p>
+                            <ul class="list-bullet mb-40" style="list-style-type: disc; padding-left: 20px;">
+                                <li>Verilerinizin işlenip işlenmediğini ve amacını öğrenme.</li>
+                                <li>Yurt içinde/dışında aktarıldığı 3. kişileri bilme.</li>
+                                <li>Eksik veya yanlış verilerin düzeltilmesini, KVKK madde 7 çerçevesinde silinmesini isteme.</li>
+                                <li>Otomatik sistemlerle analiz edilen verilere dayalı aleyhte sonuçlara itiraz etme.</li>
+                            </ul>
+
+                            <div class="alert alert-warning p-25 bd-rd12" style="background: rgba(254, 194, 1, 0.1); border: 1px solid #FEC201; color: #034460;">
+                                <strong>Başvuru:</strong> Talepleriniz için <strong>info@cokkececifast.com</strong> adresinden bizimle iletişime geçebilirsiniz. Talepleriniz en geç 30 gün içerisinde ücretsiz olarak sonuçlandırılacaktır.
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+</html>
+

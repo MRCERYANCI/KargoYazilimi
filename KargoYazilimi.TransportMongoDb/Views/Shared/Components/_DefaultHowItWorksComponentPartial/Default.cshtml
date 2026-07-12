@@ -1,0 +1,54 @@
+﻿@model List<ResultHowItWorkDto>
+
+<section class="section pt-85 bg-worldmap">
+    <div class="container">
+        <div class="text-center">
+            <img class="mb-15" src="~/templates/assets/imgs/template/icons/favicon.svg" alt="ikon">
+            <h2 class="color-brand-2 mb-20">Süreç Nasıl İşler?</h2>
+            <p class="font-md color-grey-700">Gönderi yapmak istediğiniz noktaları siz belirlersiniz, biz ise en uygun rotayı çizeriz. Hizmetlerimiz lokasyona ve taşıma moduna göre çeşitlilik gösterse de; ihtiyacınız ne olursa olsun, zamanında teslimat için en ideal lojistik çözümünü buluyor ve operasyonu başlatıyoruz.</p>
+        </div>
+
+        <div class="row mt-50">
+            <div class="col-lg-6 mb-30">
+                <div class="box-image-how">
+                    <img class="w-100" src="~/templates/assets/imgs/page/homepage1/how-it-work.png" alt="nasil-calisir">
+                    <div class="box-info-bottom-img">
+                        <div class="image-play"><img class="mb-15" src="~/templates/assets/imgs/template/icons/play.svg" alt="oynat"></div>
+                        <div class="info-play">
+                            <h4 class="color-white mb-15">Bu tutkuyla 25 yıllık deneyime sahibiz</h4>
+                            <p class="font-sm color-white">Çeyrek asırdır lojistik sektöründe güven inşa ediyoruz. Tecrübemizle her türlü zorluğun üstesinden geliyor, işinizi güvenle taşıyoruz.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-30">
+                <ul class="list-how-works">
+                    @if (Model != null && Model.Count > 0)
+                    {
+                        @* OrderNo'ya göre sıralayıp adımları tek tek basıyoruz *@
+                        foreach (var item in Model.OrderBy(x => x.OrderNo))
+                        {
+                            <li>
+                                <div class="image-how">
+                                    <span class="img">
+                                        <img src="@item.IconUrl" alt="@item.Title">
+                                    </span>
+                                </div>
+                                <div class="info-how">
+                                    <h5 class="color-brand-2">@item.Title</h5>
+                                    <p class="font-md color-grey-700">@item.Description</p>
+                                </div>
+                            </li>
+                        }
+                    }
+                    else
+                    {
+                        @* Veri yoksa boş kalmaması için veya hata vermemesi için alternatif *@
+                        <li class="text-muted">Henüz bir süreç adımı eklenmedi.</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

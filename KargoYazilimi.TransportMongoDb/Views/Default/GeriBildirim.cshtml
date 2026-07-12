@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+
+    <main class="main" style="background-color: #f4f7f9;">
+
+        <!-- Sayfa Üst Alanı (Hero) -->
+        <section class="section box-pageheader-1" style="background: linear-gradient(135deg, rgba(3, 68, 96, 0.9) 0%, rgba(2, 45, 64, 0.95) 100%), url('https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=1600&q=80'); background-attachment: fixed; background-size: cover; padding: 120px 0;">
+            <div class="container text-center">
+                <h1 class="color-white mb-20 font-bold-800" style="font-size: 56px; text-shadow: 2px 2px 10px rgba(0,0,0,0.3);">Bizi Değerlendirin</h1>
+                <p class="font-md color-white opacity-75 max-width-600 mx-auto" style="letter-spacing: 0.5px;">ÇokkeçeciJet güvencesiyle gönderinizin anlık durumunu ve teslimat aşamalarını öğrenin.</p>
+            </div>
+        </section>
+      
+    </main>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfLtkO7rW9lmqrjP8boKvhWFHSJuIdIi7Oh61LA_PjCPtyCJw/viewform?embedded=true" width="2040" height="2564" frameborder="0" marginheight="0" marginwidth="0">Yükleniyor…</iframe>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+</html>
+
+

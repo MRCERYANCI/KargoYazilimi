@@ -1,0 +1,111 @@
+﻿@model GetGetInTouchSectionByIdDto
+
+@{
+    ViewData["Title"] = "UpdateGetInTouchSection";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<br />
+<br />
+<div class="row justify-content-center">
+    <div class="col-xl-12">
+        <div class="card shadow-lg border-0" style="border-radius: 15px;">
+            <div class="card-header bg-white border-bottom py-3">
+                <h5 class="card-title mb-0 fw-bold text-dark">
+                    <i class="bi bi-pencil-square me-2 text-warning"></i>İletişim & Tanıtım Bölümünü Güncelle
+                </h5>
+            </div>
+
+            <div class="card-body p-4">
+                <form method="post">
+                    @* MongoDB ID'sini taşımak için gizli alan *@
+                    <input type="hidden" asp-for="GetInTouchSectionId" />
+
+                    <div class="row mb-4">
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label fw-bold text-secondary">Üst Etiket (Tag)</label>
+                            <input type="text" asp-for="Tag" class="form-control rounded-3" placeholder="Örn: Bize Ulaşın" required>
+                        </div>
+                        <div class="col-md-8 mb-3">
+                            <label class="form-label fw-bold text-secondary">Ana Başlık</label>
+                            <input type="text" asp-for="Title" class="form-control rounded-3" placeholder="Her Teslimatta Mükemmellik..." required>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label class="form-label fw-bold text-secondary">Ana Açıklama Metni</label>
+                            <textarea asp-for="Description" class="form-control rounded-3" rows="3" placeholder="Lojistik süreçlerinizde sürdürülebilir başarı..."></textarea>
+                        </div>
+                    </div>
+
+                    <hr class="opacity-25 mb-4">
+
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded-3 bg-light bg-opacity-50">
+                                <h6 class="fw-bold text-warning mb-3"><i class="bi bi-1-square me-2"></i>Alt Özellik 1</h6>
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold">Başlık 1</label>
+                                    <input type="text" asp-for="SubTitle1" class="form-control form-control-sm rounded-2">
+                                </div>
+                                <div>
+                                    <label class="form-label small fw-bold">Açıklama 1</label>
+                                    <textarea asp-for="SubDescription1" class="form-control form-control-sm rounded-2" rows="2"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded-3 bg-light bg-opacity-50">
+                                <h6 class="fw-bold text-warning mb-3"><i class="bi bi-2-square me-2"></i>Alt Özellik 2</h6>
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold">Başlık 2</label>
+                                    <input type="text" asp-for="SubTitle2" class="form-control form-control-sm rounded-2">
+                                </div>
+                                <div>
+                                    <label class="form-label small fw-bold">Açıklama 2</label>
+                                    <textarea asp-for="SubDescription2" class="form-control form-control-sm rounded-2" rows="2"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="opacity-25 mb-4">
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label fw-bold text-secondary">Buton Metni</label>
+                            <input type="text" asp-for="ButtonText" class="form-control rounded-3">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label fw-bold text-secondary">Buton Linki (URL)</label>
+                            <input type="text" asp-for="ButtonUrl" class="form-control rounded-3">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label fw-bold text-secondary">Arka Plan Görsel URL</label>
+                            <input type="text" asp-for="BackgroundImageUrl" class="form-control rounded-3">
+                        </div>
+                    </div>
+
+                    <div class="text-end mt-4">
+                        <a href="/Admin/GetInTouch/Index" class="btn btn-light px-4 rounded-pill me-2">İptal</a>
+                        <button type="submit" class="btn btn-warning px-5 rounded-pill shadow-sm text-dark fw-bold">
+                            <i class="bi bi-arrow-repeat me-1"></i> Değişiklikleri Kaydet
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .form-control:focus {
+        border-color: #ffc107;
+        box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.1);
+    }
+
+    label {
+        font-size: 13px;
+        margin-bottom: 5px;
+    }
+</style>

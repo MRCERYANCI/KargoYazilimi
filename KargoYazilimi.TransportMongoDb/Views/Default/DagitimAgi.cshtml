@@ -1,0 +1,141 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+    <main class="main">
+        <section class="section box-pageheader-1" style="background: linear-gradient(rgba(3, 68, 96, 0.85), rgba(3, 68, 96, 0.85)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; padding: 110px 0;">
+            <div class="container text-center">
+                <h1 class="color-white mb-20 font-bold-800">Dağıtım Ağımız</h1>
+                <p class="font-md color-white opacity-75">Kayseri'den Türkiye'nin 81 iline uzanan kesintisiz ve akıllı lojistik köprüsü.</p>
+            </div>
+        </section>
+
+        <section class="section pt-60 pb-60 bg-white">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-lg-3 col-md-6 mb-30">
+                        <div class="p-25 shadow-sm bd-rd16 border h-100">
+                            <h2 class="color-brand-1 mb-5">81</h2>
+                            <p class="font-sm-bold color-brand-2">Hizmet Verilen İl</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-30">
+                        <div class="p-25 shadow-sm bd-rd16 border h-100">
+                            <h2 class="color-brand-1 mb-5">900+</h2>
+                            <p class="font-sm-bold color-brand-2">Aktif Dağıtım Noktası</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-30">
+                        <div class="p-25 shadow-sm bd-rd16 border h-100">
+                            <h2 class="color-brand-1 mb-5">24/48s</h2>
+                            <p class="font-sm-bold color-brand-2">Teslimat Taahhüdü</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-30">
+                        <div class="p-25 shadow-sm bd-rd16 border h-100">
+                            <h2 class="color-brand-1 mb-5">%99.9</h2>
+                            <p class="font-sm-bold color-brand-2">Hasarsız Teslimat</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section pt-80 pb-80 bg-grey-100">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-40">
+                        <h2 class="color-brand-2 mb-30">Kayseri'den Tüm Türkiye'ye <br>Akıllı Operasyon</h2>
+                        <p class="font-md color-grey-700 mb-25" style="line-height: 1.8;">
+                            <strong>ÇOKKEÇECİ FAST</strong> dağıtım ağı, sadece araçlardan ve depolardan ibaret değildir. Kayseri merkezli ana aktarma merkezimiz, stratejik konumu sayesinde Türkiye'nin ticaret hatlarının tam merkezinde yer alır.
+                        </p>
+                        <p class="font-md color-grey-700 mb-40" style="line-height: 1.8;">
+                            Yazılım uzmanlığımızla geliştirdiğimiz rota optimizasyon sistemleri sayesinde, her kargo en verimli güzergah üzerinden hareket eder.
+                        </p>
+
+                        <div class="list-features-network">
+                            <div class="d-flex align-items-center mb-30">
+                                <div class="mr-20" style="min-width: 50px; height: 50px; background: #FEC201; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="mdi mdi-map-marker-path color-brand-2" style="font-size: 24px;"></i>
+                                </div>
+                                <h6 class="color-brand-2 m-0 font-bold-700" style="font-size: 17px;">Bölgesel Aktarma Merkezleri</h6>
+                            </div>
+
+                            <div class="d-flex align-items-center mb-30">
+                                <div class="mr-20" style="min-width: 50px; height: 50px; background: #FEC201; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="mdi mdi-shield-check color-brand-2" style="font-size: 24px;"></i>
+                                </div>
+                                <h6 class="color-brand-2 m-0 font-bold-700" style="font-size: 17px;">7/24 GPS ile Araç Takibi</h6>
+                            </div>
+
+                            <div class="d-flex align-items-center">
+                                <div class="mr-20" style="min-width: 50px; height: 50px; background: #FEC201; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="mdi mdi-barcode-scan color-brand-2" style="font-size: 24px;"></i>
+                                </div>
+                                <h6 class="color-brand-2 m-0 font-bold-700" style="font-size: 17px;">Uçtan Uca Barkodlu İzlenebilirlik</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mb-40 text-center">
+                        <div class="box-map-visual shadow-lg bd-rd16 overflow-hidden border p-15 bg-white">
+                            <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80" alt="Türkiye Dağıtım Haritası" class="img-fluid bd-rd8">
+                            <p class="mt-20 font-xs color-grey-500">Kayseri Merkezli Türkiye Dağıtım Haritası</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section pt-100 pb-100 bg-white">
+            <div class="container">
+                <div class="text-center mb-60">
+                    <h2 class="color-brand-2">Operasyonel Etki Alanımız</h2>
+                    <p class="font-md color-grey-500">Türkiye'nin her bölgesine özel lojistik çözümler sunuyoruz.</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 mb-30">
+                        <div class="card-offer p-40 bd-rd16 border shadow-sm h-100 hover-up" style="transition: 0.3s;">
+                            <h5 class="color-brand-2 mb-15">İç Anadolu Hattı</h5>
+                            <p class="font-sm color-grey-700" style="line-height: 1.6;">Kayseri ana üssümüzden Ankara, Konya, Sivas ve Nevşehir gibi merkezlere günlük çift sefer ile en hızlı teslimat.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-30">
+                        <div class="card-offer p-40 bd-rd16 border shadow-sm h-100 hover-up" style="transition: 0.3s;">
+                            <h5 class="color-brand-2 mb-15">Marmara & Ege Hattı</h5>
+                            <p class="font-sm color-grey-700" style="line-height: 1.6;">İstanbul ve İzmir aktarma merkezlerimiz üzerinden tüm batı illerine 24 saatte kapıdan kapıya teslimat.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-30">
+                        <div class="card-offer p-40 bd-rd16 border shadow-sm h-100 hover-up" style="transition: 0.3s;">
+                            <h5 class="color-brand-2 mb-15">Doğu & Güney Hattı</h5>
+                            <p class="font-sm color-grey-700" style="line-height: 1.6;">Zorlu coğrafi koşullara rağmen, güçlü araç filomuzla Doğu Anadolu ve Güneydoğu illerine kesintisiz erişim.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section pt-80 pb-80 bg-brand-2 text-center" style="background: linear-gradient(rgba(3, 68, 96, 0.9), rgba(3, 68, 96, 0.9)), url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center;">
+            <div class="container">
+                <h2 class="color-white mb-20 font-bold-800">Dağıtım Ağımıza Katılın</h2>
+                <p class="font-lg color-white opacity-75 mb-40">Kurumsal iş birlikleri ve düzenli sevkiyat çözümleri için hemen iletişime geçin.</p>
+                <a href="contact.html" class="btn btn-brand-1-big" style="background: #FEC201; color: #034460; font-weight: 800; border: none;">TEKLİF ALIN</a>
+            </div>
+        </section>
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+</html>

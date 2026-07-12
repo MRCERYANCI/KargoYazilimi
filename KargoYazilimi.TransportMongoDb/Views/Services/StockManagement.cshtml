@@ -1,0 +1,170 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+
+    <main class="main" style="background-color: #f8fafc; color: #333; line-height: 1.8; font-family: 'Segoe UI', sans-serif;">
+
+        <!-- 1. GÖRKEMLİ HERO BÖLÜMÜ (Veri ve Teknoloji Teması) -->
+        <section class="section pt-120 pb-120" style="position: relative; background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(30, 27, 75, 0.95)), url('https://images.unsplash.com/photo-1554774853-719586f82d77?auto=format&fit=crop&q=80&w=1920') center/cover fixed;">
+            <!-- Dijital Izgara / Matrix Deseni -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(99, 102, 241, 0.1) 1px, transparent 1px); background-size: 40px 40px; z-index: 1;"></div>
+
+            <div class="container text-center position-relative" style="z-index: 2;">
+                <span class="d-inline-block mb-3" style="background: rgba(99, 102, 241, 0.2); color: #818cf8; padding: 8px 25px; border-radius: 50px; font-weight: 700; letter-spacing: 2px; font-size: 14px; border: 1px solid rgba(99, 102, 241, 0.4);">DİJİTAL, KESİNTİSİZ, KUSURSUZ</span>
+
+                <h1 class="text-white mb-4" style="font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 900; line-height: 1.1;">
+                    Akıllı Stok <br> <span style="color: #818cf8;">Yönetimi</span>
+                </h1>
+
+                <p class="font-lg text-white opacity-80 mb-5 mx-auto" style="max-width: 780px;">
+                    Ürünlerinizin nerede, ne miktarda ve hangi aşamada olduğunu saniye saniye takip edin. Gelişmiş Depo Yönetim Sistemimiz (WMS) ile stok maliyetlerinizi düşürüyor, "stokta yok" krizlerini tamamen ortadan kaldırıyoruz.
+                </p>
+
+                <a href="/Contact/Index" class="btn" style="background: #4f46e5; color: white; padding: 16px 45px; font-weight: bold; border-radius: 8px; font-size: 16px; border: none; box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);">
+                    Sisteme Entegre Olun
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. KONSEPT AÇIKLAMASI (Kontrol ve Optimizasyon) -->
+        <section class="section pt-100 pb-80" style="background-color: #ffffff;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0 pe-lg-5">
+                        <h2 class="mb-4" style="color: #0f172a; font-size: 2.5rem;">Veriyle Gelen <br><span style="color: #4f46e5;">Mutlak Kontrol</span></h2>
+                        <p class="text-muted font-lg mb-4">
+                            Stok yönetimi sadece periyodik sayım yapmak değildir. Doğru ürünü, doğru zamanda, doğru miktarda elde tutma sanatıdır. Eksik stok satış kaçırtır; fazla stok ise sermayenizi depoya hapseder.
+                        </p>
+                        <p class="text-muted font-lg mb-4">
+                            ÇokkeçeciJET olarak; ürünleriniz depomuza girdiği an onlara dijital bir kimlik kazandırıyoruz. Güçlü WMS (Warehouse Management System) altyapımızla, ERP veya e-ticaret sitelerinizle anlık senkronizasyon kuruyor, kritik stok uyarılarıyla tedarik zincirinizin kopmasını engelliyoruz.
+                        </p>
+                        <div class="d-flex align-items-center p-3 mt-4" style="background: #eef2ff; border-left: 4px solid #4f46e5; border-radius: 0 10px 10px 0;">
+                            <div style="font-size: 24px; margin-right: 15px;">📊</div>
+                            <p class="mb-0" style="color: #3730a3; font-weight: 500;">Tüm hareketleri bulut tabanlı panelinizden anlık, şeffaf ve %100 doğru şekilde izleyebilirsiniz.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 position-relative">
+                        <!-- Gerçek Unsplash Görseli (Tablet/Dijital Stok) -->
+                        <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                            <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?auto=format&fit=crop&q=80&w=800" alt="Dijital Stok Yönetimi" style="width: 100%; display: block;">
+                            <!-- Yüzen Kutu -->
+                            <div style="position: absolute; top: 30px; right: -15px; background: #ffffff; padding: 15px 25px; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-bottom: 3px solid #4f46e5;">
+                                <h6 class="mb-0" style="color: #0f172a; font-weight: bold;">Gerçek Zamanlı Senkron</h6>
+                                <p class="text-muted font-sm mb-0">API ile Saniyelik Güncelleme</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. STOK YÖNETİMİ ÖZELLİKLERİ (Kartlı Yapı) -->
+        <section class="section pt-80 pb-100" style="background-color: #f8fafc;">
+            <div class="container">
+                <div class="text-center mb-60">
+                    <h2 style="color: #0f172a;">WMS Yazılımımızın Yetenekleri</h2>
+                    <p class="text-muted font-lg">Sıfır hata prensibiyle çalışan dijital depo özelliklerimiz.</p>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Dinamik Lokasyon -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="p-4" style="background: #ffffff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); height: 100%; border-top: 4px solid #4f46e5; transition: 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <div style="background: #eef2ff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #4f46e5; margin-bottom: 20px;">📍</div>
+                            <h5 style="color: #0f172a; margin-bottom: 15px;">Dinamik Lokasyon</h5>
+                            <p class="text-muted font-sm mb-0">Depodaki her ürün raf, kat ve hücre bazında sisteme kayıtlıdır. Toplama işlemi (picking) sırasında ürün saniyeler içinde bulunur.</p>
+                        </div>
+                    </div>
+
+                    <!-- Seri ve Lot Takibi -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="p-4" style="background: #ffffff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); height: 100%; border-top: 4px solid #4f46e5; transition: 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <div style="background: #eef2ff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #4f46e5; margin-bottom: 20px;">🔢</div>
+                            <h5 style="color: #0f172a; margin-bottom: 15px;">Seri / Lot / SKT Takibi</h5>
+                            <p class="text-muted font-sm mb-0">Özellikle teknoloji ve gıda sektörleri için kritik olan seri numarası, parti kodu (Lot) ve Son Kullanma Tarihi (SKT) kusursuzca izlenir.</p>
+                        </div>
+                    </div>
+
+                    <!-- Kritik Stok Uyarıları -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="p-4" style="background: #ffffff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); height: 100%; border-top: 4px solid #4f46e5; transition: 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <div style="background: #eef2ff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #4f46e5; margin-bottom: 20px;">⚠️</div>
+                            <h5 style="color: #0f172a; margin-bottom: 15px;">Kritik Stok Uyarısı</h5>
+                            <p class="text-muted font-sm mb-0">Belirlediğiniz alt limite düşen ürünler için sistem otomatik uyarı üretir. Böylece tedarik sürecinizi müşteri mağduriyeti yaşamadan başlatırsınız.</p>
+                        </div>
+                    </div>
+
+                    <!-- Kural Bazlı Çıkış -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="p-4" style="background: #ffffff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); height: 100%; border-top: 4px solid #4f46e5; transition: 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <div style="background: #eef2ff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #4f46e5; margin-bottom: 20px;">➡️</div>
+                            <h5 style="color: #0f172a; margin-bottom: 15px;">FIFO & FEFO Kuralları</h5>
+                            <p class="text-muted font-sm mb-0">İlk Giren İlk Çıkar (FIFO) veya Son Kullanma Tarihi Yaklaşan İlk Çıkar (FEFO) algoritmalarıyla fire oranlarınızı sıfıra yaklaştırırız.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. ENTEGRASYON VE RAPORLAMA (Koyu Kurumsal Tema) -->
+        <section class="section pt-80 pb-100" style="background-color: #1e1b4b; color: white;">
+            <div class="container">
+                <div class="row align-items-center mb-60">
+                    <div class="col-lg-6">
+                        <span style="color: #818cf8; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Ekosistemimiz</span>
+                        <h2 class="text-white mt-2 mb-0">Tüm Sistemlerinizle<br>Tek Bir Dil Konuşuruz</h2>
+                    </div>
+                    <div class="col-lg-6 text-lg-end mt-4 mt-lg-0">
+                        <p style="color: #a5b4fc; margin-bottom: 0;">Bağımsız ve kopuk yazılımlar operasyonu yavaşlatır.<br>ÇokkeçeciJET WMS, sizin sisteminize tamamen entegre olur.</p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="p-5 d-flex align-items-center" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; transition: 0.3s;" onmouseover="this.style.background='rgba(79, 70, 229, 0.15)'; this.style.borderColor='#4f46e5'" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='rgba(255,255,255,0.1)'">
+                            <div style="font-size: 45px; margin-right: 25px;">🔌</div>
+                            <div>
+                                <h4 class="text-white mb-2">ERP ve B2B Entegrasyonu</h4>
+                                <p style="color: #a5b4fc; font-size: 14px; margin-bottom: 0;">SAP, Logo, Mikro, Netsis vb. kurumsal kaynak planlama sistemlerinizle çift yönlü veri alışverişi yaparak manuel veri girişini bitiriyoruz.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-5 d-flex align-items-center" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; transition: 0.3s;" onmouseover="this.style.background='rgba(79, 70, 229, 0.15)'; this.style.borderColor='#4f46e5'" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='rgba(255,255,255,0.1)'">
+                            <div style="font-size: 45px; margin-right: 25px;">📈</div>
+                            <div>
+                                <h4 class="text-white mb-2">Detaylı Performans Raporları</h4>
+                                <p style="color: #a5b4fc; font-size: 14px; margin-bottom: 0;">Hangi ürünün ne kadar sürede tüketildiği (stok devir hızı) ve iade oranları gibi analizleri periyodik olarak yönetici panellerinize sunuyoruz.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. CTA BÖLÜMÜ -->
+        <section class="section pt-80 pb-80 text-center" style="background: #ffffff; border-top: 5px solid #4f46e5;">
+            <div class="container">
+                <h2 class="mb-4" style="color: #0f172a;">Manuel Sayımlara Son Verin</h2>
+                <p class="font-lg mb-5 mx-auto text-muted" style="max-width: 650px;">Deponuzdaki ürünleri bulut teknolojisiyle yönetmek, hata payını sıfırlamak ve dijital lojistiğe adım atmak için uzmanlarımızla görüşün.</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="/Contact/Index" class="btn" style="background: #4f46e5; color: white; padding: 18px 45px; font-weight: bold; border-radius: 8px; font-size: 16px; box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);">WMS Demosu Talep Et</a>
+                    <a href="/Hizmetler/Depolama" class="btn" style="background: white; color: #0f172a; padding: 18px 45px; font-weight: bold; border-radius: 8px; font-size: 16px; border: 2px solid #e2e8f0;">Depolama Çözümleri</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+</html>

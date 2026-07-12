@@ -1,0 +1,128 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+
+    <main class="main" style="background-color: #f8fafc; color: #333; line-height: 1.8; font-family: 'Segoe UI', sans-serif;">
+
+        <!-- 1. SAYFA BAŞLIĞI (Hero) -->
+        <section class="section pt-100 pb-100" style="background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1586528116311-ad8ed7c66324?auto=format&fit=crop&q=80&w=1920') center/cover fixed; color: white;">
+            <div class="container text-center">
+                <span class="d-inline-block mb-3" style="background: rgba(249, 115, 22, 0.2); color: #f97316; padding: 8px 25px; border-radius: 50px; font-weight: 700; letter-spacing: 2px; font-size: 14px;">HAKKIMIZDA</span>
+                <h1 class="text-white mb-3" style="font-size: 3.5rem; font-weight: 900;">Geleceğin Lojistiği</h1>
+                <p class="font-lg opacity-75 mx-auto" style="max-width: 700px;">Zamanın değerini biliyor, teknolojinin gücüyle mesafeleri ortadan kaldırıyoruz.</p>
+            </div>
+        </section>
+
+        <!-- 2. HİKAYEMİZ (26 Nisan 2023 ve Vizyon) -->
+        <section class="section pt-100 pb-80" style="background-color: #ffffff;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0 pe-lg-5">
+                        <h2 class="mb-4" style="color: #0f172a; font-size: 2.5rem;">Bir Hayalden, <br><span style="color: #f97316;">Sektör Öncülüğüne...</span></h2>
+                        <p class="text-muted font-lg mb-4">
+                            Her büyük dönüşüm, cesur bir adımla başlar. <strong>26 Nisan 2023</strong> tarihinde, geleneksel ve hantal kargo süreçlerine son verip, lojistiğe yepyeni bir teknolojik soluk getirmek amacıyla temellerimizi attık. Kayseri'den yola çıkan bu tutku, bugün tüm Türkiye'yi birbirine bağlayan dev bir ağa dönüştü.
+                        </p>
+                        <p class="text-muted font-lg mb-4">
+                            ÇokkeçeciJET olarak; sadece bir paketi bir yerden diğerine taşımayı değil, <em>"müşterilerimizin yaşam kalitesini ileriye taşımayı"</em> kendimize misyon edindik. Güçlü yazılım altyapımız, anlık GPS araç takip sistemlerimiz (telemetri) ve kendi geliştirdiğimiz dijital çözümler sayesinde lojistiği hızlı, şeffaf ve keyifli bir hale getirdik.
+                        </p>
+                        <p class="text-muted font-lg">
+                            İnternetten veya mobilden kargo işlemlerini cazip hale getirerek alışkanlıkları değiştirmek, gönderi yapmayı bir stres unsuru olmaktan çıkarıp <strong>"ÇokkeçeciJET ayrıcalığına"</strong> dönüştürmek en büyük gayemizdir.
+                        </p>
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- Hikaye Görseli -->
+                        <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                            <img src="https://images.bilgiakademisi.net.tr/cokkececi-resimler/2026/05/28/cokkececijet-kurulus.png" alt="ÇokkeçeciJET Kuruluş" style="width: 100%; display: block;">
+                            <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(15,23,42,0.9), transparent); padding: 40px 30px 20px 30px;">
+                                <h4 class="text-white mb-0">26 Nisan 2023</h4>
+                                <p class="text-white opacity-75 mb-0 font-sm">Yenilikçi lojistiğin doğuşu.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. TEKNOLOJİ VE HİZMET ANLAYIŞI (Uyarlanmış Metin) -->
+        <section class="section pt-80 pb-100" style="background-color: #f8fafc;">
+            <div class="container">
+                <div class="row flex-row-reverse align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0 ps-lg-5">
+                        <h3 class="mb-4" style="color: #0f172a;">Teknolojiyle Bütünleşen Teslimat</h3>
+                        <p class="text-muted mb-4">
+                            Sektörün dijital uygulamalarında öncü olan ÇokkeçeciJET; 7 gün 24 saat boyunca kesintisiz online sipariş, kurye çağırma ve anlık kargo takibi imkanı sunar. Zengin hizmet çeşitliliğimizle müşterilerimiz; standart gönderilerden acil VIP kargolara kadar tüm operasyonları tek bir ekrandan, hızla ve güvenle yönetebilmektedir.
+                        </p>
+                        <p class="text-muted mb-4">
+                            Hizmetlerini web platformlarının yanı sıra akıllı telefon ve tabletlerle entegre eden şirketimiz, lojistikte mobiliteye öncülük etmektedir. Gelişmiş mobil altyapımız, kapıda güvenli ödeme, QR kodla teslimat ve canlı harita takibi gibi özelliklerle Türkiye'de kargoculuk deneyiminde yeni bir çığır açmıştır.
+                        </p>
+                        <ul class="list-unstyled mt-4">
+                            <li class="mb-3 d-flex align-items-center"><i class="fa fa-check-circle" style="color: #f97316; font-size: 20px; margin-right: 15px;"></i> %100 Müşteri Odaklı Dijital Deneyim</li>
+                            <li class="mb-3 d-flex align-items-center"><i class="fa fa-check-circle" style="color: #f97316; font-size: 20px; margin-right: 15px;"></i> Uçtan Uca Gelişmiş Takip (Traccar & GPS)</li>
+                            <li class="mb-3 d-flex align-items-center"><i class="fa fa-check-circle" style="color: #f97316; font-size: 20px; margin-right: 15px;"></i> Zaman Kazandıran Yenilikçi Çözümler</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- Teknoloji Görseli -->
+                        <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                            <img src="https://images.bilgiakademisi.net.tr/cokkececi-resimler/2026/05/28/dagitim-merkezi.png" alt="Mobil Lojistik Teknolojisi" style="width: 100%; display: block;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. KURUMSAL BİLGİLER -->
+        <section class="section pt-80 pb-100" style="background-color: #1e293b; color: white;">
+            <div class="container">
+                <div class="text-center mb-60">
+                    <h2 class="text-white">Kurumsal Bilgilerimiz</h2>
+                    <p style="color: #94a3b8;">Şeffaflık ve güven ilkesiyle tüm yasal bilgilerimiz.</p>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="row g-4">
+                            <!-- Sol Sütun -->
+                            <div class="col-md-6">
+                                <div class="p-4 h-100" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px;">
+                                    <h5 class="text-white mb-4" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">Şirket Kimliği</h5>
+
+                                    <p class="mb-2"><strong style="color: #f97316;">Ünvan:</strong> ÇOKKEÇECİ DAĞITIM HİZMETLERİ VE LOJİSTİK A.Ş.</p>
+                                    <p class="mb-2"><strong style="color: #f97316;">Merkez Adres:</strong> Kayseri, Türkiye</p>
+                                    <p class="mb-2"><strong style="color: #f97316;">Telefon:</strong> 0850 123 45 69 <br> <span style="font-size: 12px; color: #94a3b8;">(Müşteri Hizmetleri hattımıza 08:30-19:00 saatleri arasında ulaşabilirsiniz.)</span></p>
+                                    <p class="mb-2"><strong style="color: #f97316;">KEP Adresi:</strong> cokkececijet@hs01.kep.tr</p>
+                                </div>
+                            </div>
+
+                            <!-- Sağ Sütun -->
+                            <div class="col-md-6">
+                                <div class="p-4 h-100" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px;">
+                                    <h5 class="text-white mb-4" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">Yasal Kayıtlar & Altyapı</h5>
+
+                                    <p class="mb-2"><strong style="color: #f97316;">Vergi Dairesi:</strong> Gevher Nesibe Vergi Dairesi</p>
+                                    <p class="mb-2"><strong style="color: #f97316;">Vergi No / Mersis No:</strong> 11111111</p>
+                                    <p class="mb-2"><strong style="color: #f97316;">Ticaret Sicil No:</strong> 22222222</p>
+                                     <p class="mb-2"><strong style="color: #f97316;">Yer Sağlayıcı / Altyapı:</strong> Çokkeçeci Yazılım</p>
+                                    <p class="mb-0"><strong style="color: #f97316;">Yer Sağlayıcı Sorumlu Kişi:</strong> Burak Çokkeçeci</p> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+</html>

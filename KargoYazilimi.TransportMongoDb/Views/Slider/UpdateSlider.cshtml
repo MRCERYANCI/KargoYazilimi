@@ -1,0 +1,118 @@
+﻿@model GetSldierByIdDto
+
+@{
+    ViewData["Title"] = "UpdateSlider";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<br />
+<br />
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card shadow-sm">
+            <div class="card-header bg-white border-bottom py-3">
+                <h5 class="card-title mb-0 fw-bold text-primary">
+                    <i class="bi bi-plus-circle me-2"></i>Slider Güncelleme Alanı
+                </h5>
+            </div>
+
+            <form method="post" class="mt-2">
+                <input type="hidden" asp-for="SliderId">
+                <div class="card-body p-4">
+                    <div class="row g-4">
+                        <div class="col-md-8">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold text-secondary">Küçük Başlık (Slogan)</label>
+                                    <input type="text" asp-for="SmallTitle" class="form-control form-control-lg" placeholder="Örn: Hızın Güvenceyle Buluştuğu Nokta" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold text-secondary">Sıralama (OrderNo)</label>
+                                    <input type="number" asp-for="OrderNo" class="form-control form-control-lg" value="1" required>
+                                </div>
+
+                                <div class="col-md-12 mt-3">
+                                    <label class="form-label fw-semibold text-secondary">Ana Başlık</label>
+                                    <input type="text" asp-for="MainTitle" class="form-control form-control-lg" placeholder="Örn: Dijital ve Güvenilir Ulaşım" required>
+                                    <div class="form-text mt-1 italic">Satır atlamak için <code>&lt;br&gt;</code> kullanabilirsiniz.</div>
+                                </div>
+
+                                <div class="col-md-12 mt-3">
+                                    <label class="form-label fw-semibold text-secondary">Açıklama Metni</label>
+                                    <textarea asp-for="Description" class="form-control" rows="4" placeholder="Müşterilerinize kısa bir mesaj yazın..."></textarea>
+                                </div>
+
+                                <div class="col-md-4 mt-3">
+                                    <label class="form-label fw-semibold text-secondary">Buton Metni</label>
+                                    <input type="text" asp-for="Button1Text" class="form-control" placeholder="Paket Hesapla">
+                                </div>
+                                <div class="col-md-4 mt-3">
+                                    <label class="form-label fw-semibold text-secondary">Buton Linki</label>
+                                    <input type="text" asp-for="Button1Url" class="form-control" placeholder="/hizmetlerimiz">
+                                </div>
+                                <div class="col-md-4 mt-3">
+                                    <label class="form-label fw-semibold text-secondary">Video URL</label>
+                                    <input type="text" asp-for="VideoUrl" class="form-control" placeholder="YouTube Linki">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 border-start ps-4">
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold text-secondary">Slider Arka Plan Görseli</label>
+                                <div class="image-preview-wrapper rounded-3 shadow-sm mb-3" style="width: 100%; height: 220px; background: #fdfdfd; border: 2px dashed #cbd5e0; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                                    <img id="preview" src="#" alt="Önizleme" style="display: none; width: 100%; height: 100%; object-fit: cover;">
+                                    <div id="placeholder-content" class="text-center">
+                                        <i class="bi bi-cloud-arrow-up d-block mb-2" style="font-size: 2.5rem; color: #a0aec0;"></i>
+                                        <span class="text-muted small">Resim URL girildiğinde<br>önizleme burada görünür</span>
+                                    </div>
+                                </div>
+                                <input type="text" asp-for="ImageUrl" class="form-control" placeholder="Resim yolunu buraya yapıştırın" oninput="previewImage(this)">
+                            </div>
+
+                            <div class="p-3 rounded-3 bg-light border">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" asp-for="IsActive" id="IsActive" value="true" style="cursor: pointer; width: 3em; height: 1.5em;">
+                                    <label class="form-check-label fw-bold ms-2" for="IsActive" style="cursor: pointer; padding-top: 3px;">Slider Yayında</label>
+                                </div>
+                                <small class="text-muted d-block mt-2">Bu seçeneği kapatırsanız slider ana sayfada listelenmez.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer bg-white border-top py-4 px-4 text-end">
+                    <button type="reset" class="btn btn-outline-secondary px-4 me-2">Formu Sıfırla</button>
+                    <button type="submit" class="btn btn-primary px-5 fw-bold shadow-sm">
+                        <i class="bi bi-save me-2"></i> Koleksiyonu Güncelle
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function previewImage(input) {
+        var preview = document.getElementById('preview');
+        var placeholder = document.getElementById('placeholder-content');
+
+        if (input.value && input.value.trim() !== "") {
+            // Resim URL'si girildiğinde önizlemeyi göster, ikonu gizle
+            preview.src = input.value;
+            preview.style.display = 'block';
+            placeholder.style.display = 'none';
+
+            // Eğer resim yüklenemezse (hatalı URL) tekrar ikonu göster
+            preview.onerror = function() {
+                preview.style.display = 'none';
+                placeholder.style.display = 'block';
+            };
+        } else {
+            // Giriş boşsa eski haline dön
+            preview.style.display = 'none';
+            placeholder.style.display = 'block';
+        }
+    }
+</script>
+

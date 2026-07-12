@@ -1,0 +1,99 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+
+    <main class="main" style="background-color: #f8fafc; color: #333; line-height: 1.8; font-family: 'Segoe UI', sans-serif;">
+
+        <!-- SAYFA BAŞLIĞI (Hero) -->
+        <section class="section pt-80 pb-50" style="background: #1e293b; color: white;">
+            <div class="container text-center">
+                <h1 class="text-white mb-3" style="font-size: 2.5rem; font-weight: 800;">Kullanım Koşulları ve Gizlilik</h1>
+                <p class="font-lg opacity-75">ÇokkeçeciJET Dijital Platformları Kullanım Şartları</p>
+            </div>
+        </section>
+
+        <!-- İÇERİK BÖLÜMÜ -->
+        <section class="section pt-60 pb-100">
+            <div class="container">
+                <div style="background: #ffffff; border-radius: 15px; padding: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+
+                    <h3 class="mb-4" style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">KULLANIM KOŞULLARI</h3>
+
+                    <h4 class="mb-3 mt-5" style="color: #0f172a; font-size: 1.2rem;">Sitenin Mülkiyeti; Kullanım Kurallarının Kabulü</h4>
+                    <p>İşbu Kullanım Kuralları, <strong>ÇOKKEÇECİ DAĞITIM HİZMETLERİ VE LOJİSTİK A.Ş.</strong> (bundan böyle “ÇokkeçeciJET” yahut “Şirket” olarak anılacaktır) tarafından işletme ve yürütüm faaliyetleri sürdürülen kurumsal web sitelerimiz, mikro sitelerimiz, kargo/kurye takip sistemlerimiz ve ÇokkeçeciJET mobil uygulamaları (birlikte "Site" olarak anılacaktır) için geçerlidir. SİTEYİ KULLANMAKLA, BU KULLANIM KOŞULLARINI KABUL ETMİŞ SAYILMAKTASINIZ; KABUL ETMİYORSANIZ, SİTEYİ KULLANMAMALISINIZ.</p>
+                    <p class="mb-4">Şirket, kendi inisiyatifine bağlı olarak bu Kullanım Koşulları üzerinde dilediği zaman değiştirme, tadil etme, ekleme veya çıkarma yapma hakkını saklı tutar. Bu Kullanım Koşulları'nı değişikliklere karşı düzenli olarak kontrol etme sorumluluğu size aittir. Değişikliklerin yayınlanmasından sonra Site'yi kullanmaya devam etmeniz, değişiklikleri kabul ettiğiniz anlamına gelir. Bu Kullanım Koşulları'na uyduğunuz sürece, Şirket, kişisel, münhasır olmayan, devredilebilir olmayan ve sınırlı bir ayrıcalık olan Site'ye girme ve kullanma hakkını size vermektedir.</p>
+
+                    <h4 class="mb-3 mt-4" style="color: #0f172a; font-size: 1.2rem;">İçerik ve Telif Hakkı Uyarısı</h4>
+                    <p>Site'de yer alan her türlü metin, grafik, kullanıcı arabirimi, görsel arabirim, fotoğraf, ticari marka, logo, ses, müzik, artwork ve bilgisayar kodunun (birlikte "İçerik" olarak anılacaktır) mülkiyeti, kontrolü veya lisansı, söz konusu içeriğin tasarımı, yapısı, seçimi, koordinasyonu, ifadesi, "görünüm ve yapısı" ve düzenlemesi dahil fakat bunlarla sınırlı olmamak üzere, Şirket’e veya ilgili malzemelerin lisansını veren üçüncü şahıslara aittir ve ticari takdim şekli, telif hakkı, patent ve ticari marka kanunları, çeşitli diğer fikri mülkiyet hakları ve rekabet yasaları ile korunmaktadır.</p>
+                    <p>Bu Kullanım Kuralları'nda aksi açıkça belirtilmediği sürece, Site'nin hiçbir kısmı ve hiçbir İçerik Şirket'in önceden açık onayı olmadan kopyalanamaz, çoğaltılamaz, yayınlanamaz, yüklenemez, gösterilemez, sergilenemez, kodlanamaz, tercüme edilemez, herhangi bir şekilde başka bir bilgisayar, sunucu Web sitesi veya diğer yayın veya dağıtım ortamına veya herhangi bir ticari girişim için iletilemez veya dağıtılamaz ("mirroring" de dahil olmak üzere).</p>
+                    <p class="mb-4">Site'den indirilmek üzere sağlanan ÇokkeçeciJET hizmetleri hakkındaki tüm bilgileri (bilgi föyleri, makaleleri ve benzer malzemeleri); (1) söz konusu belgelerin tüm kopyalarından herhangi bir mülkiyet uyarısı ifadesini kaldırmamanız, (2) söz konusu bilgileri sadece kendi şahsi, ticari olmayan bilgilenme amacıyla kullanmanız ve bu bilgiyi kopyalamamanız veya herhangi bir ağa bağlı bilgisayarda veya herhangi bir ortamda yayınlamamanız, (3) söz konusu bilgide değişiklik yapmamanız ve (4) bu belgelere ilişkin ek bir beyanat veya garantide bulunmamanız kaydıyla kullanabilirsiniz. Malzemeleri indirmeniz dolayısıyla, indirilen malzemeye ilişkin herhangi bir hak, çıkar veya menfaat edinemezsiniz. Şirket, bu web sitesinden indirdiğiniz her türlü İçeriğin fikri mülkiyet haklarını tamamen saklı tutar.</p>
+
+                    <h4 class="mb-3 mt-4" style="color: #0f172a; font-size: 1.2rem;">Sitenin Kullanımı</h4>
+                    <p>Site'nin herhangi bir kısmına veya herhangi İçeriğe erişmek, elde etmek, kopyalamak veya izlemek için veya Site'nin veya herhangi bir İçeriğin navigasyon yapısını veya sunumunu herhangi bir şekilde çoğaltmak veya atlamak, Site vasıtasıyla kasıtlı olarak verilmeyen herhangi bir yolla herhangi bir malzeme, doküman veya bilgiyi elde etmek veya elde etmeye kalkışmak amacıyla, "deep-link" "page-scrape", "robot", "spider" veya diğer bir otomatik cihaz, program, algoritma veya metodoloji, veya bunlara benzer ya da eşdeğer manuel prosesler kullanamazsınız. Şirket bu tür faaliyetleri engelleme hakkını saklı tutar.</p>
+                    <p>Site'nin herhangi bir bölümüne veya Site ile bağlantılı diğer sistem veya ağlara, Şirket sunucusuna, Site üzerinde veya Site vasıtasıyla sunulan herhangi bir servise, hacking, şifre "avcılığı" veya diğer meşru olmayan yollarla yetkisiz bir şekilde erişmeye kalkışamazsınız.</p>
+                    <p>Site'nin veya Site'ye bağlı herhangi bir ağın savunmasızlığını inceleyemez, tarayamaz veya test edemez, Site veya Site'ye bağlı herhangi bir ağ üzerindeki güvenlik veya doğrulama önlemlerini ihlal edemezsiniz. Site'nin herhangi bir diğer kullanıcısı veya ziyaretçisi ya da Site’nin bir müşterisine ait bilgileri kaynağına kadar takip edemez veya takip etme girişiminde bulunamazsınız.</p>
+                    <p>Site'nin sistem veya ağlarına, Site'ye bağlı herhangi bir sistem ya da şebekenin altyapısına makul olmayan veya orantısız büyüklükte bir yük getiren her türlü aksiyondan kaçınmanız gerekmektedir.</p>
+                    <p>Site'nin veya Site üzerinde yürütülen herhangi bir işlemin doğru çalışmasını veya Site'nin başka bir şahıs tarafından güvenli kullanımını etkileyebilecek herhangi bir cihaz, yazılım veya rutin kullanamazsınız.</p>
+                    <p>Site üzerinde veya Site vasıtasıyla ya da Site üzerinden sunulan herhangi bir servis aracılığıyla Şirket’e gönderdiğiniz mesaj veya iletinin kaynağını saklamak amacıyla taklit başlıklar veya tanımlayıcılar kullanamazsınız. Başka biri gibi veya başka birini temsil ediyor gibi davranamaz veya başka bir şahıs veya kuruluşu taklit edemezsiniz.</p>
+                    <p class="mb-4">Site'yi veya herhangi bir İçeriği kanuni olmayan veya işbu Kullanım Kuralları'nda yasaklanan bir amaç için veya herhangi bir yasa dışı faaliyet ya da Şirket’in veya başkalarının haklarını ihlal eden başka bir faaliyetin yürütülmesini sağlamak amacıyla kullanamazsınız.</p>
+
+                    <h4 class="mb-3 mt-4" style="color: #0f172a; font-size: 1.2rem;">Görüşler, Yorumlar, Sunumlar ve Diğer İletiler</h4>
+                    <p>Görüş, yorum ve diğer ileti, fotoğraf veya videolar (birlikte "Kullanıcı İçeriği" olarak anılacaktır), verilen Kullanıcı İçeriği iş bu Kullanım Kuralları'na ve Yorum Yayınlama Kriterlerimize uygun olarak sunulduğu takdirde kabul edilmektedir.</p>
+                    <p>Site üzerinden sunulan her türlü Kullanıcı İçeriğinin doğru olduğunu, yürürlükteki kanun, yönetmelik, Şirket kural veya politikalarını ihlal etmeyeceğini veya ihlalini kolaylaştırmayacağını, telif hakkı, marka, gizlilik veya reklam hakları gibi fakat bunlarla sınırlı olmamak üzere üçüncü şahıs haklarını ihlal etmeyeceğini, herhangi bir şahsa veya kuruluşa zarar vermeyeceğini gönderici tarafından kabul edilmiş sayılmaktadır. Site üzerinden sunulan Kullanıcı İçeriği müstehcen, yakışıksız veya tehditkâr lisan ile yazılım virüsleri, siyasi kampanya, ticari teklifler, zincir mektuplar, toplu postalar veya herhangi bir "spam" içermemelidir.</p>
+                    <p>Kullanıcı İçeriğinden tamamen gönderici sorumludur ve Şirket gönderilen Kullanıcı İçeriğine ilişkin hiçbir sorumluluk üstlenmemektedir. Kullanıcı İçeriğinden kaynaklanan tüm talep ve sorumluluklara karşı gönderici Şirket’i tazmin etmeyi kabul etmektedir.</p>
+                    <p>Gönderdiğiniz her türlü Kullanıcı İçeriği için, Şirket’e söz konusu içeriği kullanma, kopyalama, değiştirme, silme, uyarlama, yayınlama, tercüme ettirme, buna dayalı türev eserler oluşturma, satma ve dağıtma hakkını ve söz konusu içeriği size herhangi bir ücret ödemeden dünya genelinde herhangi bir form, ortam veya teknolojiye aktarma hakkını, süresiz, geri dönülemez, telifsiz, devredilebilir bir hak ve lisans olarak vermektesiniz.</p>
+                    <p class="mb-4">Kullanıcı İçeriğini göndermek için gerçek e-posta adresinizi vermeniz gerekmektedir. Değerlendirmeniz ve yorumunuzla ilgili olarak, e-posta adresinizi göndererek, Şirket ve üçüncü şahıs servis sağlayıcılarının e-posta adresinizi, yorumunuzla ilgili olarak sizinle irtibat kurmak veya diğer idari amaçlar için kullanabileceklerini kabul etmektesiniz.</p>
+
+                    <h4 class="mb-3 mt-4" style="color: #0f172a; font-size: 1.2rem;">Satın Almalar; Diğer Kurallar</h4>
+                    <p>Yarışmalar, promosyonlar ve diğer benzer özellikler dâhil olmak üzere mal veya hizmet alımına ve Site'nin belli kısımlarının veya özelliklerine ilişkin ek kurallar uygulanabilir ve söz konusu kuralların tamamı, bu referansla iş bu Kullanım Kurallarının bir parçası haline gelir.</p>
+                    <p class="mb-4">Şirket, Site üzerinde sunulan ürün veya hizmetlerde (lojistik/kargo navlun bedelleri vb.) veya söz konusu ürün ya da hizmetlerin geçerli fiyatlarında dilediği zaman haber vermeden değişiklik yapabilir.</p>
+
+                    <h4 class="mb-3 mt-4" style="color: #0f172a; font-size: 1.2rem;">Hesaplar, Şifreler ve Güvenlik</h4>
+                    <p>Site üzerinde veya Site vasıtasıyla sunulan belli özellikler veya hizmetler (örneğin kurumsal kargo takip ekranları), bir hesap açmanızı (e-posta ve şifre oluşturmanızı) gerektirmektedir. Şifreniz dâhil olmak üzere hesabınızda bulunan bilginin gizliliğini koruma sorumluluğu ve bu bilgilerin güvenliğini ve gizliliğini sağlayamamanız halinde hesabınızda gerçekleşen her türlü faaliyete ilişkin sorumluluk tamamen tarafınıza aittir. Hesabınızın veya şifrenizin her türlü yetkisiz kullanımını ya da diğer güvenlik ihlallerini derhal Şirket’e bildirmeyi kabul etmektesiniz.</p>
+                    <p class="mb-4">Başka birinin e-postasını, şifresini veya hesabını, söz konusu e-posta, şifre veya hesabın sahibinin açık izni ve onayı olmadan kullanamazsınız. Şirket, bu yükümlülüklere uymamanız sonucu ortaya çıkacak hiçbir zarar veya kayıptan sorumlu olamaz ve olmayacaktır.</p>
+
+                    <h4 class="mb-3 mt-4" style="color: #0f172a; font-size: 1.2rem;">Diğer Sitelere Bağlantılar</h4>
+                    <p class="mb-4">Bu Site, diğer bağımsız üçüncü şahıs Web sitelerine (birlikte "Bağlantılı Siteler" olarak anılacaktır) bağlantılar içerebilir. Bu Bağlantılı Siteler sadece ziyaretçilerimize kolaylık sağlamak amacıyla verilmiştir. Söz konusu Bağlantılı Siteler, Şirket’in kontrolü altında değildir ve Şirket, söz konusu Bağlantılı Sitelerde yer alan bilgi veya malzemeler dâhil olmak üzere Bağlantılı Sitelerin içeriğinden sorumlu değildir.</p>
+
+                    <h4 class="mb-3 mt-4" style="color: #0f172a; font-size: 1.2rem;">Uyarılar</h4>
+                    <p>ŞİRKET, SİTE'NİN VEYA SİTE'NİN HERHANGİ BİR İÇERİĞİ, SERVİSİ VEYA ÖZELLİĞİNİN HATASIZ, KESİNTİSİZ OLACAĞINI YA DA HERHANGİ BİR KUSURUN DÜZELTİLECEĞİNİ, SİTENİN TARAFINIZCA KULLANIMININ BELİRLİ SONUÇLAR SAĞLAYACAĞINI VAAT ETMEZ. SİTE VE İÇERİĞİ "OLDUĞU GİBİ" VE "OLDUĞU KADARIYLA" VERİLMEKTEDİR. SİTE'DE YER ALAN TÜM BİLGİLER HABER VERMEDEN DEĞİŞTİRİLEBİLİR. ŞİRKET, SİTE'DEN İNDİRDİĞİNİZ HERHANGİ BİR DOSYANIN VEYA DİĞER VERİNİN VİRÜSLER, BULAŞICI VEYA YOK EDİCİ ÖZELLİKLER TAŞIMAYACAĞINI GARANTİ EDEMEZ.</p>
+                    <p class="mb-4">Şirket dilediği zaman aşağıda sayılan eylemleri haber vermeden yapma hakkına sahiptir: (1) Site veya Site'nin herhangi bir kısmının işletimini veya erişimini herhangi bir sebeple değiştirme, durdurma veya iptal etme; (2) Site'yi veya Site'nin herhangi bir kısmını ve geçerli politika veya kuralları değiştirme; (3) olağan veya olağandışı bakım, hata düzeltimi veya diğer değişiklikleri yapmak için Site veya Site'nin herhangi bir kısmının işletimine ara verme.</p>
+
+                    <h4 class="mb-3 mt-4" style="color: #0f172a; font-size: 1.2rem;">Tazminat</h4>
+                    <p class="mb-4">Siteyi kullanımınızdan doğan dolandırıcılık amaçlı durumlarda, Şirket aleyhinde herhangi bir üçüncü şahıs tarafından öne sürülebilecek her türlü talep, zarar, sorumluluk, iddia veya gidere karşı (vekalet ücretleri dâhil olmak üzere) Şirket’i, hissedarlarını, çalışanlarını, acentelerini, iştiraklerini ve bağlı kuruluşlarını muaf tutmayı ve tazmin etmeyi kabul etmektesiniz.</p>
+
+                    <h4 class="mb-3 mt-4" style="color: #0f172a; font-size: 1.2rem;">Kullanım Kurallarının İhlali</h4>
+                    <p>Site'nin tarafınızca kullanımı ile ilgili herhangi bir soruşturma veya şikâyet ile ilgili olarak veya Şirket’in hakları veya mülkiyeti Site'nin ziyaretçileri veya kullanıcılarının hakları ve mülkiyetine zarar verebilecek veya müdahalede bulunabilecek herhangi bir kişiyi tanımlamak, bu kişiyle irtibat kurmak veya aleyhinde yasal işlem başlatmak için bilgi paylaşımının gerekli olduğunu tespit etmemiz halinde, Şirket’in, hakkınızdaki bilgileri (kimlik bilgileriniz dâhil olmak üzere) paylaşabileceğini kabul etmektesiniz.</p>
+                    <p class="mb-4">İşbu Kullanım Kuralları'nı ihlal ettiğinizin tespit edilmesi halinde, Şirket’in kendi inisiyatifine dayanarak ve önceden haber vermeden Site'ye erişiminizi iptal edebileceğini ve/veya gelecekte Site'ye erişiminizi engelleyebileceğini kabul etmektesiniz.</p>
+
+                    <h4 class="mb-3 mt-4" style="color: #0f172a; font-size: 1.2rem;">Geçerli Kanun, Anlaşmazlıkların Çözümü</h4>
+                    <p class="mb-4">Site'ye erişiminiz veya Site'nin kullanımı ile ilgili tüm hususların, tüm ihtilaflar dâhil olmak üzere Türkiye Cumhuriyeti kanunlarına tabi olacağını ve <strong>Kayseri Mahkemeleri ve İcra Dairelerinin</strong> yetkisini kabul etmektesiniz. Şirket ile tarafınız arasında Site'nin kullanımı ile ilgili olarak bir anlaşmazlık veya farklılık oluşması durumunda, taraflar derhal, söz konusu anlaşmazlığı iyi niyet çerçevesinde çözümlemeye çaba sarf edeceklerdir.</p>
+
+                    <h4 class="mb-3 mt-4" style="color: #0f172a; font-size: 1.2rem;">Yasaklanan Yerlerde Geçersizlik</h4>
+                    <p class="mb-4">Site dünya çapında erişebilir olmasına rağmen, Şirket söz konusu erişim hakkını ülke bazlı güvenlik gerekçeleriyle kısıtlayabilir. Site aracılığıyla veya Site üzerinde tartışılan, atıfta bulunulan, sağlanan veya sunulan tüm özellikler, ürünler veya hizmetler tüm şahıslara veya tüm coğrafi bölgelere yönelik değildir.</p>
+
+                    <h4 class="mb-3 mt-4" style="color: #0f172a; font-size: 1.2rem;">Diğer Hükümler</h4>
+                    <p class="mb-4">İşbu Kullanım Kuralları'nın herhangi bir hükmünün yetkili bir mahkeme veya kurul tarafından geçersiz veya uygulanamaz ilan edilmesi halinde, söz konusu hükümler, asgari ölçüde kısıtlanacak veya kaldırılacak ve işbu Kullanım Kuralları'nın geçerliliğinin devam edebilmesi için bu Kullanım Kuralları'nın amacına yakın geçerli bir hükümle değiştirilecektir.</p>
+
+                    <h4 class="mb-3 mt-4" style="color: #0f172a; font-size: 1.2rem;">Geribildirim ve Bilgilendirme</h4>
+                    <p>Bu sitede verdiğiniz her türlü geribildirim gizli olmayan bilgi sayılacaktır. Şirket söz konusu bilgileri kısıtlamasız bir şekilde kullanmakta serbesttir.</p>
+                    <p class="text-muted font-sm mt-3"><em>* Bu web sitesinde yer alan bilgiler önceden haber vermeden değiştirilebilir.</em></p>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+</html>

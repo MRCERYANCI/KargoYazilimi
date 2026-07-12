@@ -1,0 +1,45 @@
+﻿@model List<ResultTestimonialDto>
+
+<section class="section mt-50 bg-customers-say">
+    <div class="container">
+        <h2 class="title-favicon color-white mb-20 title-padding-left">Müşterilerimiz Neler Diyor?</h2>
+        <p class="font-lg color-white pl-55">Lojistik maliyetlerini optimize eden ve taşımacılık süreçlerinde <br class="d-none d-lg-block">fark yaratan çözümlerimizle tanışan iş ortaklarımızı dinleyin.</p>
+    </div>
+    <div class="box-slide-customers mt-50">
+        <div class="box-swiper">
+            <div class="swiper-container swiper-group-3-customers pb-50">
+                <div class="swiper-wrapper">
+
+                    @foreach (var item in Model.Where(x=>x.IsActive))
+                    {
+                        <div class="swiper-slide">
+                            <div class="card-testimonial-grid">
+                                <div class="box-author mb-25">
+                                    <a href="#"><img src="@item.ImageUrl" alt="müşteri" style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;"></a>
+                                    <div class="author-info">
+                                        <a href="#"><span class="font-xl-bold color-brand-2 author-name">@item.FullName</span></a>
+                                        <span class="font-sm color-grey-500 department">@item.Title</span>
+                                    </div>
+                                </div>
+                                <p class="font-md color-grey-700">@item.Comment</p>
+                                <div class="card-bottom-info justify-content-between">
+                                    <div class="rating text-start">
+                                        @* Yıldızları StarCount kadar döngüyle basıyoruz *@
+                                        @for (int i = 0; i < item.StarCount; i++)
+                                        {
+                                            <img src="~/templates/assets/imgs/template/icons/star.svg" alt="yıldız">
+                                        }
+                                        <br><span class="font-sm color-white">Müşteri Desteği İçin</span>
+                                    </div>
+                                    <span class="font-xs color-grey-500 rate-post text-end">Puan: @item.RatingScore.ToString("F2") / 5</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+                @* Slider noktaları vb. buraya gelecek (swiper-pagination) *@
+            </div>
+        </div>
+    </div>
+</section>

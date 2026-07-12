@@ -1,0 +1,187 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+
+    <main class="main" style="background-color: #f8fafc; color: #333; line-height: 1.8; font-family: 'Segoe UI', sans-serif;">
+
+        <!-- 1. GÖRKEMLİ HERO BÖLÜMÜ (Modern Depo Teması) -->
+        <section class="section pt-120 pb-120" style="position: relative; background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&q=80&w=1920') center/cover fixed;">
+            <!-- Raf/Kutu Geometrik Deseni -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(249, 115, 22, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(249, 115, 22, 0.05) 1px, transparent 1px); background-size: 50px 50px; z-index: 1;"></div>
+
+            <div class="container text-center position-relative" style="z-index: 2;">
+                <span class="d-inline-block mb-3" style="background: rgba(249, 115, 22, 0.15); color: #f97316; padding: 8px 25px; border-radius: 50px; font-weight: 700; letter-spacing: 2px; font-size: 14px; border: 1px solid rgba(249, 115, 22, 0.3);">AKILLI STOK YÖNETİMİ</span>
+
+                <h1 class="text-white mb-4" style="font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 900; line-height: 1.1;">
+                    Depo <br> <span style="color: #f97316;">Lojistiği</span>
+                </h1>
+
+                <p class="font-lg text-white opacity-80 mb-5 mx-auto" style="max-width: 780px;">
+                    Sadece alan değil, verimlilik kiralayın. Modern raflama sistemlerimiz, akıllı Depo Yönetim Sistemi (WMS) entegrasyonumuz ve uzman personelimizle; ürünlerinizin kabulünden paketlenip sevk edilmesine kadar tüm süreçleri kusursuzca yönetiyoruz.
+                </p>
+
+                <a href="/Contact/Index" class="btn" style="background: #f97316; color: white; padding: 16px 45px; font-weight: bold; border-radius: 8px; font-size: 16px; border: none; box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);">
+                    Depo Alanı Rezerve Et
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. KONSEPT AÇIKLAMASI (Fulfillment ve Optimizasyon) -->
+        <section class="section pt-100 pb-80" style="background-color: #ffffff;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0 pe-lg-5">
+                        <h2 class="mb-4" style="color: #0f172a; font-size: 2.5rem;">Tedarik Zincirinizin <br><span style="color: #f97316;">Güvenli Limanı</span></h2>
+                        <p class="text-muted font-lg mb-4">
+                            Günümüzde depolama, malların pasif bir şekilde bekletildiği yerler olmaktan çıkmış; siparişlerin saniyeler içinde toplanıp, etiketlenip kargoya teslim edildiği dinamik "Fulfillment" (Sipariş Karşılama) merkezlerine dönüşmüştür.
+                        </p>
+                        <p class="text-muted font-lg mb-4">
+                            ÇokkeçeciJET olarak, şirketinizin sabit yatırım maliyetlerini (kira, personel, güvenlik, yazılım) üstlenerek, size sadece işinizi büyütmeye odaklanma fırsatı sunuyoruz. Stoklarınızı gerçek zamanlı takip eder, siparişlerinizi anında müşterilerinize ulaştırırız.
+                        </p>
+                        <div class="d-flex align-items-center p-3 mt-4" style="background: #fff7ed; border-left: 4px solid #f97316; border-radius: 0 10px 10px 0;">
+                            <div style="font-size: 24px; margin-right: 15px;">💻</div>
+                            <p class="mb-0" style="color: #9a3412; font-weight: 500;">B2B ve B2C e-ticaret sitelerinizle API üzerinden %100 entegre çalışıyoruz.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 position-relative">
+                        <!-- Gerçek Unsplash Görseli (Barkod/E-ticaret Kutu Toplama) -->
+                        <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                            <img src="https://images.unsplash.com/photo-1604046537357-1111628d009b?auto=format&fit=crop&q=80&w=800" alt="E-Ticaret Depo Lojistiği" style="width: 100%; display: block;">
+                            <!-- Yüzen Kutu -->
+                            <div style="position: absolute; bottom: 30px; right: 30px; background: #ffffff; padding: 15px 25px; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-bottom: 3px solid #f97316;">
+                                <h6 class="mb-0" style="color: #0f172a; font-weight: bold;">Hatasız Toplama (Picking)</h6>
+                                <p class="text-muted font-sm mb-0">El terminalleri ve barkod ile.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. DEPO HİZMETLERİMİZ (Modüler Grid) -->
+        <section class="section pt-80 pb-100" style="background-color: #f8fafc;">
+            <div class="container">
+                <div class="text-center mb-60">
+                    <h2 style="color: #0f172a;">Kapsamlı Depo Çözümlerimiz</h2>
+                    <p class="text-muted font-lg">Her sektörün ihtiyacına özel olarak kurgulanmış esnek servisler.</p>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Gümrüklü / Gümrüksüz -->
+                    <div class="col-lg-6">
+                        <div class="d-flex p-4" style="background: #ffffff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); height: 100%; border-top: 4px solid #f97316; transition: 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <div style="background: #fff7ed; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-right: 20px; flex-shrink: 0;">🏢</div>
+                            <div>
+                                <h4 class="mb-2" style="color: #0f172a;">Gümrüklü & Gümrüksüz Depolama</h4>
+                                <p class="text-muted mb-0 font-sm">İthalat/İhracat ürünleriniz için A tipi antrepo ve serbest depolama alanları. Ürünlerinizi millileştirmeden önce güvenle muhafaza eder, dilediğiniz parti büyüklüğünde çekiş yapmanızı sağlarız.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fulfillment -->
+                    <div class="col-lg-6">
+                        <div class="d-flex p-4" style="background: #ffffff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); height: 100%; border-top: 4px solid #f97316; transition: 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <div style="background: #fff7ed; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-right: 20px; flex-shrink: 0;">🛒</div>
+                            <div>
+                                <h4 class="mb-2" style="color: #0f172a;">E-Ticaret Fulfillment Hizmeti</h4>
+                                <p class="text-muted mb-0 font-sm">Pazaryeri ve web sitenize düşen siparişler depolarımızda anında toplanır, koli/kargo paketlemesi yapılır, faturası kesilir ve aynı gün kargo firmalarına teslim edilir.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Katma Değerli Hizmetler -->
+                    <div class="col-lg-6">
+                        <div class="d-flex p-4" style="background: #ffffff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); height: 100%; border-top: 4px solid #f97316; transition: 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <div style="background: #fff7ed; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-right: 20px; flex-shrink: 0;">🏷️</div>
+                            <div>
+                                <h4 class="mb-2" style="color: #0f172a;">Katma Değerli İşlemler (VAS)</h4>
+                                <p class="text-muted mb-0 font-sm">Sadece depolamakla kalmıyor; ürün birleştirme (kitleme), Türkçe etiketleme, barkod basımı, streçleme, promosyon paketi hazırlama ve kalite kontrol işlemlerini yapıyoruz.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cross-Docking -->
+                    <div class="col-lg-6">
+                        <div class="d-flex p-4" style="background: #ffffff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); height: 100%; border-top: 4px solid #f97316; transition: 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <div style="background: #fff7ed; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-right: 20px; flex-shrink: 0;">🔄</div>
+                            <div>
+                                <h4 class="mb-2" style="color: #0f172a;">Çapraz Sevkiyat (Cross-Docking)</h4>
+                                <p class="text-muted mb-0 font-sm">Farklı tedarikçilerden gelen malları depoya hiç sokmadan (rafa kaldırmadan) mal kabul alanında hızla ayrıştırarak doğrudan farklı alıcılara sevk ediyoruz. Stok maliyetini sıfırlıyoruz.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. TEKNOLOJİ VE GÜVENLİK ALTYAPISI (Karanlık Tema) -->
+        <section class="section pt-80 pb-100" style="background-color: #0f172a; color: white;">
+            <div class="container">
+                <div class="row align-items-center mb-60">
+                    <div class="col-lg-6">
+                        <h2 class="text-white mb-0">Teknoloji ve Güvenlik <br>Altyapımız</h2>
+                    </div>
+                    <div class="col-lg-6 text-lg-end mt-4 mt-lg-0">
+                        <p style="color: #94a3b8; margin-bottom: 0;">Ürünleriniz, dijital zeka ile yönetilen ve fiziksel<br>olarak üst düzey korunan tesislerimizdedir.</p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-3 col-6">
+                        <div class="p-4 text-center" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 15px; height: 100%;">
+                            <div style="font-size: 35px; margin-bottom: 15px;">📲</div>
+                            <h5 class="text-white mb-2">Gelişmiş WMS</h5>
+                            <p style="color: #94a3b8; font-size: 13px; mb-0">FIFO, LIFO ve FEFO kurallarına uygun dijital stok yönetimi yazılımı.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="p-4 text-center" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 15px; height: 100%;">
+                            <div style="font-size: 35px; margin-bottom: 15px;">🌡️</div>
+                            <h5 class="text-white mb-2">İklimlendirme</h5>
+                            <p style="color: #94a3b8; font-size: 13px; mb-0">Gıda ve hassas kimyasallar için nem/ısı kontrollü özel odalar.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="p-4 text-center" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 15px; height: 100%;">
+                            <div style="font-size: 35px; margin-bottom: 15px;">🔐</div>
+                            <h5 class="text-white mb-2">24/7 Güvenlik</h5>
+                            <p style="color: #94a3b8; font-size: 13px; mb-0">CCTV kamera sistemleri, duman/ısı detektörleri ve fiziki güvenlik.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="p-4 text-center" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 15px; height: 100%;">
+                            <div style="font-size: 35px; margin-bottom: 15px;">☂️</div>
+                            <h5 class="text-white mb-2">Emtia Sigortası</h5>
+                            <p style="color: #94a3b8; font-size: 13px; mb-0">Depodaki tüm ürünlerin yangın, sel ve hırsızlığa karşı tam sigortalanması.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. CTA BÖLÜMÜ -->
+        <section class="section pt-80 pb-80 text-center" style="background: #ffffff; border-top: 5px solid #f97316;">
+            <div class="container">
+                <h2 class="mb-4" style="color: #0f172a;">Stoklarınızı Bize Bırakın, İşinizi Büyütün</h2>
+                <p class="font-lg mb-5 mx-auto text-muted" style="max-width: 600px;">Palet bazlı depolama fiyatlarımızı, raf kiralama seçeneklerini ve fulfillment entegrasyon süreçlerini öğrenmek için uzmanlarımızla görüşün.</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="/Contact/Index" class="btn" style="background: #0f172a; color: white; padding: 18px 45px; font-weight: bold; border-radius: 8px; font-size: 16px; box-shadow: 0 10px 20px rgba(0,0,0,0.15);">Depo Maliyet Analizi Al</a>
+                    <a href="tel:0850xxxxxxx" class="btn" style="background: #ffffff; color: #f97316; padding: 18px 45px; font-weight: bold; border-radius: 8px; font-size: 16px; border: 2px solid #f97316;">Hemen Arayın</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+</html>

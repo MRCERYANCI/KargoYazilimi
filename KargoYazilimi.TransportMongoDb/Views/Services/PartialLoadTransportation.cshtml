@@ -1,0 +1,179 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+
+    <main class="main" style="background-color: #f8fafc; color: #333; line-height: 1.8; font-family: 'Segoe UI', sans-serif;">
+
+        <!-- 1. GÖRKEMLİ HERO BÖLÜMÜ (Depo ve Konsolidasyon Teması) -->
+        <section class="section pt-120 pb-120" style="position: relative; background: linear-gradient(rgba(46, 20, 85, 0.85), rgba(23, 10, 43, 0.95)), url('https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&q=80&w=1920') center/cover fixed;">
+            <!-- Zemin Deseni (Modüler Ağ) -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px); background-size: 40px 40px; z-index: 1;"></div>
+
+            <div class="container text-center position-relative" style="z-index: 2;">
+                <span class="d-inline-block mb-3" style="background: rgba(244, 63, 94, 0.15); color: #f43f5e; padding: 8px 25px; border-radius: 50px; font-weight: 700; letter-spacing: 2px; font-size: 14px; border: 1px solid rgba(244, 63, 94, 0.3);">AKILLI PAYLAŞIM, MAKSİMUM TASARRUF</span>
+
+                <h1 class="text-white mb-4" style="font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 900; line-height: 1.1;">
+                    Parsiyel <br> <span style="color: #f43f5e;">Taşımacılık (LTL/LCL)</span>
+                </h1>
+
+                <p class="font-lg text-white opacity-75 mb-5 mx-auto" style="max-width: 780px;">
+                    Küçük ve orta ölçekli kargolarınız için bir aracın veya konteynerin tamamını kiralamak zorunda değilsiniz. Yükünüzü diğer gönderilerle aynı güzergahta birleştiriyor, sadece kapladığınız hacim kadar ödemenizi sağlıyoruz.
+                </p>
+
+                <a href="/Contact/Index" class="btn" style="background: #f43f5e; color: white; padding: 16px 45px; font-weight: bold; border-radius: 8px; font-size: 16px; border: none; box-shadow: 0 10px 25px rgba(244, 63, 94, 0.4);">
+                    Hacimsel Fiyat Hesapla
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. KONSEPT AÇIKLAMASI (Yenilikçi "Asimetrik" Çift Kart) -->
+        <section class="section pt-100 pb-80" style="background-color: #ffffff; position: relative;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0 pe-lg-5">
+                        <h2 class="mb-4" style="color: #2e1455; font-size: 2.5rem;">Aracı Paylaşın, <br><span style="color: #f43f5e;">Maliyeti Bölüşün</span></h2>
+                        <p class="text-muted font-lg mb-4">
+                            Parsiyel (Parça Yük) taşımacılık, lojistik optimizasyonun zirvesidir. Aynı yöne gidecek olan birbirinden bağımsız müşterilerin yükleri, toplama merkezlerimizde (hub) ayrıştırılır ve tek bir araca profesyonelce yüklenir.
+                        </p>
+                        <ul class="list-unstyled mb-0 mt-4">
+                            <li class="d-flex align-items-start mb-4">
+                                <div style="background: #fff1f2; color: #f43f5e; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-right: 15px; flex-shrink: 0;">🚛</div>
+                                <div>
+                                    <h5 style="color: #2e1455; margin-bottom: 5px;">Karayolu Parsiyel (LTL)</h5>
+                                    <p class="text-muted font-sm mb-0">Avrupa ve Ortadoğu ülkelerine haftanın belirli günleri düzenli ve tarifeli tır çıkışları.</p>
+                                </div>
+                            </li>
+                            <li class="d-flex align-items-start">
+                                <div style="background: #fff1f2; color: #f43f5e; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-right: 15px; flex-shrink: 0;">🚢</div>
+                                <div>
+                                    <h5 style="color: #2e1455; margin-bottom: 5px;">Denizyolu Parsiyel (LCL)</h5>
+                                    <p class="text-muted font-sm mb-0">Dünya limanlarına haftalık konsolide konteyner servisleriyle ekonomik küresel ticaret.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-6 position-relative">
+                        <!-- Gerçek Unsplash Görseli (Kutu/Yükleme) -->
+                        <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                            <img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&q=80&w=800" alt="Depo Yükleme İşlemi" style="width: 100%; display: block;">
+                            <!-- Görsel Üzeri Yüzen Bilgi Kutusu -->
+                            <div style="position: absolute; bottom: 30px; left: 30px; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); padding: 20px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); max-width: 250px;">
+                                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                    <span style="font-size: 24px; color: #10b981; margin-right: 10px;">📉</span>
+                                    <h6 style="margin: 0; color: #2e1455; font-weight: bold;">Maliyet Etkinliği</h6>
+                                </div>
+                                <p style="margin: 0; font-size: 13px; color: #64748b;">Standart taşımaya göre %40'a varan maliyet avantajı.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. KONSOLİDASYON (PARSİYEL) SÜRECİ (Görsel Akış) -->
+        <section class="section pt-80 pb-100" style="background-color: #f8fafc;">
+            <div class="container">
+                <div class="text-center mb-60">
+                    <h2 style="color: #2e1455;">Parsiyel Operasyon Adımları</h2>
+                    <p class="text-muted font-lg">Kargonuzun çıkışından varışına kadar uzanan milimetrik planlama.</p>
+                </div>
+
+                <div class="row g-4 position-relative">
+                    <!-- Arka plan kesik çizgi -->
+                    <div class="d-none d-lg-block" style="position: absolute; top: 110px; left: 10%; width: 80%; border-top: 2px dashed #cbd5e0; z-index: 1;"></div>
+
+                    <div class="col-lg-3 col-md-6 text-center position-relative" style="z-index: 2;">
+                        <div class="mx-auto mb-4" style="width: 80px; height: 80px; background: #ffffff; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.05); font-size: 30px; border: 2px solid #e2e8f0;">📦</div>
+                        <h5 style="color: #2e1455;">1. Toplama (Pick-up)</h5>
+                        <p class="text-muted font-sm px-2">Gönderiniz küçük araçlarla adresinizden alınarak depomuza (hub) getirilir.</p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 text-center position-relative" style="z-index: 2;">
+                        <div class="mx-auto mb-4" style="width: 80px; height: 80px; background: #ffffff; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.05); font-size: 30px; border: 2px solid #2e1455;">🧩</div>
+                        <h5 style="color: #2e1455;">2. Konsolidasyon</h5>
+                        <p class="text-muted font-sm px-2">Aynı bölgeye gidecek diğer kargolarla birleştirilip tıra/konteynere planlı şekilde yüklenir.</p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 text-center position-relative" style="z-index: 2;">
+                        <div class="mx-auto mb-4" style="width: 80px; height: 80px; background: #ffffff; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.05); font-size: 30px; border: 2px solid #e2e8f0;">🛣️</div>
+                        <h5 style="color: #2e1455;">3. Ana Taşıma</h5>
+                        <p class="text-muted font-sm px-2">Tam dolan araç vakit kaybetmeden gümrüklenir ve tarifeli uluslararası seferine başlar.</p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 text-center position-relative" style="z-index: 2;">
+                        <div class="mx-auto mb-4" style="width: 80px; height: 80px; background: #f43f5e; color: white; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(244, 63, 94, 0.4); font-size: 30px; border: 2px solid #f43f5e;">📍</div>
+                        <h5 style="color: #2e1455;">4. Dağıtım</h5>
+                        <p class="text-muted font-sm px-2">Varış ülkesindeki depoda kargolar tekrar ayrıştırılır ve alıcıların kapılarına teslim edilir.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. AVANTAJLAR (Ametist Moru Koyu Tema Grid) -->
+        <section class="section pt-80 pb-100" style="background-color: #2e1455; color: white;">
+            <div class="container">
+                <div class="text-center mb-60">
+                    <h2 class="text-white">Neden Bizi Seçmelisiniz?</h2>
+                    <p style="color: #cbd5e0;">Parsiyel taşımacılık operasyonlarında yarattığımız katma değerler.</p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="p-5" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; transition: 0.3s; height: 100%;">
+                            <div style="font-size: 35px; margin-bottom: 20px;">📅</div>
+                            <h4 class="text-white mb-3">Düzenli ve Tarifeli Çıkışlar</h4>
+                            <p style="color: #cbd5e0; mb-0; font-size: 15px;">Araçların dolmasını beklemek zorunda değilsiniz. Kesinleşmiş haftalık çıkış günlerimizle planlamalarınızı güvenle yapın.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-5" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; transition: 0.3s; height: 100%;">
+                            <div style="font-size: 35px; margin-bottom: 20px;">🔒</div>
+                            <h4 class="text-white mb-3">Kusursuz Yükleme Güvenliği</h4>
+                            <p style="color: #cbd5e0; mb-0; font-size: 15px;">Ağırlık, ebat ve hassasiyete göre akıllı istifleme (Lashing) yapıyor, kargonuzun diğer yüklerden zarar görmesini engelliyoruz.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-5" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; transition: 0.3s; height: 100%;">
+                            <div style="font-size: 35px; margin-bottom: 20px;">🛃</div>
+                            <h4 class="text-white mb-3">Entegre Gümrükleme</h4>
+                            <p style="color: #cbd5e0; mb-0; font-size: 15px;">Çoklu müşterinin olduğu parsiyel araçlarda gümrük süreçleri uzayabilir. Uzman ekibimizle tüm evrak süreçlerini hızlandırıyoruz.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-5" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; transition: 0.3s; height: 100%;">
+                            <div style="font-size: 35px; margin-bottom: 20px;">🌐</div>
+                            <h4 class="text-white mb-3">Tek Noktadan Takip</h4>
+                            <p style="color: #cbd5e0; mb-0; font-size: 15px;">Sadece size ait olan parçanın (palet, koli vb.) durumunu, gelişmiş dijital sistemlerimiz üzerinden barkod veya referans no ile takip edin.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. ÇAĞRI (Özel CTA Tasarımı) -->
+        <section class="section pt-80 pb-80 text-center" style="background: #ffffff; border-top: 5px solid #f43f5e;">
+            <div class="container">
+                <h2 class="mb-4" style="color: #2e1455;">Boş Alanlara Değil, Yükünüze Ödeyin</h2>
+                <p class="font-lg mb-5 mx-auto text-muted" style="max-width: 600px;">Göndermek istediğiniz palet/koli sayısını, ebatlarını ve ağırlığını bize iletin; size en rekabetçi parsiyel (LTL/LCL) navlun teklifini sunalım.</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="/Contact/Index" class="btn" style="background: #f43f5e; color: white; padding: 18px 45px; font-weight: bold; border-radius: 8px; font-size: 16px; box-shadow: 0 10px 20px rgba(244, 63, 94, 0.3);">Fiyat Teklifi Al</a>
+                    <a href="/Hizmetler/Depolama" class="btn" style="background: white; color: #2e1455; padding: 18px 45px; font-weight: bold; border-radius: 8px; font-size: 16px; border: 2px solid #2e1455;">Depolama Çözümleri</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+</html>

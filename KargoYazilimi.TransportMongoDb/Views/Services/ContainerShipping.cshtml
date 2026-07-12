@@ -1,0 +1,85 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+
+    <main class="main" style="background-color: #f8f9fa;">
+
+        <!-- 1. Şık Üst Bilgi Alanı -->
+        <section class="section pt-60 pb-60" style="background: #0b1c3d; color: white;">
+            <div class="container text-center">
+                <h1 class="color-white mb-15">Konteyner Taşımacılığı</h1>
+                <p class="font-lg" style="color: #cbd5e0; max-width: 700px; margin: 0 auto;">
+                    Uluslararası ticaretin anahtarı olan konteyner taşımacılığında, uçtan uca lojistik çözümlerimizle işinizi dünyaya açıyoruz.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. Ana İçerik ve Detaylı Kartlar -->
+        <section class="section pt-80 pb-80">
+            <div class="container">
+                <div class="row align-items-center mb-60">
+                    <div class="col-lg-6">
+                        <img src="/templates/assets/imgs/page/homepage1/menu1.png" alt="Konteyner Lojistik" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                    </div>
+                    <div class="col-lg-6 ps-lg-5">
+                        <h2 class="color-brand-1 mb-25">Yükünüzü Güvenle Dünyaya Taşıyoruz</h2>
+                        <p class="font-lg color-grey-600 mb-20">
+                            Modern konteyner filomuz, gelişmiş takip sistemlerimiz ve limanlardaki operasyonel hızımızla, lojistik süreçlerinizi zahmetsiz hale getiriyoruz.
+                        </p>
+                        <ul class="list-unstyled">
+                            <li class="mb-15">✅ <strong>Stratejik Liman Bağlantıları:</strong> Ana limanlarda geniş acente ağı.</li>
+                            <li class="mb-15">✅ <strong>Ekipman Çeşitliliği:</strong> Reefer, Open Top, Flat Rack seçenekleri.</li>
+                            <li class="mb-15">✅ <strong>Maliyet Optimizasyonu:</strong> En uygun rota planlaması.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Kartlar Bölümü -->
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="card p-4" style="border: none; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); height: 100%;">
+                            <h4 class="mb-3 color-brand-1">FCL Taşımacılık</h4>
+                            <p>Konteynerin tamamını kullanarak maksimum güvenlik ve hızla teslimat sağlıyoruz.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card p-4" style="border: none; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); height: 100%;">
+                            <h4 class="mb-3 color-brand-1">LCL Taşımacılık</h4>
+                            <p>Parsiyel yüklerinizi en verimli şekilde birleştirerek lojistik maliyetlerinizi düşürüyoruz.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card p-4" style="border: none; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); height: 100%;">
+                            <h4 class="mb-3 color-brand-1">Özel Projeler</h4>
+                            <p>Gabari dışı ve ağır tonajlı yükleriniz için özel konteyner çözümleri geliştiriyoruz.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Harekete Geçirici (CTA) Bölümü -->
+        <section class="section pt-60 pb-60" style="background: #e9ecef;">
+            <div class="container text-center">
+                <h2 class="mb-20">Hala sorularınız mı var?</h2>
+                <p class="font-lg mb-30">Lojistik ihtiyaçlarınız için uzman ekibimizle hemen iletişime geçin.</p>
+                <a class="btn btn-brand-1 px-5" href="/Contact/Index" style="padding: 15px 40px; font-weight: bold;">Teklif İste</a>
+            </div>
+        </section>
+
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+
+
+</body>
+</html>

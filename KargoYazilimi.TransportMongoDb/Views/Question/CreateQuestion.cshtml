@@ -1,0 +1,87 @@
+﻿@model CreateQuestionDto
+
+@{
+    ViewData["Title"] = "CreateQuestion";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<br />
+<br />
+<div class="row justify-content-center">
+    <div class="col-xl-12">
+        <div class="card shadow-lg border-0" style="border-radius: 15px;">
+            <div class="card-header bg-white border-bottom py-3">
+                <h5 class="card-title mb-0 fw-bold text-dark">
+                    <i class="bi bi-patch-question-fill me-2 text-primary"></i>Yeni Sıkça Sorulan Soru Ekle
+                </h5>
+            </div>
+
+            <div class="card-body p-4">
+                <form method="post">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="mb-4">
+                                <label class="form-label fw-bold text-secondary">Soru Metni</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-light"><i class="bi bi-chat-dots"></i></span>
+                                    <input type="text" asp-for="QuestionTitle" class="form-control form-control-lg rounded-end" placeholder="Örn: Gönderimi nasıl takip edebilirim?" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold text-secondary">Cevap Metni</label>
+                                <textarea asp-for="Answer" class="form-control rounded-3" rows="6" placeholder="Müşterilerinizin göreceği detaylı cevabı buraya yazın..." required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 border-start ps-4">
+                            <div class="mb-4">
+                                <label class="form-label fw-bold text-secondary">Görüntüleme Sırası</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-light"><i class="bi bi-sort-numeric-down"></i></span>
+                                    <input type="number" asp-for="OrderNo" class="form-control" value="1" min="1" required>
+                                </div>
+                                <small class="text-muted">Accordion listesinde kaçıncı sırada görünecek?</small>
+                            </div>
+
+                            <div class="p-3 rounded-3 border bg-light bg-opacity-50 mb-4">
+                                <div class="form-check form-switch d-flex justify-content-between align-items-center p-0">
+                                    <label class="form-check-label fw-bold mb-0" for="IsActive">Soru Aktif mi?</label>
+                                    <input class="form-check-input ms-0" type="checkbox" asp-for="IsActive" id="IsActive" checked style="width: 2.5em; height: 1.25em;">
+                                </div>
+                                <small class="text-muted d-block mt-2">Pasif yaparsanız sitede gizlenir.</small>
+                            </div>
+
+                            <div class="alert alert-info border-0 shadow-sm rounded-3">
+                                <div class="d-flex">
+                                    <i class="bi bi-info-circle-fill me-2"></i>
+                                    <small>Net ve kısa cevaplar müşteri memnuniyetini artırır.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-end mt-4 border-top pt-3">
+                        <a href="/Question/QuestionList" class="btn btn-light px-4 rounded-pill me-2">Vazgeç</a>
+                        <button type="submit" class="btn btn-primary px-5 rounded-pill shadow-sm fw-bold">
+                            <i class="bi bi-check2-circle me-1"></i> Soruyu Yayınla
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .form-control:focus, .form-select:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.1);
+    }
+
+    label {
+        font-size: 14px;
+    }
+</style>

@@ -1,0 +1,175 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+
+    <main class="main" style="background-color: #f8fafc; color: #333; line-height: 1.8; font-family: 'Segoe UI', sans-serif;">
+
+        <!-- 1. GÖRKEMLİ HERO BÖLÜMÜ (Gerçek Unsplash Tren Görseli) -->
+        <section class="section pt-120 pb-120" style="position: relative; background: linear-gradient(rgba(30, 41, 59, 0.85), rgba(30, 41, 59, 0.9)), url('https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&q=80&w=1920') center/cover fixed;">
+            <!-- Zemin deseni (Ray/Çelik hissiyatı) -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 2px, transparent 2px, transparent 10px); z-index: 1;"></div>
+
+            <div class="container text-center position-relative" style="z-index: 2;">
+                <span class="d-inline-block mb-3" style="background: rgba(16, 185, 129, 0.2); color: #10b981; padding: 8px 25px; border-radius: 50px; font-weight: 700; letter-spacing: 2px; font-size: 14px; border: 1px solid rgba(16, 185, 129, 0.5);">ÇEVRECİ & KESİNTİSİZ LOJİSTİK</span>
+
+                <h1 class="text-white mb-4" style="font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 900; line-height: 1.1;">
+                    Demiryolu <br> <span style="color: #10b981;">Taşımacılığı</span>
+                </h1>
+
+                <p class="font-lg text-white opacity-75 mb-5 mx-auto" style="max-width: 750px;">
+                    Trafik ve hava muhalefetinden etkilenmeyen çelik ağlarla; ağır tonajlı ve yüksek hacimli yüklerinizi, en düşük karbon ayak izi ve sabit maliyet garantisiyle hedefine ulaştırıyoruz.
+                </p>
+
+                <a href="/Contact/Index" class="btn" style="background: #10b981; color: white; padding: 16px 45px; font-weight: bold; border-radius: 8px; font-size: 16px; border: none; box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);">
+                    Proje Analizi Talep Et
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. KESİŞEN (OVERLAP) AVANTAJ KARTLARI -->
+        <section style="position: relative; z-index: 10; margin-top: -60px; padding-bottom: 60px;">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div style="background: #ffffff; border-radius: 15px; padding: 30px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); height: 100%; border-top: 4px solid #10b981;">
+                            <div style="font-size: 35px; margin-bottom: 15px;">🍃</div>
+                            <h4 class="mb-2" style="color: #1e293b; font-weight: 700;">Yeşil Lojistik</h4>
+                            <p class="text-muted mb-0 font-sm">Karayoluna kıyasla %75'e varan oranda daha az karbon emisyonu salınımı ile doğa dostu taşımacılık modeli.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div style="background: #ffffff; border-radius: 15px; padding: 30px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); height: 100%; border-top: 4px solid #3b82f6;">
+                            <div style="font-size: 35px; margin-bottom: 15px;">⏳</div>
+                            <h4 class="mb-2" style="color: #1e293b; font-weight: 700;">Sabit Transit Süresi</h4>
+                            <p class="text-muted mb-0 font-sm">Sınır kapısı kuyrukları ve trafik yoğunluğundan bağımsız, tarifeli seferlerle net teslimat süreleri.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div style="background: #ffffff; border-radius: 15px; padding: 30px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); height: 100%; border-top: 4px solid #f59e0b;">
+                            <div style="font-size: 35px; margin-bottom: 15px;">🏗️</div>
+                            <h4 class="mb-2" style="color: #1e293b; font-weight: 700;">Yüksek Tonaj Avantajı</h4>
+                            <p class="text-muted mb-0 font-sm">Tek seferde binlerce ton ürün taşıma kapasitesi ile ağır sanayi ve maden sektörleri için rakipsiz maliyetler.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. STRATEJİK HİZMET MODELLERİ (Canlı Resimlerle Yatay Detaylı Bloklar) -->
+        <section class="section pt-60 pb-100" style="background-color: #f8fafc;">
+            <div class="container">
+                <div class="text-center mb-60">
+                    <h2 style="color: #1e293b;">Demiryolu Çözümlerimiz</h2>
+                    <p class="text-muted font-lg">Yükünüzün hacmine ve rotasına göre optimize edilmiş operasyon modelleri.</p>
+                </div>
+
+                <!-- İntermodal Blok -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="d-flex flex-wrap flex-lg-nowrap align-items-center" style="background: #ffffff; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                            <div class="col-lg-5 p-0">
+                                <!-- Konteyner / İntermodal Görseli -->
+                                <img src="https://yilsanlojistik.com/images/intermodal-tasimacilik-961525.jpg" alt="İntermodal Taşıma Konteyner" style="width: 100%; height: 100%; min-height: 300px; object-fit: cover;">
+                            </div>
+                            <div class="col-lg-7 p-5">
+                                <span style="color: #3b82f6; font-weight: bold; font-size: 13px; letter-spacing: 1px;">KOMBİNE GÜÇ</span>
+                                <h3 class="mt-2 mb-3" style="color: #1e293b;">İntermodal Taşımacılık</h3>
+                                <p class="text-muted mb-4">Ürünlerinizi konteyner veya değiştirilebilir kasalar (swap body) içinden hiç çıkarmadan; karayolu, demiryolu ve denizyolu modlarını entegre ederek kapıdan kapıya (door-to-door) ulaştırıyoruz. Bu sayede elleçleme riskini sıfıra indiriyoruz.</p>
+                                <ul class="list-unstyled mb-0 d-flex flex-wrap gap-3">
+                                    <li><i class="fa fa-check text-primary me-2"></i> 45' HC Konteyner</li>
+                                    <li><i class="fa fa-check text-primary me-2"></i> Swap Body Ekipman</li>
+                                    <li><i class="fa fa-check text-primary me-2"></i> Terminal Teslimi</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blok Tren Blok -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex flex-wrap flex-lg-nowrap flex-lg-row-reverse align-items-center" style="background: #ffffff; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                            <div class="col-lg-5 p-0">
+                                <!-- Yük Treni Görseli -->
+                                <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&q=80&w=800" alt="Blok Tren Taşıma" style="width: 100%; height: 100%; min-height: 300px; object-fit: cover;">
+                            </div>
+                            <div class="col-lg-7 p-5">
+                                <span style="color: #10b981; font-weight: bold; font-size: 13px; letter-spacing: 1px;">KESİNTİSİZ HIZ</span>
+                                <h3 class="mt-2 mb-3" style="color: #1e293b;">Blok Tren Organizasyonu</h3>
+                                <p class="text-muted mb-4">Sadece size veya projenize tahsis edilmiş yekpare bir tren dizisi ile, çıkış terminalinden varış terminaline kadar hiçbir aktarma yapılmadan sağlanan özel taşımacılık hizmetidir. Özellikle maden, demir-çelik ve proje yükleri için idealdir.</p>
+                                <ul class="list-unstyled mb-0 d-flex flex-wrap gap-3">
+                                    <li><i class="fa fa-check text-success me-2"></i> Özel Vagon Tahsisi</li>
+                                    <li><i class="fa fa-check text-success me-2"></i> Aktarmasız Rota</li>
+                                    <li><i class="fa fa-check text-success me-2"></i> Hacimli Yük Kapasitesi</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. VAGON TİPLERİ (Minimalist Grid) -->
+        <section class="section pt-80 pb-100" style="background-color: #1e293b; color: white;">
+            <div class="container">
+                <div class="text-center mb-60">
+                    <h2 class="text-white">Geniş Vagon Ekipman Ağı</h2>
+                    <p style="color: #94a3b8;">Her sektöre ve her yük tipine uygun vagon filosu tedariği.</p>
+                </div>
+
+                <div class="row g-4 text-center">
+                    <div class="col-6 col-md-3">
+                        <div class="p-4" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; height: 100%; background: rgba(255,255,255,0.02);">
+                            <div style="font-size: 30px; margin-bottom: 10px;">📦</div>
+                            <h5 class="text-white">Kapalı Vagon</h5>
+                            <p style="color: #94a3b8; font-size: 13px;">Hava şartlarından etkilenen paletli veya dökme ürünler.</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="p-4" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; height: 100%; background: rgba(255,255,255,0.02);">
+                            <div style="font-size: 30px; margin-bottom: 10px;">🪨</div>
+                            <h5 class="text-white">Açık Vagon</h5>
+                            <p style="color: #94a3b8; font-size: 13px;">Kömür, cevher ve hurda gibi dökme maden/sanayi yükleri.</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="p-4" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; height: 100%; background: rgba(255,255,255,0.02);">
+                            <div style="font-size: 30px; margin-bottom: 10px;">🏗️</div>
+                            <h5 class="text-white">Platform (Flat)</h5>
+                            <p style="color: #94a3b8; font-size: 13px;">Konteynerler, borular, araçlar ve ağır iş makineleri.</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="p-4" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; height: 100%; background: rgba(255,255,255,0.02);">
+                            <div style="font-size: 30px; margin-bottom: 10px;">🛢️</div>
+                            <h5 class="text-white">Sarnıçlı Vagon</h5>
+                            <p style="color: #94a3b8; font-size: 13px;">Akaryakıt, kimyasal ve her türlü dökme sıvı maddeler.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. GÜÇLÜ CTA -->
+        <section class="section pt-80 pb-80 text-center" style="background: #ffffff; border-top: 5px solid #10b981;">
+            <div class="container">
+                <h2 class="mb-4" style="color: #1e293b;">Güvenilir Çelik Ağlarla Tanışın</h2>
+                <p class="font-lg mb-5 mx-auto text-muted" style="max-width: 600px;">Uluslararası demiryolu ve intermodal taşıma rotalarınız için uzman lojistik mühendislerimizden fizibilite raporu alın.</p>
+                <a href="/Contact/Index" class="btn" style="background: #1e293b; color: white; padding: 18px 50px; font-weight: bold; border-radius: 8px; font-size: 18px;">Lojistik Danışmanı İle Görüş</a>
+            </div>
+        </section>
+
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+</html>

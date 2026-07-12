@@ -1,0 +1,89 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+
+    <main class="main" style="background-color: #ffffff; color: #333; line-height: 1.8;">
+
+        <!-- 1. GÖRKEMLİ HERO (Ro-Ro Taşımacılığı) -->
+        <section class="section" style="padding: 160px 0; background: linear-gradient(rgba(11, 28, 61, 0.85), rgba(11, 28, 61, 0.85)), url('/templates/assets/imgs/page/homepage1/menu3.png') center/cover fixed;">
+            <div class="container text-center">
+                <span class="text-uppercase fw-bold" style="color: #ffbc00; letter-spacing: 4px;">Özel Lojistik Çözümleri</span>
+                <h1 class="text-white mt-3 mb-4" style="font-size: 4rem; font-weight: 900;">Ro-Ro Taşımacılığı</h1>
+                <p class="text-white opacity-75 font-lg" style="max-width: 700px; margin: 0 auto;">
+                    Tekerlekli yüklerinizin, kendi aksları üzerinde gemiye güvenle "sürülerek" taşındığı; hızlı, hasarsız ve yüksek verimli lojistik hizmeti.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. DETAYLI METİN VE GÖRSEL (Sağda) -->
+        <section class="section pt-100 pb-100">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h2 class="mb-4" style="font-size: 2.5rem; color: #0b1c3d;">Tekerlekli Yüklerin Lojistiğinde Uzmanlık</h2>
+                        <p class="font-lg color-grey-700 mb-4">
+                            Ro-Ro taşımacılığı, lojistik operasyonlarında en düşük hasar riski ve en yüksek hız avantajını sunar. İş makineleri, tırlar, otomobiller veya karavanlar gibi kendi aksı üzerinde yürüyebilen tüm yükleriniz için gemi içi özel depolama ve sabitleme hizmeti sunuyoruz.
+                        </p>
+                        <p class="font-lg color-grey-700">
+                            Deniz yolunu bir karayolu konforunda kullanmanızı sağlayan Ro-Ro çözümlerimizle, liman bekleme sürelerini minimize ederek transit sürenizi kısaltıyoruz.
+                        </p>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="/templates/assets/imgs/page/homepage1/menu1.png" alt="Ro-Ro Operasyonu" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. OPERASYONEL AVANTAJLAR (İkonik Kartlar) -->
+        <section class="section pt-100 pb-100" style="background-color: #f8f9fa;">
+            <div class="container">
+                <div class="text-center mb-60">
+                    <h2>Ro-Ro Taşımacılığının Avantajları</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 text-center">
+                        <div class="p-4" style="background: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                            <h4 class="mb-3 color-brand-1">Sıfır Hasar Riski</h4>
+                            <p class="text-muted">Yükleme-boşaltma vinçlerini devre dışı bırakarak yükün fiziksel temasını minimize ediyoruz.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <div class="p-4" style="background: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                            <h4 class="mb-3 color-brand-1">Hız ve Verimlilik</h4>
+                            <p class="text-muted">Doğrudan gemiye sürülerek yükleme sayesinde hızlı liman operasyon süreci.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <div class="p-4" style="background: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                            <h4 class="mb-3 color-brand-1">Geniş Kapasite</h4>
+                            <p class="text-muted">Otomobilden devasa inşaat iş makinelerine kadar tüm tekerlekli üniteler için uygunluk.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. ÇAĞRI (CTA) -->
+        <section class="section pt-80 pb-80 text-center" style="background: #0b1c3d; color: white;">
+            <div class="container">
+                <h2 class="mb-4">Aracınız veya İş Makineniz İçin Teklif Alın</h2>
+                <p class="font-lg mb-4" style="color: #cbd5e0;">Ro-Ro lojistik ağımızla en hızlı rota ve en iyi fiyat seçeneklerini sunuyoruz.</p>
+                <a href="/Contact/Index" class="btn btn-brand-1" style="padding: 15px 40px; font-weight: bold;">Hemen İletişime Geç</a>
+            </div>
+        </section>
+
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+</html>

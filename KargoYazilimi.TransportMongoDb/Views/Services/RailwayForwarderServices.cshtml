@@ -1,0 +1,163 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+
+    <main class="main" style="background-color: #f8fafc; color: #333; line-height: 1.8; font-family: 'Segoe UI', sans-serif;">
+
+        <!-- 1. GÖRKEMLİ HERO BÖLÜMÜ (Kurumsal ve Stratejik Tema) -->
+        <section class="section pt-120 pb-120" style="position: relative; background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(30, 58, 138, 0.85)), url('https://images.unsplash.com/photo-1563212040-5b1b46328b07?auto=format&fit=crop&q=80&w=1920') center/cover fixed;">
+            <!-- Dijital Ağ Deseni (Forwarder bağlantılarını temsil eder) -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px); background-size: 40px 40px; z-index: 1;"></div>
+
+            <div class="container text-center position-relative" style="z-index: 2;">
+                <span class="d-inline-block mb-3" style="background: rgba(59, 130, 246, 0.2); color: #60a5fa; padding: 8px 25px; border-radius: 50px; font-weight: 700; letter-spacing: 2px; font-size: 14px; border: 1px solid rgba(59, 130, 246, 0.4);">LOJİSTİĞİN MİMARLARI</span>
+
+                <h1 class="text-white mb-4" style="font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 900; line-height: 1.1;">
+                    Demiryolu Forwarder <br> <span style="color: #60a5fa;">Hizmetleri</span>
+                </h1>
+
+                <p class="font-lg text-white opacity-80 mb-5 mx-auto" style="max-width: 800px;">
+                    Yükünüzün A noktasından B noktasına ulaşmasındaki tüm karmaşık süreçleri, evrak operasyonlarını, vagon tedariğini ve sınır geçişlerini sizin adınıza tek bir merkezden planlıyor ve yönetiyoruz. Uluslararası demiryollarında "Tek Muhatabınız" biziz.
+                </p>
+
+                <a href="/Contact/Index" class="btn" style="background: #2563eb; color: white; padding: 16px 45px; font-weight: bold; border-radius: 8px; font-size: 16px; border: none; box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);">
+                    Operasyon Danışmanlığı Alın
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. KONSEPT AÇIKLAMASI (Strateji ve Evrak) -->
+        <section class="section pt-100 pb-80" style="background-color: #ffffff;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0 pe-lg-5">
+                        <h2 class="mb-4" style="color: #0f172a; font-size: 2.5rem;">Taşımacılığın Ötesinde: <br><span style="color: #2563eb;">Kusursuz Organizasyon</span></h2>
+                        <p class="text-muted font-lg mb-4">
+                            Demiryolu taşımacılığı, ülkeler arası farklı hat genişlikleri, gümrük prosedürleri ve karmaşık dökümantasyon kuralları içerir. Bir "Forwarder" (Taşıma İşleri Organizatörü) olarak ÇokkeçeciJET, tüm bu bürokratik ve operasyonel engelleri sizin için aşar.
+                        </p>
+                        <p class="text-muted font-lg mb-4">
+                            Siz sadece yükünüzün varış noktasını söylersiniz. Biz; en optimal rotayı çizer, en uygun vagonu bulur, uluslararası taşıma belgelerini (CIM / SMGS) düzenler ve gümrük süreçlerini koordine ederiz.
+                        </p>
+                        <div class="d-flex align-items-center p-3 mt-4" style="background: #eff6ff; border-left: 4px solid #2563eb; border-radius: 0 10px 10px 0;">
+                            <div style="font-size: 24px; margin-right: 15px;">🤝</div>
+                            <p class="mb-0" style="color: #1e3a8a; font-weight: 500;">Birden çok taşıyıcı, gümrükçü ve acente ile uğraşmazsınız; tek yetkili muhatabınız ÇokkeçeciJET'tir.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 position-relative">
+                        <!-- Gerçek Unsplash Görseli (Evrak / Danışmanlık / Planlama) -->
+                        <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800" alt="Lojistik Organizasyon ve Planlama" style="width: 100%; display: block;">
+                            <!-- Yüzen Kutu -->
+                            <div style="position: absolute; top: 30px; right: -20px; background: #ffffff; padding: 15px 25px; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-bottom: 3px solid #2563eb;">
+                                <h6 class="mb-0" style="color: #0f172a; font-weight: bold;">Uluslararası Acente Ağı</h6>
+                                <p class="text-muted font-sm mb-0">Tüm Avrupa ve Asya'da</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. FORWARDER HİZMET DETAYLARI (Kartlı Yapı) -->
+        <section class="section pt-80 pb-100" style="background-color: #f8fafc;">
+            <div class="container">
+                <div class="text-center mb-60">
+                    <h2 style="color: #0f172a;">Forwarder Olarak Neler Yapıyoruz?</h2>
+                    <p class="text-muted font-lg">Yükünüz için masa başında ve sahada yürüttüğümüz mühendislik süreçleri.</p>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Rota Planlama -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="p-4" style="background: #ffffff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); height: 100%; border-top: 4px solid #2563eb; transition: 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <div style="background: #eff6ff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #2563eb; margin-bottom: 20px;">🗺️</div>
+                            <h5 style="color: #0f172a; margin-bottom: 15px;">Rota Optimizasyonu</h5>
+                            <p class="text-muted font-sm mb-0">Maliyet, süre ve güvenlik dengesini gözeterek, aktarma noktalarının en aza indirildiği optimal demiryolu güzergahını tasarlıyoruz.</p>
+                        </div>
+                    </div>
+
+                    <!-- Vagon Tedariği -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="p-4" style="background: #ffffff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); height: 100%; border-top: 4px solid #2563eb; transition: 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <div style="background: #eff6ff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #2563eb; margin-bottom: 20px;">🚆</div>
+                            <h5 style="color: #0f172a; margin-bottom: 15px;">Ekipman & Vagon Tedariği</h5>
+                            <p class="text-muted font-sm mb-0">Devlet demiryolları veya özel operatörlerle olan anlaşmalarımız sayesinde, yükünüze en uygun vagon tipini (kapalı, açık, platform) hızla tahsis ediyoruz.</p>
+                        </div>
+                    </div>
+
+                    <!-- Evrak ve Gümrük -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="p-4" style="background: #ffffff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); height: 100%; border-top: 4px solid #2563eb; transition: 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <div style="background: #eff6ff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #2563eb; margin-bottom: 20px;">📄</div>
+                            <h5 style="color: #0f172a; margin-bottom: 15px;">Dökümantasyon (CIM/SMGS)</h5>
+                            <p class="text-muted font-sm mb-0">Farklı demiryolu rejimlerine ait taşıma belgelerinin (CIM ve SMGS) eksiksiz düzenlenmesi ve sınır gümrük süreçlerinin koordinasyonu.</p>
+                        </div>
+                    </div>
+
+                    <!-- Takip ve Sigorta -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="p-4" style="background: #ffffff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); height: 100%; border-top: 4px solid #2563eb; transition: 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <div style="background: #eff6ff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #2563eb; margin-bottom: 20px;">🛡️</div>
+                            <h5 style="color: #0f172a; margin-bottom: 15px;">Sigorta & Anlık Takip</h5>
+                            <p class="text-muted font-sm mb-0">Yükünüzü risklere karşı en kapsamlı şekilde sigortalıyor ve yolculuk boyunca size günlük dijital konum raporlaması sunuyoruz.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. NEDEN BİZ? (Karanlık Kurumsal Tema) -->
+        <section class="section pt-80 pb-100" style="background-color: #0f172a; color: white;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 mb-5 mb-lg-0">
+                        <span class="d-inline-block mb-3" style="color: #60a5fa; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Ayrıcalıklarımız</span>
+                        <h2 class="text-white mb-4">Küresel Acente Ağı, <br>Yerel Uzmanlık</h2>
+                        <p style="color: #94a3b8; font-size: 16px; margin-bottom: 30px;">
+                            Başarılı bir forwarder şirketinin en büyük gücü, fiziksel araçlarından ziyade geniş ve güvenilir acente ağıdır. ÇokkeçeciJET olarak; Avrupa, Orta Asya, Rusya ve Çin demiryolu koridorlarında yerleşik partnerlerimizle, kriz anlarında anında müdahale edebilen bir yapıya sahibiz.
+                        </p>
+                        <a href="/Hizmetler/Intermodal" class="btn" style="background: transparent; color: white; border: 2px solid #60a5fa; padding: 12px 30px; border-radius: 8px; font-weight: bold;">İntermodal Hizmetini İncele</a>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="row g-4">
+                            <div class="col-sm-6">
+                                <div class="p-4" style="background: rgba(255,255,255,0.05); border-radius: 15px; border-left: 3px solid #60a5fa;">
+                                    <h3 class="mb-2" style="color: #ffffff;">Maliyet <br>Avantajı</h3>
+                                    <p style="color: #cbd5e0; font-size: 14px; margin-bottom: 0;">Farklı taşıyıcılarla yaptığımız yüksek hacimli yıllık anlaşmalar sayesinde rekabetçi navlun fiyatları sunarız.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="p-4" style="background: rgba(255,255,255,0.05); border-radius: 15px; border-left: 3px solid #60a5fa;">
+                                    <h3 class="mb-2" style="color: #ffffff;">Hukuki <br>Güvence</h3>
+                                    <p style="color: #cbd5e0; font-size: 14px; margin-bottom: 0;">Uluslararası demiryolu hukuku (COTIF vb.) konusundaki uzmanlığımızla sizi tüm yasal risklerden koruruz.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. CTA BÖLÜMÜ -->
+        <section class="section pt-80 pb-80 text-center" style="background: #ffffff; border-top: 5px solid #2563eb;">
+            <div class="container">
+                <h2 class="mb-4" style="color: #0f172a;">Lojistik Stratejinizi Birlikte Belirleyelim</h2>
+                <p class="font-lg mb-5 mx-auto text-muted" style="max-width: 600px;">Sadece varış noktasını belirtin. Tüm planlama, gümrük ve organizasyon süreçlerini profesyonel ekibimize bırakın.</p>
+                <a href="/Contact/Index" class="btn" style="background: #2563eb; color: white; padding: 18px 50px; font-weight: bold; border-radius: 8px; font-size: 18px; box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);">Uzman Danışmanla Görüş</a>
+            </div>
+        </section>
+
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+</html>

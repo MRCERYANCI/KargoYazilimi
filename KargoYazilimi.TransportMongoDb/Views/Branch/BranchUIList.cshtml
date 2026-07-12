@@ -1,0 +1,295 @@
+﻿@model List<ResultBranchDto>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    @await Component.InvokeAsync("_DefaultHeadComponentPartial")
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        body {
+            background-color: #f8faff;
+            font-family: 'Inter', sans-serif;
+            color: #333;
+        }
+
+        /* ÜST BAŞLIK - ARKA PLAN RESİMLİ (HERO) */
+        .branch-hero {
+            background: linear-gradient(rgba(3, 10, 21, 0.75), rgba(3, 10, 21, 0.85)), url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=2070') no-repeat center center;
+            background-size: cover;
+            padding: 110px 0;
+            text-align: center;
+            border-bottom: 5px solid #0d6efd;
+        }
+
+            .branch-hero h1 {
+                color: #ffffff;
+                font-weight: 800;
+                font-size: 3.2rem;
+                text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            }
+
+            .branch-hero p {
+                color: rgba(255,255,255,0.85);
+                font-size: 1.2rem;
+                margin-top: 10px;
+            }
+
+        /* AKSİYON ALANI (DİP DİBE OLMAYAN TASARIM) */
+        .action-row {
+            margin-top: 60px;
+            margin-bottom: 40px;
+        }
+
+        .total-card {
+            background: linear-gradient(135deg, #1a4da1 0%, #0d3678 100%);
+            color: white;
+            border-radius: 25px;
+            padding: 45px 50px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 20px 40px rgba(26, 77, 161, 0.25);
+        }
+
+            .total-card h1 {
+                font-size: 85px;
+                font-weight: 900;
+                margin: 0;
+                line-height: 1;
+                margin-right: 40px;
+                border-right: 2px solid rgba(255,255,255,0.15);
+                padding-right: 40px;
+            }
+
+            .total-card .txt {
+                font-size: 1.25rem;
+                font-weight: 700;
+                line-height: 1.6 !important;
+                margin: 0;
+            }
+
+        /* FİLTRE VE HARİTA */
+        #branchMap {
+            height: 550px;
+            width: 100%;
+            border-radius: 25px;
+            border: 10px solid white;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.08);
+            z-index: 1;
+        }
+
+        .filter-panel {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            border: 1px solid #eee;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+
+        .custom-select {
+            height: 60px;
+            border-radius: 15px;
+            border: 1px solid #e2e8f0;
+            background-color: #f8fafc;
+            font-weight: 600;
+            color: #1a4da1;
+        }
+
+        /* LİSTE KARTLARI */
+        .branch-list-item {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 1px solid #f1f5f9;
+            transition: 0.3s;
+            cursor: pointer;
+            border-bottom: 4px solid transparent;
+        }
+
+            .branch-list-item:hover {
+                transform: translateY(-8px);
+                border-bottom-color: #0d6efd;
+                box-shadow: 0 12px 25px rgba(0,0,0,0.05);
+            }
+    </style>
+</head>
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+
+    <main>
+        <section class="branch-hero">
+            <div class="container">
+                <h1>Şubelerimiz ve Dağıtım Merkezleri</h1>
+                <p>Türkiye'nin her noktasında, profesyonel lojistik çözümlerimizle yanınızdayız.</p>
+            </div>
+        </section>
+
+        <div class="container action-row">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-7">
+                    <div class="total-card shadow-lg">
+                        <h1 style="color:white;">@Model.Count</h1>
+                        <div class="txt">
+                            Şube ile Sizlere Hizmet Vermekten <br />
+                            <span style="color: #0dcaf0;">Memnuniyet Duyuyoruz</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-end">
+                    <button id="geoBtn" class="btn btn-white shadow-sm rounded-pill px-5 py-3 fw-bold border bg-white text-primary">
+                        <i class="bi bi-cursor-fill me-2"></i>Yakınımdaki Şubeleri Göster
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="filter-panel">
+                        <h4 class="fw-bold mb-3 text-primary">Bölge Sorgulama</h4>
+                        <div class="mb-3">
+                            <select id="citySelect" class="form-select custom-select shadow-sm">
+                                <option value="">Şehir Seçiniz</option>
+                                @foreach (var city in Model.Select(x => x.City).Distinct().OrderBy(x => x))
+                                {
+                                    <option value="@city">@city</option>
+                                }
+                            </select>
+                        </div>
+                        <div>
+                            <select id="districtSelect" class="form-select custom-select shadow-sm">
+                                <option value="">İlçe Seçiniz</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div id="branchMap"></div>
+                </div>
+            </div>
+
+            <div class="py-5">
+                <h3 id="listTitle" class="fw-bold text-dark mb-4 text-center" style="display:none; font-size: 2.2rem;"></h3>
+                <div id="listContainer" class="row g-4 px-3"></div>
+            </div>
+        </div>
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Harita Başlatma
+            var map = L.map('branchMap').setView([38.9637, 35.2433], 6);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+            // Havuç Olmayan Bina İkonu
+            var branchIcon = L.icon({
+                iconUrl: 'https://images.bilgiakademisi.net.tr/cokkececi-resimler/2026/05/28/cokkececi_jet_icon_202606141118.png',
+                iconSize: [50, 50],
+                iconAnchor: [25, 50],
+                popupAnchor: [0, -45]
+            });
+
+            var branches = @Html.Raw(Json.Serialize(Model)) || [];
+            var markers = {};
+
+            // Markerları hazırla
+            branches.forEach(function(b) {
+                if(b.latitude && b.longitude) {
+                    var m = L.marker([parseFloat(b.latitude), parseFloat(b.longitude)], { icon: branchIcon }).addTo(map)
+                        .bindPopup(`
+                            <div style="width:220px">
+                                <h6 style="color:#1a4da1; font-weight:800; border-bottom:1px solid #eee; padding-bottom:5px;">${b.branchName}</h6>
+                                <p style="font-size:12px; margin-bottom:5px;"><b>Müdür:</b> ${b.managerName}</p>
+                                <p style="font-size:12px; margin-bottom:5px;"><b>Tel:</b> ${b.phone}</p>
+                                <p style="font-size:12px;"><b>Adres:</b> ${b.fullAddress}</p>
+                            </div>
+                        `);
+                    markers[b.branchId] = m;
+                }
+            });
+
+            // Şehir Filtresi
+            document.getElementById('citySelect').addEventListener('change', function() {
+                var city = this.value;
+                var districtSelect = document.getElementById('districtSelect');
+                districtSelect.innerHTML = '<option value="">İlçe Seçiniz</option>';
+
+                var filtered = branches.filter(function(x) { return x.city === city; });
+                var dists = [...new Set(filtered.map(function(x) { return x.district; }))];
+
+                dists.forEach(function(d) {
+                    var opt = document.createElement('option');
+                    opt.value = opt.text = d;
+                    districtSelect.add(opt);
+                });
+
+                if(city && filtered.length > 0) {
+                    document.getElementById('listTitle').style.display = 'block';
+                    document.getElementById('listTitle').innerText = city + " Şubelerimiz";
+                    updateUIList(filtered);
+                    map.flyTo([filtered[0].latitude, filtered[0].longitude], 10);
+                }
+            });
+
+            // İlçe Filtresi
+            document.getElementById('districtSelect').addEventListener('change', function() {
+                var dist = this.value;
+                var city = document.getElementById('citySelect').value;
+                var filtered = branches.filter(function(x) { return x.district === dist && x.city === city; });
+
+                if(dist && filtered.length > 0) {
+                    updateUIList(filtered);
+                    map.flyTo([filtered[0].latitude, filtered[0].longitude], 14);
+                    if(markers[filtered[0].branchId]) markers[filtered[0].branchId].openPopup();
+                }
+            });
+
+            function updateUIList(data) {
+                var container = document.getElementById('listContainer');
+                container.innerHTML = '';
+                data.forEach(function(b) {
+                    var div = document.createElement('div');
+                    div.className = 'col-md-6 col-lg-4';
+                    div.innerHTML = `
+                        <div class="branch-list-item shadow-sm">
+                            <h5 class="fw-bold text-primary mb-2">${b.branchName}</h5>
+                            <p class="small text-muted mb-3"><i class="bi bi-geo-alt-fill text-danger"></i> ${b.district} / ${b.city}</p>
+                            <div class="border-top pt-3 small">
+                                <b>Müdür:</b> ${b.managerName}<br><b>İletişim:</b> ${b.phone}
+                            </div>
+                        </div>
+                    `;
+                    div.onclick = function() {
+                        map.flyTo([b.latitude, b.longitude], 15);
+                        markers[b.branchId].openPopup();
+                        window.scrollTo({ top: document.getElementById('branchMap').offsetTop - 100, behavior: 'smooth' });
+                    };
+                    container.appendChild(div);
+                });
+            }
+
+            // Konum Butonu
+            document.getElementById('geoBtn').onclick = function() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function(p) {
+                        map.flyTo([p.coords.latitude, p.coords.longitude], 12);
+                    });
+                }
+            };
+        });
+    </script>
+</body>
+</html>

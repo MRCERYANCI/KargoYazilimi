@@ -1,0 +1,158 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+
+    <main class="main" style="background-color: #ffffff; color: #333; line-height: 1.8;">
+
+        <!-- 1. TİPOGRAFİ ODAKLI HERO BÖLÜMÜ (Tazelik ve Soğuk Zincir Teması) -->
+        <section class="section pt-120 pb-60" style="position: relative; overflow: hidden; background-color: #f8fafc;">
+
+            <!-- ARKA PLAN EFEKTLERİ (Grid ve Soğuk/Taze Işık Yansımaları) -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(#cbd5e0 1.5px, transparent 1.5px); background-size: 35px 35px; opacity: 0.5; z-index: 0;"></div>
+            <!-- Sol üstte soğuk zinciri temsil eden Buz Mavisi yansıma -->
+            <div style="position: absolute; top: -150px; left: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, rgba(255,255,255,0) 70%); z-index: 0; border-radius: 50%;"></div>
+            <!-- Sağ altta tazeliği ve doğallığı temsil eden Zümrüt Yeşili yansıma -->
+            <div style="position: absolute; bottom: 100px; right: -150px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(255,255,255,0) 70%); z-index: 0; border-radius: 50%;"></div>
+
+            <!-- İÇERİK (Z-index ile öne alındı) -->
+            <div class="container text-center" style="position: relative; z-index: 2;">
+                <span class="d-inline-block mb-3" style="background: rgba(16, 185, 129, 0.15); color: #059669; padding: 8px 25px; border-radius: 50px; font-weight: 700; letter-spacing: 2px; font-size: 14px; backdrop-filter: blur(5px);">SOĞUK ZİNCİR & TAZE LOJİSTİK</span>
+
+                <h1 class="mb-4" style="font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 900; color: #0b1c3d; letter-spacing: -1px; line-height: 1.1;">
+                    Bozulabilir Gıda <br> <span style="color: #10b981;">Taşımacılığı</span>
+                </h1>
+
+                <p class="font-lg mb-5 mx-auto" style="color: #64748b; max-width: 800px;">
+                    Taze meyve, sebze, deniz ürünleri, et, süt ve fidan gibi raf ömrü kısa, ısı hassasiyeti olan kargolarınızı; tarladan sofraya kadar ilk günkü tazeliğinde ve uluslararası soğuk zincir standartlarında taşıyoruz.
+                </p>
+
+                <a href="/Contact/Index" class="btn hover-up" style="padding: 16px 45px; font-weight: bold; border-radius: 50px; background-color: #10b981; color: white; border: none; box-shadow: 0 15px 30px rgba(16, 185, 129, 0.3);">
+                    Özel Isı Talebi İletin
+                </a>
+
+                <!-- ZARİF GÖRSEL (Yazının altında sinematik şerit) -->
+                <div class="mt-5 pt-4">
+                    <img src="/templates/assets/imgs/page/homepage1/menu2.png" alt="Bozulabilir Gıda Taşımacılığı" style="width: 100%; max-width: 1100px; height: 450px; object-fit: cover; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); position: relative; z-index: 3;">
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. HİZMET DETAYLARI (Yatay Kutular - Soğuk Zincir Odaklı) -->
+        <section class="section pt-80 pb-100" style="background-color: #ffffff;">
+            <div class="container">
+                <div class="row justify-content-center mb-60">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="mb-3" style="color: #0b1c3d;">Tazelik İçin Zamanla Yarışıyoruz</h2>
+                        <p class="font-lg" style="color: #64748b;">
+                            Ürünlerinizin doğal yapısının, tat ve kokusunun bozulmaması için IATA PCR (Perishable Cargo Regulations) kurallarına titizlikle uyuyor; aktif ve pasif soğutma sistemleriyle kusursuz bir mikro iklim yaratıyoruz.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2x2 Soğuk Zincir Grid -->
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="d-flex p-4" style="background: #ecfdf5; border-radius: 20px; border: 1px solid #d1fae5; transition: 0.3s;">
+                            <div style="font-size: 40px; margin-right: 20px;">❄️</div>
+                            <div>
+                                <h4 class="mb-2 color-brand-1">Aktif ve Pasif Soğutma</h4>
+                                <p class="mb-0 text-muted">Kuru buz (dry ice), özel soğutucu jeller, termo battaniyeler ve aktif motorlu Envirotainer konteyner çözümleri.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex p-4" style="background: #ecfdf5; border-radius: 20px; border: 1px solid #d1fae5; transition: 0.3s;">
+                            <div style="font-size: 40px; margin-right: 20px;">🌡️</div>
+                            <div>
+                                <h4 class="mb-2 color-brand-1">Hassas Isı Takibi</h4>
+                                <p class="mb-0 text-muted">Hedeflenen (+2°C/+8°C, -20°C vb.) derecenin korunması ve "Data Logger" cihazlarıyla anlık ısı & nem raporlaması.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex p-4" style="background: #ecfdf5; border-radius: 20px; border: 1px solid #d1fae5; transition: 0.3s;">
+                            <div style="font-size: 40px; margin-right: 20px;">🍏</div>
+                            <div>
+                                <h4 class="mb-2 color-brand-1">Öncelikli Elleçleme</h4>
+                                <p class="mb-0 text-muted">Bozulabilir kargoların uçak altına son yüklenip varışta ilk tahliye edilmesiyle (Last on, First off) asgari ısı teması.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex p-4" style="background: #ecfdf5; border-radius: 20px; border: 1px solid #d1fae5; transition: 0.3s;">
+                            <div style="font-size: 40px; margin-right: 20px;">🏢</div>
+                            <div>
+                                <h4 class="mb-2 color-brand-1">Havalimanı Soğuk Odaları</h4>
+                                <p class="mb-0 text-muted">Uçuş öncesi ve sonrası bekleme sürelerinde, havalimanlarındaki özel "Cold Room" (Soğuk Hava Deposu) hizmetleri.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. OPERASYON SÜRECİ (Karanlık Tema - Tazelik Süreci) -->
+        <section class="section pt-100 pb-120" style="background-color: #0b1c3d; color: white;">
+            <div class="container">
+                <div class="text-center mb-60">
+                    <h2 class="text-white">Kesintisiz Soğuk Zincir Döngüsü</h2>
+                    <p style="color: #94a3b8;">Tarladan sofraya uzanan hassas sürecin 4 ana adımı.</p>
+                </div>
+
+                <div class="row text-center position-relative mt-5">
+                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                        <div class="mx-auto mb-4 d-flex align-items-center justify-content-center" style="width: 70px; height: 70px; background: rgba(16, 185, 129, 0.15); border-radius: 50%; font-size: 24px; font-weight: bold; color: #10b981; border: 2px solid #10b981;">1</div>
+                        <h5 class="text-white mb-3">Uygun Paketleme</h5>
+                        <p style="color: #cbd5e0; font-size: 14px;">Ürünün karakteristiğine göre uygun termo-izolasyonlu ambalaj ve soğutucu elemanlar seçilir.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                        <div class="mx-auto mb-4 d-flex align-items-center justify-content-center" style="width: 70px; height: 70px; background: rgba(16, 185, 129, 0.15); border-radius: 50%; font-size: 24px; font-weight: bold; color: #10b981; border: 2px solid #10b981;">2</div>
+                        <h5 class="text-white mb-3">Frigo Transfer</h5>
+                        <p style="color: #cbd5e0; font-size: 14px;">Tesisinizden alınan ürünler, ısı kontrollü özel frigo araçlarla havalimanı kargo terminaline ulaştırılır.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                        <div class="mx-auto mb-4 d-flex align-items-center justify-content-center" style="width: 70px; height: 70px; background: rgba(16, 185, 129, 0.15); border-radius: 50%; font-size: 24px; font-weight: bold; color: #10b981; border: 2px solid #10b981;">3</div>
+                        <h5 class="text-white mb-3">Öncelikli Uçuş</h5>
+                        <p style="color: #cbd5e0; font-size: 14px;">Havalimanındaki soğuk hava depolarında bekletilen kargo, uçağın ısı ayarlı özel kargo bölümüne yüklenir.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="mx-auto mb-4 d-flex align-items-center justify-content-center" style="width: 70px; height: 70px; background: #10b981; border-radius: 50%; font-size: 24px; font-weight: bold; color: #ffffff; border: 2px solid #10b981;">4</div>
+                        <h5 class="text-white mb-3">Hızlı Teslimat</h5>
+                        <p style="color: #cbd5e0; font-size: 14px;">Varış noktasında hızlandırılmış gümrük süreçlerinden geçirilerek, bozulmadan alıcısına teslim edilir.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. YÜZEN ÇAĞRI KUTUSU (Doğal ve Güven Verici CTA) -->
+        <div class="container" style="margin-top: -60px; position: relative; z-index: 10;">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div style="background: linear-gradient(135deg, #059669 0%, #047857 100%); border-radius: 20px; padding: 40px 50px; box-shadow: 0 20px 40px rgba(5, 150, 105, 0.3); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+                        <div class="mb-3 mb-md-0">
+                            <h3 style="color: #ffffff; margin-bottom: 5px;">Ürünlerinizin Değerini ve Tazeliğini Koruyun</h3>
+                            <p style="color: #d1fae5; margin-bottom: 0; font-size: 16px; font-weight: 500;">Raf ömrü kısa olan gıda ve tarım ürünleriniz için soğuk zincir navlun teklifini hemen alın.</p>
+                        </div>
+                        <a href="/Contact/Index" class="btn hover-up" style="background: #ffffff; color: #059669; padding: 15px 35px; font-weight: bold; border-radius: 50px; font-size: 16px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">Soğuk Zincir Teklifi Al</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alt Boşluk -->
+        <div style="height: 100px; background-color: #ffffff;"></div>
+
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+</html>

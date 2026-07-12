@@ -1,0 +1,110 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+    <main class="main">
+        <section class="section box-pageheader-1" style="background: linear-gradient(rgba(4, 28, 47, 0.8), rgba(4, 28, 47, 0.8)), url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; padding: 120px 0;">
+            <div class="container text-center">
+                <span class="btn btn-tag mb-15">Kurumsal Değerlerimiz</span>
+                <h1 class="color-white mb-20 font-bold-800">Misyon & Vizyon</h1>
+                <p class="font-md color-white opacity-75">Geleceğin lojistik standartlarını bugünden Kayseri'de inşa ediyoruz.</p>
+            </div>
+        </section>
+
+        <section class="section pt-100 pb-100 bg-white">
+            <div class="container">
+                <div class="row align-items-center item-about-2">
+                    <div class="col-lg-6 mb-30">
+                        <div class="box-image-vision shadow-lg bd-rd16 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=800&q=80" alt="Vizyonumuz">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-30 pl-50 pl-md-15">
+                        <h2 class="color-brand-2 mb-30">Vizyonumuz</h2>
+                        <p class="font-md color-grey-700 mb-20">
+                            <strong>ÇOKKEÇECİ FAST DAĞITIM</strong> olarak vizyonumuz; küresel lojistik dinamiklerini, yerel tecrübemiz ve teknolojik inovasyonlarımızla harmanlayarak, Türkiye’nin en güvenilir ve tercih edilen "akıllı dağıtım ağı" olmaktır. Sadece paket taşıyan bir aracı kurum olmanın ötesine geçerek; yapay zeka destekli rota optimizasyonları, otonom takip sistemleri ve sürdürülebilir yeşil lojistik çözümleriyle sektörde dijital dönüşümün öncüsü olmayı hedefliyoruz.
+                        </p>
+                        <p class="font-md color-grey-700">
+                            2030 yılı projeksiyonumuzda, Kayseri merkezli operasyonel gücümüzü tüm Avrasya coğrafyasına yaymak, karbon ayak izimizi minimize eden elektrikli araç filomuzla çevre dostu taşımacılıkta dünya standartlarını belirlemek ve müşterilerimize "sıfır hata" prensibiyle kusursuz bir dijital deneyim sunmak yer almaktadır. Bizim için gelecek, sadece hız değil; şeffaflık, sürdürülebilirlik ve teknoloji ile bütünleşmiş bir lojistik ekosistemidir.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section pt-100 pb-100 bg-grey-100">
+            <div class="container">
+                <div class="row align-items-center item-about-2 item-about-2-revert">
+                    <div class="col-lg-6 mb-30 pr-50 pr-md-15 order-2 order-lg-1">
+                        <h2 class="color-brand-2 mb-30">Misyonumuz</h2>
+                        <p class="font-md color-grey-700 mb-20">
+                            Misyonumuz; bireysel ve kurumsal tüm paydaşlarımızın gönderilerini, "emanet" bilinciyle, en yüksek güvenlik standartlarında ve taahhüt edilen sürede varış noktasına ulaştırmaktır. <strong>ÇOKKEÇECİ FAST DAĞITIM HİZMETLERİ ve LOJİSTİK A.Ş.</strong> olarak, lojistik süreçlerini karmaşadan arındırarak; basit, ulaşılabilir ve maliyet etkin çözümler üretmeyi görev ediniyoruz.
+                        </p>
+                        <p class="font-md color-grey-700">
+                            Her bir teslimatın arkasında bir hikaye, bir emek ve bir ihtiyaç olduğunun farkındayız. Bu nedenle; nitelikli insan kaynağımızla, etik değerlere olan bağlılığımızla ve "müşteri memnuniyeti odaklı" çalışma prensibimizle, Türkiye’nin ticaret damarlarına can suyu taşımaya devam ediyoruz. Ülke ekonomisine katma değer sağlamak, yerel üreticinin dünyaya açılan kapısı olmak ve taşımacılıkta mutlak güveni tesis etmek temel varlık sebebimizdir.
+                        </p>
+                    </div>
+                    <div class="col-lg-6 mb-30 order-1 order-lg-2 text-end">
+                        <div class="box-image-mission shadow-lg bd-rd16 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Misyonumuz">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section pt-80 pb-80 bg-white">
+            <div class="container">
+                <div class="text-center mb-60">
+                    <h2 class="color-brand-2">Bizi Biz Yapan Değerler</h2>
+                    <p class="font-md color-grey-500">Kurumsal kültürümüzün temel taşları</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-30">
+                        <div class="card-offer hover-up p-40 text-center shadow-sm">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1160/1160329.png" style="width: 45px; margin-bottom: 20px;" alt="guven">
+                            <h6 class="color-brand-2">Mutlak Güven</h6>
+                            <p class="font-xs">Her kargo bir emanettir, sigortalı ve korumalı taşınır.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-30">
+                        <div class="card-offer hover-up p-40 text-center shadow-sm">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2972/2972215.png" style="width: 45px; margin-bottom: 20px;" alt="hiz">
+                            <h6 class="color-brand-2">Jet Hızında Dağıtım</h6>
+                            <p class="font-xs">Zamanın kıymetini biliyor, dakik teslimat yapıyoruz.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-30">
+                        <div class="card-offer hover-up p-40 text-center shadow-sm">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2092/2092215.png" style="width: 45px; margin-bottom: 20px;" alt="teknoloji">
+                            <h6 class="color-brand-2">Teknolojik Altyapı</h6>
+                            <p class="font-xs">Uçtan uca dijital takip ve şeffaf raporlama sunuyoruz.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-30">
+                        <div class="card-offer hover-up p-40 text-center shadow-sm">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3144/3144474.png" style="width: 45px; margin-bottom: 20px;" alt="insan">
+                            <h6 class="color-brand-2">İnsan Odaklılık</h6>
+                            <p class="font-xs">Çalışanlarımız ve müşterilerimiz en büyük sermayemizdir.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+</html>

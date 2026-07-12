@@ -1,0 +1,180 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_DefaultBoxBarComponentPartial")
+    @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+
+    <main class="main" style="background-color: #f8fafc; color: #333; line-height: 1.8; font-family: 'Segoe UI', sans-serif;">
+
+        <!-- 1. GÖRKEMLİ HERO BÖLÜMÜ (Hız ve Akış Teması) -->
+        <section class="section pt-120 pb-120" style="position: relative; background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&q=80&w=1920') center/cover fixed;">
+            <!-- Dinamik Akış Deseni -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: repeating-linear-gradient(90deg, rgba(59, 130, 246, 0.03) 0px, rgba(59, 130, 246, 0.03) 1px, transparent 1px, transparent 40px); z-index: 1;"></div>
+
+            <div class="container text-center position-relative" style="z-index: 2;">
+                <span class="d-inline-block mb-3" style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; padding: 8px 25px; border-radius: 50px; font-weight: 700; letter-spacing: 2px; font-size: 14px; border: 1px solid rgba(59, 130, 246, 0.3);">HIZ, DOĞRULUK, KESİNTİSİZ AKIŞ</span>
+
+                <h1 class="text-white mb-4" style="font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 900; line-height: 1.1;">
+                    Dağıtım Merkezi <br> <span style="color: #3b82f6;">Operasyonları</span>
+                </h1>
+
+                <p class="font-lg text-white opacity-80 mb-5 mx-auto" style="max-width: 780px;">
+                    Ürünlerin depolarda bekleme süresini bitiriyoruz. Üreticiden veya tedarikçiden gelen ürünleri, ileri teknoloji sorter (ayrıştırıcı) sistemlerimizle saniyeler içinde rotalarına göre sınıflandırıyor ve beklemeden son alıcıya sevk ediyoruz.
+                </p>
+
+                <a href="/Contact/Index" class="btn" style="background: #3b82f6; color: white; padding: 16px 45px; font-weight: bold; border-radius: 8px; font-size: 16px; border: none; box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);">
+                    Dağıtım Ağınızı Hızlandırın
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. KONSEPT AÇIKLAMASI (Depo vs Dağıtım Merkezi) -->
+        <section class="section pt-100 pb-80" style="background-color: #ffffff;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0 pe-lg-5">
+                        <h2 class="mb-4" style="color: #0f172a; font-size: 2.5rem;">Beklemek Yok: <br><span style="color: #3b82f6;">Sürekli Hareket</span></h2>
+                        <p class="text-muted font-lg mb-4">
+                            Klasik depolar malların uzun süreli muhafaza edildiği yerlerdir. ÇokkeçeciJET Dağıtım Merkezleri (Hub) ise, tedarik zincirindeki ürün devir hızını (turnover) maksimize etmek üzere tasarlanmış dinamik transfer noktalarıdır.
+                        </p>
+                        <p class="text-muted font-lg mb-4">
+                            Gelen araçlar (Inbound) boşaltılırken, aynı anda varış rotasına göre ayrıştırılan kargolar çıkış araçlarına (Outbound) yüklenir. Bu sayede stok tutma maliyetleri sıfırlanır, "Just-in-Time" (Tam Zamanında) teslimat stratejisi gerçeğe dönüşür.
+                        </p>
+                        <div class="d-flex align-items-center p-3 mt-4" style="background: #eff6ff; border-left: 4px solid #3b82f6; border-radius: 0 10px 10px 0;">
+                            <div style="font-size: 24px; margin-right: 15px;">⚡</div>
+                            <p class="mb-0" style="color: #1e40af; font-weight: 500;">Hedefimiz; merkeze giren bir ürünün 24 saatten daha kısa sürede çıkışını sağlamaktır.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 position-relative">
+                        <!-- Gerçek Unsplash Görseli (Kutu Ayrıştırma/Konveyör) -->
+                        <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                            <img src="https://images.bilgiakademisi.net.tr/cokkececi-resimler/2026/05/28/filo.png" alt="Dağıtım Merkezi Ayrıştırma" style="width: 100%; display: block;">
+                            <!-- Yüzen Kutu -->
+                            <div style="position: absolute; bottom: 30px; left: 30px; background: rgba(255,255,255,0.95); padding: 15px 25px; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-left: 4px solid #3b82f6;">
+                                <h6 class="mb-0" style="color: #0f172a; font-weight: bold;">Yüksek Devir Hızı</h6>
+                                <p class="text-muted font-sm mb-0">Minimum Stok, Maksimum Hız</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. HUB OPERASYON ADIMLARI (Dinamik Grid) -->
+        <section class="section pt-80 pb-100" style="background-color: #f8fafc;">
+            <div class="container">
+                <div class="text-center mb-60">
+                    <h2 style="color: #0f172a;">Merkez Operasyon Süreçleri</h2>
+                    <p class="text-muted font-lg">Tedarikten son kullanıcıya giden yoldaki milimetrik işlem adımları.</p>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Hızlı Mal Kabul -->
+                    <div class="col-lg-6">
+                        <div class="d-flex p-4" style="background: #ffffff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); height: 100%; border-top: 4px solid #3b82f6; transition: 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <div style="background: #eff6ff; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; color: #3b82f6; margin-right: 20px; flex-shrink: 0;">📥</div>
+                            <div>
+                                <h4 class="mb-2" style="color: #0f172a;">Dinamik Mal Kabul (Inbound)</h4>
+                                <p class="text-muted mb-0 font-sm">Fabrikalardan veya tedarikçilerden gelen tırlar hızla rampalara yanaşır. Ürünler el terminalleriyle okutularak sisteme saniyeler içinde "giriş" olarak kaydedilir.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Otomatik Ayrıştırma -->
+                    <div class="col-lg-6">
+                        <div class="d-flex p-4" style="background: #ffffff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); height: 100%; border-top: 4px solid #3b82f6; transition: 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <div style="background: #eff6ff; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; color: #3b82f6; margin-right: 20px; flex-shrink: 0;">🔀</div>
+                            <div>
+                                <h4 class="mb-2" style="color: #0f172a;">Otomatik Ayrıştırma (Sorter)</h4>
+                                <p class="text-muted mb-0 font-sm">Gelen kargolar, konveyör bant sistemleri üzerinde barkodları okunarak gidecekleri şehir, bölge veya şubeye göre otomatik olarak farklı kanallara ayrıştırılır.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Çapraz Sevkiyat -->
+                    <div class="col-lg-6">
+                        <div class="d-flex p-4" style="background: #ffffff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); height: 100%; border-top: 4px solid #3b82f6; transition: 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <div style="background: #eff6ff; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; color: #3b82f6; margin-right: 20px; flex-shrink: 0;">✖️</div>
+                            <div>
+                                <h4 class="mb-2" style="color: #0f172a;">Çapraz Sevkiyat (Cross-Docking)</h4>
+                                <p class="text-muted mb-0 font-sm">Farklı tedarikçilerden gelen mallar, depoda rafa hiç kaldırılmadan mal kabul alanında palet bazında bozulup birleştirilerek direkt olarak çıkış rampasındaki araçlara aktarılır.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Son Kilometre (Outbound) -->
+                    <div class="col-lg-6">
+                        <div class="d-flex p-4" style="background: #ffffff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); height: 100%; border-top: 4px solid #3b82f6; transition: 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <div style="background: #eff6ff; width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; color: #3b82f6; margin-right: 20px; flex-shrink: 0;">🚛</div>
+                            <div>
+                                <h4 class="mb-2" style="color: #0f172a;">Yükleme ve Rota (Outbound)</h4>
+                                <p class="text-muted mb-0 font-sm">Ayrıştırılan ürünler, dağıtım araçlarına "ilk inecek ürün en son yüklenecek" (LIFO mantığıyla rota optimizasyonu) kuralına göre yüklenerek son kilometre teslimatı için yola çıkar.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. HIZIN ARKASINDAKİ TEKNOLOJİ (Koyu Lacivert Tema) -->
+        <section class="section pt-80 pb-100" style="background-color: #0f172a; color: white;">
+            <div class="container">
+                <div class="row align-items-center mb-60">
+                    <div class="col-lg-6">
+                        <h2 class="text-white mb-0">Operasyonun Kalbi: <br>Dijital Altyapı</h2>
+                    </div>
+                    <div class="col-lg-6 text-lg-end mt-4 mt-lg-0">
+                        <p style="color: #94a3b8; margin-bottom: 0;">Binlerce kargonun birbirine karışmadan aynı gün içinde <br>yönlendirilmesi güçlü bir yazılım zekası gerektirir.</p>
+                    </div>
+                </div>
+
+                <div class="row g-4 text-center">
+                    <div class="col-md-4">
+                        <div class="p-5" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 15px; height: 100%;">
+                            <div style="font-size: 40px; margin-bottom: 20px; display: inline-block; background: rgba(59, 130, 246, 0.15); width: 80px; height: 80px; line-height: 80px; border-radius: 50%; color: #3b82f6;">📡</div>
+                            <h4 class="text-white mb-3">RFID ve Barkod Sistemleri</h4>
+                            <p style="color: #94a3b8; font-size: 14px; mb-0">Ürünlerin merkeze girişi ve çıkışı sırasında insan hatasını sıfıra indiren radyo frekansı ve lazer okuma teknolojileri.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-5" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 15px; height: 100%;">
+                            <div style="font-size: 40px; margin-bottom: 20px; display: inline-block; background: rgba(59, 130, 246, 0.15); width: 80px; height: 80px; line-height: 80px; border-radius: 50%; color: #3b82f6;">🧠</div>
+                            <h4 class="text-white mb-3">Akıllı Rota Optimizasyonu</h4>
+                            <p style="color: #94a3b8; font-size: 14px; mb-0">Yapay zeka destekli yazılımımız, dağıtım araçlarının trafikte en az zaman kaybedeceği teslimat güzergahlarını anlık olarak hesaplar.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-5" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 15px; height: 100%;">
+                            <div style="font-size: 40px; margin-bottom: 20px; display: inline-block; background: rgba(59, 130, 246, 0.15); width: 80px; height: 80px; line-height: 80px; border-radius: 50%; color: #3b82f6;">🔄</div>
+                            <h4 class="text-white mb-3">Tersine Lojistik (İade)</h4>
+                            <p style="color: #94a3b8; font-size: 14px; mb-0">Müşterilerden dönen iadelerin (B2C) merkezimizde hızla kalite kontrolden geçirilip, tekrar stoklanması veya imhaya ayrılması.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. CTA BÖLÜMÜ -->
+        <section class="section pt-80 pb-80 text-center" style="background: #ffffff; border-top: 5px solid #3b82f6;">
+            <div class="container">
+                <h2 class="mb-4" style="color: #0f172a;">Teslimat Sürenizi Yarıya İndirin</h2>
+                <p class="font-lg mb-5 mx-auto text-muted" style="max-width: 600px;">ÇokkeçeciJET dağıtım merkezi ağını kullanarak e-ticaret, perakende veya B2B operasyonlarınızda müşterilerinize daha hızlı ulaşın.</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="/Contact/Index" class="btn" style="background: #3b82f6; color: white; padding: 18px 45px; font-weight: bold; border-radius: 8px; font-size: 16px; box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);">Operasyon Planı İste</a>
+                    <a href="/Hizmetler/E-Ticaret-Lojistik" class="btn" style="background: white; color: #0f172a; padding: 18px 45px; font-weight: bold; border-radius: 8px; font-size: 16px; border: 2px solid #e2e8f0;">E-Ticaret Çözümleri</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+</html>

@@ -1,0 +1,110 @@
+﻿@model CreateShipmentMovementDto
+@using static KargoYazilimi.TransportMongoDb.Entities.Enums
+
+@{
+    ViewData["Title"] = "Yeni Kargo Hareketi Ekle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="py-3 d-flex align-items-sm-center flex-sm-row flex-column">
+    <div class="flex-grow-1">
+        <h4 class="fs-18 fw-bold m-0 text-dark">
+            <i class="bi bi-geo-alt-fill me-2 text-primary"></i>Kargo Konum & Durum Güncelleme
+        </h4>
+    </div>
+    <div class="text-end">
+        <ol class="breadcrumb m-0 py-0 text-muted">
+            <li class="breadcrumb-item"><a href="/sShipmentList" class="text-secondary text-decoration-none">Kargo Listesi</a></li>
+            <li class="breadcrumb-item active text-primary fw-semibold">Hareket Ekle</li>
+        </ol>
+    </div>
+</div>
+
+<div class="row justify-content-center mt-3">
+    <div class="col-xl-8 col-lg-10">
+        <div class="card shadow-sm border-0" style="border-radius: 16px;">
+            <div class="card-header bg-white border-bottom py-4">
+                <h5 class="card-title mb-0 fw-bold text-secondary">
+                    <i class="bi bi-node-plus-fill me-2 text-primary fs-4 align-middle"></i>Yeni İşlem Kaydı Oluştur
+                </h5>
+                <p class="text-muted small mb-0 mt-1">Bu işlem kargonun takip ekranındaki rotasını ve ana durumunu güncelleyecektir.</p>
+            </div>
+
+            <form method="post">
+                <div class="card-body p-4 p-md-5">
+
+                    <!-- Kargo ID'sini gizli olarak post ediyoruz -->
+                    <input type="hidden" asp-for="ShipmentId" />
+
+                    <div class="row g-4">
+
+                        <!-- 1. Kargo Yeni Durumu (TÜRKÇELEŞTİRİLDİ) -->
+                        <div class="col-md-12">
+                            <label class="form-label fw-bold text-dark">Kargonun Yeni Durumu</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light text-primary border-end-0"><i class="bi bi-shield-check"></i></span>
+                                <select asp-for="Status" class="form-select border-start-0 bg-light fw-semibold" required>
+                                    <option value="" disabled selected>Lütfen Yeni Durumu Seçiniz...</option>
+                                    <option value="@ShipmentStatus.Created">Kabul Edildi (Şubede)</option>
+                                    <option value="@ShipmentStatus.InTransit">Transferde (Yolda / TM)</option>
+                                    <option value="@ShipmentStatus.ArrivedAtBranch">Varış Şubesinde (Teslimat Bekliyor)</option>
+                                    <option value="@ShipmentStatus.OutForDelivery">Dağıtıma Çıktı (Kuryede)</option>
+                                    <option value="@ShipmentStatus.Delivered">Teslim Edildi</option>
+                                    <option value="@ShipmentStatus.FailedAttempt">Teslim Edilemedi (Evde Yok vs.)</option>
+                                    <option value="@ShipmentStatus.Canceled">İptal Edildi</option>
+                                    <option value="@ShipmentStatus.Returned">İade Edildi</option>
+                                </select>
+                            </div>
+                            <div class="form-text text-muted small mt-1">
+                                <i class="bi bi-info-circle me-1"></i>Müşteri ekranındaki ilerleme çubuğu bu seçime göre otomatik dolacaktır.
+                            </div>
+                        </div>
+
+                        <!-- 2. Mevcut Konum (Şube / TM) -->
+                        <div class="col-md-12">
+                            <label class="form-label fw-bold text-dark">Güncel Konum / Şube</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light text-primary border-end-0"><i class="bi bi-pin-map-fill"></i></span>
+                                <input type="text" asp-for="Location" class="form-control border-start-0 bg-light" placeholder="Örn: Anadolu TM Aktarma Merkezi" required>
+                            </div>
+                        </div>
+
+                        <!-- 3. Açıklama / Detay -->
+                        <div class="col-md-12">
+                            <label class="form-label fw-bold text-dark">İşlem Açıklaması</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light text-primary border-end-0"><i class="bi bi-card-text"></i></span>
+                                <textarea asp-for="Description" class="form-control border-start-0 bg-light" rows="3" placeholder="Örn: Transfer Sürecinde" required></textarea>
+                            </div>
+                            <div class="form-text text-muted small mt-2">
+                                <strong>Önizleme:</strong> Müşteri bu kaydı <em>"Transfer Sürecinde - Anadolu TM Aktarma Merkezi"</em> şeklinde tek satır görecektir.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card-footer bg-light border-top py-4 px-4 d-flex justify-content-between" style="border-radius: 0 0 16px 16px;">
+                    <a href="/Admin/Shipment/ShipmentList" class="btn btn-outline-secondary px-4 fw-bold">
+                        <i class="bi bi-arrow-left me-1"></i> Listeye Dön
+                    </a>
+                    <button type="submit" class="btn btn-primary px-5 fw-bold shadow-sm">
+                        <i class="bi bi-send-check-fill me-2"></i> Hareketi Kaydet
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .form-control:focus, .form-select:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+        background-color: #fff !important;
+    }
+
+    .input-group-text {
+        font-size: 1.1rem;
+    }
+</style>

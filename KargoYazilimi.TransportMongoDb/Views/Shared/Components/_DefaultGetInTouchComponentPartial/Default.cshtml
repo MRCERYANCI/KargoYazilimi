@@ -1,0 +1,49 @@
+﻿@model List<ResultGetInTouchSectionDto>
+
+@{
+    // Listeden ilk kaydı alıyoruz
+    var item = Model.FirstOrDefault();
+}
+
+@if (item != null)
+{
+    <section class="section mt-55 bg-1 position-relative pt-90 pb-90">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <span class="btn btn-tag">@item.Tag</span>
+
+                    <h3 class="color-grey-900 mb-20 mt-15">
+                        @Html.Raw(item.Title.Replace("\n", "<br class='d-none d-lg-block'>"))
+                    </h3>
+
+                    <p class="font-md color-grey-900 mb-40">@item.Description</p>
+
+                    <div class="row">
+                        <div class="col-lg-6 mb-30">
+                            <h6 class="chart-title font-md-bold color-grey-900">@item.SubTitle1</h6>
+                            <p class="font-xs color-grey-900">@item.SubDescription1</p>
+                        </div>
+
+                        <div class="col-lg-6 mb-30">
+                            <h6 class="feature-title font-md-bold color-grey-900">@item.SubTitle2</h6>
+                            <p class="font-xs color-grey-900">@item.SubDescription2</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-20">
+                        <a class="btn btn-brand-2 mr-20" href="@item.ButtonUrl">@item.ButtonText</a>
+                        <a class="btn btn-link-medium" href="#">
+                            Daha Fazla Bilgi
+                            <svg class="w-6 h-6 icon-16 ml-5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box-image-touch" style="background-image: url('@item.BackgroundImageUrl'); background-size: cover; background-position: center;"></div>
+    </section>
+}

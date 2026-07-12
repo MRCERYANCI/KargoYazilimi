@@ -1,0 +1,139 @@
+﻿@model GetProjectSectionByIdDto
+
+@{
+    ViewData["Title"] = "UpdateProjectSection";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<br />
+<br />
+<div class="row justify-content-center">
+    <div class="col-xl-12">
+        <div class="card shadow-lg border-0" style="border-radius: 15px;">
+            <div class="card-header bg-white border-bottom py-3">
+                <h5 class="card-title mb-0 fw-bold text-dark">
+                    <i class="bi bi-pencil-square me-2 text-warning"></i>Proje Güncelleme Paneli
+                </h5>
+            </div>
+
+            <div class="card-body p-4">
+                <form method="post">
+                    <input type="hidden" asp-for="ProjectSectionId" />
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label fw-bold text-secondary">Proje Başlığı</label>
+                                    <input type="text" asp-for="Title" id="projectTitle" class="form-control" oninput="generateSlug(this.value)" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label fw-bold text-secondary">Slug (URL) <small class="text-danger">(Dikkat: SEO'yu etkiler)</small></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light">/</span>
+                                        <input type="text" asp-for="Slug" id="projectSlug" class="form-control" readonly>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold text-secondary">Kısa Açıklama</label>
+                                <textarea asp-for="ShortDescription" class="form-control" rows="2"></textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold text-secondary">Detaylı İçerik (Zengin Metin Editörü)</label>
+                                <textarea asp-for="FullDescription" id="editor1" class="form-control"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 border-start ps-4">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold text-secondary">Kategori</label>
+                                <select asp-for="Category" class="form-select">
+                                    <option value="Hava Yolu">Hava Yolu</option>
+                                    <option value="Deniz Yolu">Deniz Yolu</option>
+                                    <option value="Kara Yolu">Kara Yolu</option>
+                                    <option value="Depolama">Depolama</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold text-secondary">Kapak Görseli URL</label>
+                                <input type="text" asp-for="ImageUrl" class="form-control" id="imageUrlInput" oninput="previewImage(this)">
+                            </div>
+
+                            <div class="text-center p-2 border rounded-3 bg-light mb-4">
+                                <label class="form-label d-block text-start small fw-bold text-muted mb-2">Mevcut Görsel</label>
+                                <img id="projectPreview" src="@Model.ImageUrl" alt="Önizleme" class="img-fluid rounded shadow-sm" style="max-height: 160px; object-fit: cover;">
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6 mb-3">
+                                    <label class="form-label fw-bold text-secondary">Sıralama</label>
+                                    <input type="number" asp-for="OrderNo" class="form-control">
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <label class="form-label fw-bold text-secondary">Durum</label>
+                                    <div class="form-check form-switch mt-2">
+                                        <input class="form-check-input" type="checkbox" asp-for="IsActive">
+                                        <label class="form-check-label">Yayında</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-end mt-4 pt-3 border-top">
+                        <a href="/Admin/ProjectSection/Index" class="btn btn-light px-4 rounded-pill me-2">Vazgeç</a>
+                        <button type="submit" class="btn btn-warning px-5 rounded-pill shadow-sm fw-bold text-dark">
+                            <i class="bi bi-arrow-repeat me-1"></i> Değişiklikleri Uygula
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // CKEditor'ü Başlat
+    CKEDITOR.replace('editor1', {
+        height: 350,
+        removeButtons: 'About'
+    });
+
+    // Görsel Önizleme
+    function previewImage(input) {
+        var preview = document.getElementById('projectPreview');
+        if (input.value && input.value.trim() !== "") {
+            preview.src = input.value;
+            preview.onerror = function() {
+                preview.src = "/templates/assets/imgs/page/homepage1/img.png";
+            };
+        }
+    }
+
+    // Slug Oluşturucu (Başlık değişince URL'yi günceller)
+    function generateSlug(text) {
+        var slug = text.toString().toLowerCase()
+            .replace(/\s+/g, '-')
+            .replace(/[^\w\-]+/g, '')
+            .replace(/\-\-+/g, '-')
+            .replace(/^-+/, '')
+            .replace(/-+$/, '');
+        document.getElementById('projectSlug').value = slug;
+    }
+</script>
+
+<style>
+    .form-control:focus, .form-select:focus {
+        border-color: #ffc107;
+        box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.1);
+    }
+</style>
